@@ -1,0 +1,10 @@
+.front-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  height: 600px;
+  margin-left: 420px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}

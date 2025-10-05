@@ -1,95 +1,101 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import { Box, Card, Divider, Typography, useTheme } from "@mui/material";
+import "./styles/front.css";
+import Link from "next/link";
+import {
+  FacebookOutlined,
+  GitHub,
+  LinkedIn,
+  WhatsApp,
+  X,
+} from "@mui/icons-material";
+import { DefaultButton } from "./components/ui/DefaultButton";
+import { WhiteMiddButton } from "./components/ui/WhiteMiddButton";
 
 export default function Home() {
+  const theme = useTheme();
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <Card className="front-card">
+      <Box sx={{ marginTop: "100px" }}>
+        <Typography color="primary" variant="h3" fontFamily={"monospace"}>
+          ZUNSteps
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "80%",
+          marginTop: "20px",
+        }}
+      >
+        <Typography color="primary.text">
+          La herramienta que facilita el trabajo con la Suite ZUN.
+        </Typography>
+        <Typography color="primary.text">
+          No pierdas la oprtunidad de aprender haciendo.
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          gap: "15px",
+          marginTop: "10px",
+          color: "primary.main",
+        }}
+      >
+        <Link href={"facebook"}>
+          <FacebookOutlined />
+        </Link>
+        <Link href={"github"}>
+          <GitHub />
+        </Link>
+        <Link href={"twitter"}>
+          <X />
+        </Link>
+        <Link href={"linkedin"}>
+          <LinkedIn />
+        </Link>
+      </Box>
+      <Box sx={{ display: "flex", gap: "10px", marginTop: "50px" }}>
+        <Link href={"/zunsteps/docs"}>
+          <WhiteMiddButton text={"docs"} />
+        </Link>
+        <Link href={"zunsteps/dashboard"}>
+          <DefaultButton
+            text={"iniciar"}
+            actionFunction={console.log("pronado default btn")}
+          />
+        </Link>
+      </Box>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          marginTop: "180px",
+        }}
+      >
+        <Typography color="primary.text">
+          Powered by Carlinhos. v1.0.0
+        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "primary.main",
+          }}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <span>
+            <WhatsApp />
+          </span>
+          +53 63907157
+        </Box>
+      </Box>
+    </Card>
   );
 }
