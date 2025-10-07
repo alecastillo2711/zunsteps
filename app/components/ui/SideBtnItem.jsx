@@ -8,7 +8,7 @@ import {
 import { Button, Box } from "@mui/material";
 import { useState } from "react";
 
-export const SideBtnItem = ({ title }) => {
+export const SideBtnItem = ({ title, icon }) => {
   const [selected, setSelected] = useState(true);
 
   const handleSelected = () => {
@@ -20,13 +20,13 @@ export const SideBtnItem = ({ title }) => {
         sx={{
           display: "flex",
           width: "300px",
-
           gap: "10px",
           color: "primary.text",
         }}
         onClick={handleSelected}
       >
         {title}
+        {icon}
       </Button>
     </Box>
   );

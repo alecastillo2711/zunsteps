@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
+import AccordionExpandIcon from "./AccordionExpandIcon";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -60,7 +61,8 @@ export default function BasicTabs() {
       {sections.map((el) => {
         return (
           <CustomTabPanel value={value} index={sections.indexOf(el)}>
-            {sections[sections.indexOf(el)]}
+            {/* {sections[sections.indexOf(el)]} */}
+            <AccordionExpandIcon />
           </CustomTabPanel>
         );
       })}

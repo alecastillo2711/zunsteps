@@ -29,13 +29,18 @@ export default function Home() {
           alignItems: "center",
           width: "80%",
           marginTop: "20px",
+          marginBottom: "10px",
         }}
       >
         <Typography color="primary.text">
-          La herramienta que facilita el trabajo con la Suite ZUN.
+          La herramienta que facilita el trabajo con la
         </Typography>
-        <Typography color="primary.text">
-          No pierdas la oprtunidad de aprender haciendo.
+        <Typography sx={{ marginLeft: "25px" }} color="primary.text">
+          Suite ZUN. No pierdas la oprtunidad de:
+        </Typography>
+        <Typography sx={{ color: "primary.text" }}>
+          {" "}
+          aprender haciendo.
         </Typography>
       </Box>
       <Box
@@ -76,7 +81,7 @@ export default function Home() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          marginTop: "180px",
+          marginTop: "130px",
         }}
       >
         <Typography color="primary.text">

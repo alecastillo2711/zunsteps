@@ -13,4 +13,7 @@ export const myTheme = createTheme({
       main: "#fffefe",
     },
   },
+  typography: {
+    fontFamily: "monospace",
+  },
 });

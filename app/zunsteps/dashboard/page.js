@@ -4,6 +4,7 @@ import { SideBtnItem } from "@/app/components/ui/SideBtnItem";
 import { Box, Button, Card, Divider, Typography } from "@mui/material";
 import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 import { DefaultButton } from "@/app/components/ui/DefaultButton";
+import { ScienceOutlined } from "@mui/icons-material";
 
 export default function Dashboard(params) {
   return (
@@ -47,13 +48,13 @@ export default function Dashboard(params) {
             }}
           >
             <SideBtnItem title={"ZUNacc"} />
-            <SideBtnItem title={"ZUNpms"} />
-            <SideBtnItem title={"ZUNst"} />
-            <SideBtnItem title={"ZUNhr"} />
-            <SideBtnItem title={"ZUNpr"} />
-            <SideBtnItem title={"ZUNcc"} />
-            <SideBtnItem title={"ZUNaft"} />
-            <SideBtnItem title={"ZUNut"} />
+            <SideBtnItem title={"ZUNpms"} icon={<ScienceOutlined />} />
+            <SideBtnItem title={"ZUNst"} icon={<ScienceOutlined />} />
+            <SideBtnItem title={"ZUNhr"} icon={<ScienceOutlined />} />
+            <SideBtnItem title={"ZUNpr"} icon={<ScienceOutlined />} />
+            <SideBtnItem title={"ZUNcc"} icon={<ScienceOutlined />} />
+            <SideBtnItem title={"ZUNaft"} icon={<ScienceOutlined />} />
+            <SideBtnItem title={"ZUNut"} icon={<ScienceOutlined />} />
 
             <Box>
               <DefaultButton text={"Frecuentes"} />

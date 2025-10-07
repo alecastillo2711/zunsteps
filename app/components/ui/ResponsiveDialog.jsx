@@ -8,7 +8,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 
-export default function ResponsiveDialog() {
+export default function ResponsiveDialog({ title, content, importat }) {
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
@@ -23,9 +23,23 @@ export default function ResponsiveDialog() {
 
   return (
     <React.Fragment>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Open responsive dialog
-      </Button>
+      {importat ? (
+        <Button
+          sx={{
+            backgroundColor: "background.green",
+            ":hover": { backgroundColor: "background.main" },
+          }}
+          variant="outlined"
+          onClick={handleClickOpen}
+        >
+          {title}
+        </Button>
+      ) : (
+        <Button variant="outlined" onClick={handleClickOpen}>
+          {title}
+        </Button>
+      )}
+
       <Dialog
         fullScreen={fullScreen}
         open={open}
