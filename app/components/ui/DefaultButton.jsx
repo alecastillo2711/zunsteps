@@ -10,7 +10,8 @@ export const DefaultButton = ({ text, actionFunction }) => {
         gap: "5px",
         alignItems: "center",
         justifyContent: "center",
-        width: "130px",
+        paddingLeft: "10px",
+        paddingRight: "10px",
         backgroundColor: "background.green",
         border: "1.5px,solid,#f0f0f0",
         ":hover": {
