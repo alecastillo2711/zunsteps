@@ -48,5 +48,16 @@ export const zunacc = {
         },
       ],
     },
+    {
+      id: 5,
+      sNombre: "Una mas",
+      acciones: [
+        {
+          id: 2,
+          aNombre: "Balance General",
+          pasos: ["Paso1", "Paso2", "Paso3"],
+        },
+      ],
+    },
   ],
 };

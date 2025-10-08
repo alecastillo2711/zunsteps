@@ -35,34 +35,42 @@ function a11yProps(index) {
   };
 }
 
-export default function BasicTabs() {
+export default function BasicTabs({ modulo }) {
   const [value, setValue] = React.useState(0);
+  const { mSecciones } = modulo;
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  //este es un array de prueba para despues adaptarlo a la data
-  const sections = ["primera", "segunda", "tercera", "cuarta"];
+
+  console.log(mSecciones);
+
   //************************************************************** */
 
   return (
-    <Box sx={{ width: "600px" }}>
+    <Box sx={{ width: "700px" }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Tabs
           value={value}
           onChange={handleChange}
           aria-label="basic tabs example"
         >
-          {sections.map((el) => (
-            <Tab key={el} label={el} {...a11yProps(sections.indexOf(el))} />
+          {mSecciones.map((el) => (
+            <Tab
+              key={el.id}
+              label={el.sNombre}
+              {...a11yProps(mSecciones.indexOf(el))}
+            />
           ))}
         </Tabs>
       </Box>
-      {sections.map((el) => {
+      {mSecciones.map((el) => {
         return (
-          <CustomTabPanel value={value} index={sections.indexOf(el)}>
-            {/* {sections[sections.indexOf(el)]} */}
-            <AccordionExpandIcon />
+          <CustomTabPanel value={value} index={mSecciones.indexOf(el)}>
+            <AccordionExpandIcon
+              nombreModulo={modulo.mNombre}
+              resumen={modulo.mResumen}
+            />
           </CustomTabPanel>
         );
       })}

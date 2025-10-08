@@ -5,8 +5,20 @@ import { Box, Button, Card, Divider, Typography } from "@mui/material";
 import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 import { DefaultButton } from "@/app/components/ui/DefaultButton";
 import { ScienceOutlined } from "@mui/icons-material";
+import React, { useState } from "react";
+
+/*Modulos */
+import { zunacc } from "@/app/lib/modulos/zunacc";
 
 export default function Dashboard(params) {
+  const [moduloSelect, setModuloSelect] = useState(zunacc);
+
+  /**Lo uso para poder activar el modulo zunacc */
+  const selectAcc = () => {
+    setModuloSelect(zunacc);
+    console.log(moduloSelect);
+  };
+
   return (
     <Box sx={{ display: "flex", justifyContent: "center", gap: "30px" }}>
       <Box>
@@ -47,7 +59,7 @@ export default function Dashboard(params) {
               alignItems: "center",
             }}
           >
-            <SideBtnItem title={"ZUNacc"} />
+            <SideBtnItem title={"ZUNacc"} handleModulo={selectAcc} />
             <SideBtnItem title={"ZUNpms"} icon={<ScienceOutlined />} />
             <SideBtnItem title={"ZUNst"} icon={<ScienceOutlined />} />
             <SideBtnItem title={"ZUNhr"} icon={<ScienceOutlined />} />
@@ -63,7 +75,7 @@ export default function Dashboard(params) {
         </Card>
       </Box>
       <Box>
-        <BasicTabs />
+        <BasicTabs modulo={moduloSelect} />
       </Box>
     </Box>
   );

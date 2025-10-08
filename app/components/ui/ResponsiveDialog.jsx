@@ -7,6 +7,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
+import VerticalLinearStepper from "./VerticalLinearStepper";
 
 export default function ResponsiveDialog({ title, content, importat }) {
   const [open, setOpen] = React.useState(false);
@@ -54,6 +55,7 @@ export default function ResponsiveDialog({ title, content, importat }) {
             Let Google help apps determine location. This means sending
             anonymous location data to Google, even when no apps are running.
           </DialogContentText>
+          {content}
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose}>

@@ -10,6 +10,7 @@ import { Box } from "@mui/material";
 import { Searcher } from "./Searcher";
 import ResponsiveDialog from "./ResponsiveDialog";
 import { ConceptItem } from "./ConceptItem";
+import VerticalLinearStepper from "./VerticalLinearStepper";
 
 export default function AccordionExpandIcon({
   nombreModulo,
@@ -34,7 +35,7 @@ export default function AccordionExpandIcon({
             }}
           >
             <Typography variant="h5" color="primary.main">
-              nombreModulo
+              {nombreModulo}
             </Typography>
             <Image
               src={"/next.svg"}
@@ -53,13 +54,14 @@ export default function AccordionExpandIcon({
               marginBottom: "10px",
             }}
           >
-            <ResponsiveDialog title={"Atajo1"} importat={true} />
+            <ResponsiveDialog
+              title={"Atajo1"}
+              importat={true}
+              content={<VerticalLinearStepper />}
+            />
             <ResponsiveDialog title={"Atajo2"} importat={false} />
           </Box>
-          <Typography color="primary.text">
-            Resumen: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
+          <Typography color="primary.text">{resumen}</Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion>
