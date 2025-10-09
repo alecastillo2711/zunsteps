@@ -5,19 +5,13 @@ import { Box, Button, Card, Divider, Typography } from "@mui/material";
 import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 import { DefaultButton } from "@/app/components/ui/DefaultButton";
 import { ScienceOutlined } from "@mui/icons-material";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 /*Modulos */
-import { zunacc } from "@/app/lib/modulos/zunacc";
+import { ModuloContext } from "@/app/lib/contexts/ModulosContext";
 
 export default function Dashboard(params) {
-  const [moduloSelect, setModuloSelect] = useState(zunacc);
-
-  /**Lo uso para poder activar el modulo zunacc */
-  const selectAcc = () => {
-    setModuloSelect(zunacc);
-    console.log(moduloSelect);
-  };
+  const { modulo, setZunacc } = useContext(ModuloContext);
 
   return (
     <Box sx={{ display: "flex", justifyContent: "center", gap: "30px" }}>
@@ -59,7 +53,7 @@ export default function Dashboard(params) {
               alignItems: "center",
             }}
           >
-            <SideBtnItem title={"ZUNacc"} handleModulo={selectAcc} />
+            <SideBtnItem title={"ZUNacc"} handleModulo={setZunacc} />
             <SideBtnItem title={"ZUNpms"} icon={<ScienceOutlined />} />
             <SideBtnItem title={"ZUNst"} icon={<ScienceOutlined />} />
             <SideBtnItem title={"ZUNhr"} icon={<ScienceOutlined />} />
@@ -75,7 +69,7 @@ export default function Dashboard(params) {
         </Card>
       </Box>
       <Box>
-        <BasicTabs modulo={moduloSelect} />
+        <BasicTabs />
       </Box>
     </Box>
   );

@@ -17,6 +17,6 @@ export const ModuloProvider = ({ children }) => {
     setZunacc,
   };
   return (
-    <ModuloContext.Provider values={values}>{children}</ModuloContext.Provider>
+    <ModuloContext.Provider value={values}>{children}</ModuloContext.Provider>
   );
 };

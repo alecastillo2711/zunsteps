@@ -9,7 +9,14 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import VerticalLinearStepper from "./VerticalLinearStepper";
 
-export default function ResponsiveDialog({ title, content, importat }) {
+export default function ResponsiveDialog({
+  title,
+  content,
+  importat,
+  nAccion,
+  rAccion,
+  pasos,
+}) {
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
@@ -47,23 +54,18 @@ export default function ResponsiveDialog({ title, content, importat }) {
         onClose={handleClose}
         aria-labelledby="responsive-dialog-title"
       >
-        <DialogTitle id="responsive-dialog-title">
-          {"Use Google's location service?"}
-        </DialogTitle>
+        <DialogTitle id="responsive-dialog-title">{nAccion}</DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            Let Google help apps determine location. This means sending
-            anonymous location data to Google, even when no apps are running.
-          </DialogContentText>
+          <DialogContentText>{rAccion}</DialogContentText>
           {content}
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose}>
-            Disagree
+            ok
           </Button>
-          <Button onClick={handleClose} autoFocus>
+          {/* <Button onClick={handleClose} autoFocus>
             Agree
-          </Button>
+          </Button> */}
         </DialogActions>
       </Dialog>
     </React.Fragment>

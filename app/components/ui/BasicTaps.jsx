@@ -5,6 +5,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import AccordionExpandIcon from "./AccordionExpandIcon";
+import { ModuloContext } from "@/app/lib/contexts/ModulosContext";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -35,15 +36,15 @@ function a11yProps(index) {
   };
 }
 
-export default function BasicTabs({ modulo }) {
+export default function BasicTabs() {
   const [value, setValue] = React.useState(0);
-  const { mSecciones } = modulo;
+
+  const { modulo } = React.useContext(ModuloContext);
+  const { mSecciones, mNombre, mResumen } = modulo;
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
-  console.log(mSecciones);
 
   //************************************************************** */
 
@@ -67,10 +68,7 @@ export default function BasicTabs({ modulo }) {
       {mSecciones.map((el) => {
         return (
           <CustomTabPanel value={value} index={mSecciones.indexOf(el)}>
-            <AccordionExpandIcon
-              nombreModulo={modulo.mNombre}
-              resumen={modulo.mResumen}
-            />
+            <AccordionExpandIcon key={el.id} seccion={el} />
           </CustomTabPanel>
         );
       })}

@@ -11,13 +11,13 @@ import { Searcher } from "./Searcher";
 import ResponsiveDialog from "./ResponsiveDialog";
 import { ConceptItem } from "./ConceptItem";
 import VerticalLinearStepper from "./VerticalLinearStepper";
+import { ModuloContext } from "@/app/lib/contexts/ModulosContext";
 
-export default function AccordionExpandIcon({
-  nombreModulo,
-  resumen,
-  steps,
-  content,
-}) {
+export default function AccordionExpandIcon({ seccion }) {
+  const { modulo } = React.useContext(ModuloContext);
+  const { mNombre, mResumen } = modulo;
+
+  console.log(seccion);
   return (
     <div>
       <Accordion>
@@ -35,12 +35,12 @@ export default function AccordionExpandIcon({
             }}
           >
             <Typography variant="h5" color="primary.main">
-              {nombreModulo}
+              {mNombre}
             </Typography>
             <Image
-              src={"/next.svg"}
+              src={"/getLogo.png"}
               alt="imaga"
-              width={100}
+              width={150}
               height={50}
             ></Image>
           </Box>
@@ -61,7 +61,7 @@ export default function AccordionExpandIcon({
             />
             <ResponsiveDialog title={"Atajo2"} importat={false} />
           </Box>
-          <Typography color="primary.text">{resumen}</Typography>
+          <Typography color="primary.text">{mResumen}</Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -71,7 +71,7 @@ export default function AccordionExpandIcon({
           id="panel2-header"
         >
           <Typography variant="h6" color="primary.text">
-            Conceptos
+            {seccion.sNombre}
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -80,7 +80,9 @@ export default function AccordionExpandIcon({
             malesuada lacus ex, sit amet blandit leo lobortis eget.
           </Typography>
           <Searcher />
-          <ConceptItem />
+          {seccion.acciones.slice(0, 5).map((el) => (
+            <ConceptItem accion={el} />
+          ))}
         </AccordionDetails>
       </Accordion>
     </div>

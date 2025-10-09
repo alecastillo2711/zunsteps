@@ -2,8 +2,9 @@
 
 import { Card, Typography } from "@mui/material";
 import ResponsiveDialog from "./ResponsiveDialog";
+import VerticalLinearStepper from "./VerticalLinearStepper";
 
-export const ConceptItem = () => {
+export const ConceptItem = ({ accion }) => {
   return (
     <Card
       sx={{
@@ -13,12 +14,22 @@ export const ConceptItem = () => {
         padding: "10px",
         marginTop: "5px",
         marginBottom: "5px",
+        ":hover": {
+          transition: "250ms",
+          backgroundColor: "background.green",
+        },
       }}
     >
       <Typography variant="h6" color="primary.text">
-        Concepto
+        {accion.aNombre}
       </Typography>
-      <ResponsiveDialog importat={false} title={"Detalle del Concepto 1"} />
+      <ResponsiveDialog
+        rAccion={accion.aResumen}
+        nAccion={accion.aNombre}
+        importat={false}
+        title={"Detalles"}
+        content={<VerticalLinearStepper steps={accion.pasos} />}
+      />
     </Card>
   );
 };
