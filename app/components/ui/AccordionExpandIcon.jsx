@@ -88,8 +88,9 @@ export default function AccordionExpandIcon({ seccion }) {
         </AccordionSummary>
         <AccordionDetails>
           <Typography color="primary.text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
+            A continuación te mostramos las acciones que consideramos más
+            importantes en esta sección, pero puedes buscar la que desees desde
+            la barra de búsqueda.
           </Typography>
           <Searcher
             collection={seccion.acciones}
@@ -97,10 +98,10 @@ export default function AccordionExpandIcon({ seccion }) {
             resetFunction={restSearch}
           />
           {resultSearch
-            ? resultSearch.map((el) => <ConceptItem accion={el} />)
+            ? resultSearch.map((el) => <ConceptItem key={el.id} accion={el} />)
             : seccion.acciones
                 .slice(0, 5)
-                .map((el) => <ConceptItem accion={el} />)}
+                .map((el) => <ConceptItem key={el.id} accion={el} />)}
           <Tooltip title="Mostrar Todos">
             <IconButton>
               <ArrowDropDownCircleOutlined />

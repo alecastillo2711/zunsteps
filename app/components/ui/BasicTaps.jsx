@@ -67,7 +67,11 @@ export default function BasicTabs() {
       </Box>
       {mSecciones.map((el) => {
         return (
-          <CustomTabPanel value={value} index={mSecciones.indexOf(el)}>
+          <CustomTabPanel
+            key={el.sNombre}
+            value={value}
+            index={mSecciones.indexOf(el)}
+          >
             <AccordionExpandIcon key={el.id} seccion={el} />
           </CustomTabPanel>
         );

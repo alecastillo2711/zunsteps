@@ -10,9 +10,10 @@ export const Searcher = ({ collection, searchFunction, resetFunction }) => {
   return (
     <Box sx={{ display: "flex", gap: "10px", padding: "10px", height: "56px" }}>
       <Input
+        sx={{ width: "100%" }}
         onChange={(e) => setItem(e.target.value)}
         type="text"
-        placeholder="Buscar..."
+        placeholder="ej:Listado de Comprobantes"
         value={item}
       >
         {item}
@@ -31,7 +32,14 @@ export const Searcher = ({ collection, searchFunction, resetFunction }) => {
       >
         <SearchOutlined />
       </Button>
-      <Button onClick={resetFunction}>reset</Button>
+      <Button
+        onClick={() => {
+          resetFunction();
+          setItem("");
+        }}
+      >
+        Reset
+      </Button>
     </Box>
   );
 };
