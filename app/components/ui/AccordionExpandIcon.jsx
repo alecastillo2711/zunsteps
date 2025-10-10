@@ -6,18 +6,30 @@ import Typography from "@mui/material/Typography";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import Image from "next/image";
-import { Box } from "@mui/material";
+import { Box, IconButton, Tooltip } from "@mui/material";
 import { Searcher } from "./Searcher";
 import ResponsiveDialog from "./ResponsiveDialog";
 import { ConceptItem } from "./ConceptItem";
 import VerticalLinearStepper from "./VerticalLinearStepper";
 import { ModuloContext } from "@/app/lib/contexts/ModulosContext";
+import { ArrowDropDownCircleOutlined } from "@mui/icons-material";
 
 export default function AccordionExpandIcon({ seccion }) {
   const { modulo } = React.useContext(ModuloContext);
   const { mNombre, mResumen } = modulo;
+  const [resultSearch, setResultSearch] = React.useState();
 
-  console.log(seccion);
+  const searchAccion = (goal, list) => {
+    let lowerGoal = goal.toLowerCase();
+    let result = list.filter((el) =>
+      el.aNombre.toLowerCase().includes(lowerGoal)
+    );
+    setResultSearch(result);
+  };
+  const restSearch = () => {
+    setResultSearch();
+  };
+
   return (
     <div>
       <Accordion>
@@ -79,10 +91,21 @@ export default function AccordionExpandIcon({ seccion }) {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
             malesuada lacus ex, sit amet blandit leo lobortis eget.
           </Typography>
-          <Searcher />
-          {seccion.acciones.slice(0, 5).map((el) => (
-            <ConceptItem accion={el} />
-          ))}
+          <Searcher
+            collection={seccion.acciones}
+            searchFunction={searchAccion}
+            resetFunction={restSearch}
+          />
+          {resultSearch
+            ? resultSearch.map((el) => <ConceptItem accion={el} />)
+            : seccion.acciones
+                .slice(0, 5)
+                .map((el) => <ConceptItem accion={el} />)}
+          <Tooltip title="Mostrar Todos">
+            <IconButton>
+              <ArrowDropDownCircleOutlined />
+            </IconButton>
+          </Tooltip>
         </AccordionDetails>
       </Accordion>
     </div>

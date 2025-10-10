@@ -2,12 +2,23 @@
 
 import { SearchOutlined } from "@mui/icons-material";
 import { Box, Button, Input } from "@mui/material";
+import { useState } from "react";
 
-export const Searcher = () => {
+export const Searcher = ({ collection, searchFunction, resetFunction }) => {
+  const [item, setItem] = useState("");
+
   return (
     <Box sx={{ display: "flex", gap: "10px", padding: "10px", height: "56px" }}>
-      <Input type="text" placeholder="Buscar..."></Input>
+      <Input
+        onChange={(e) => setItem(e.target.value)}
+        type="text"
+        placeholder="Buscar..."
+        value={item}
+      >
+        {item}
+      </Input>
       <Button
+        onClick={() => searchFunction(item, collection)}
         sx={{
           backgroundColor: "background.green",
           ":hover": {
@@ -20,6 +31,7 @@ export const Searcher = () => {
       >
         <SearchOutlined />
       </Button>
+      <Button onClick={resetFunction}>reset</Button>
     </Box>
   );
 };
