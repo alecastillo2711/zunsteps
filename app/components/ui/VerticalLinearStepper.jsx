@@ -36,7 +36,9 @@ export default function VerticalLinearStepper({ steps }) {
                 ) : null
               }
             >
-              {step.label}
+              <Typography sx={{ color: "background.green" }}>
+                {step.label}
+              </Typography>
             </StepLabel>
             <StepContent>
               <Typography>{step.description}</Typography>
@@ -57,7 +59,7 @@ export default function VerticalLinearStepper({ steps }) {
                   onClick={handleBack}
                   sx={{ mt: 1, mr: 1 }}
                 >
-                  Atás
+                  Atrás
                 </Button>
               </Box>
             </StepContent>

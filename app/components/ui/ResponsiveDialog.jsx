@@ -56,7 +56,9 @@ export default function ResponsiveDialog({
       >
         <DialogTitle id="responsive-dialog-title">{nAccion}</DialogTitle>
         <DialogContent>
-          <DialogContentText>{rAccion}</DialogContentText>
+          <DialogContentText sx={{ marginBottom: "20px" }}>
+            {rAccion}
+          </DialogContentText>
           {content}
         </DialogContent>
         <DialogActions>

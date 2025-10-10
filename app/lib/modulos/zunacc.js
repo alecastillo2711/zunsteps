@@ -26,7 +26,6 @@ se produce la mayor interacción con el usuario.`,
             },
             {
               label: "Configurar la cabecera del comprobante",
-              image: "/secciones-comprobante",
               description: `Introducir todos los datos que pide el sistema, ejemplo: título, fecha o libro.`,
             },
             {
@@ -37,9 +36,8 @@ El Documento no son campos obligatorios `,
             },
             {
               label: "Funciones",
-              image: "/secciones-comprobante",
               description: `Con la opción Incertar podras agregar más apuntes, con la de Borrar puedes eliminar apuntes
-              y con la opción OK guardaras todos los cambios`,
+              y con la opción OK guardarás todos los cambios`,
             },
           ],
         },
@@ -54,11 +52,11 @@ editado.`,
           pasos: [
             {
               label: "Inicio",
-              image: "/reversion-comprobante",
               description: `Entrar en la opción de sistema llamada Reversion de Comprobantes Integrados`,
             },
             {
               label: "Introducir Comprobante",
+              image: "/zunacc/registro/reversion-comprobante.png",
               description: `Introduce en el campo que se muestra el número del comprobante que se desea revertir.`,
             },
             {
@@ -86,12 +84,12 @@ derecho a ejecutar la pantalla de comprobantes.`,
           pasos: [
             {
               label: "Inicio",
-              image: "/listar-comprobante",
+              image: "/zunacc/registro/listar-comprobante.png",
               description: `Entrar en la opción de sistema llamada Comprobantes Pendientes a Integrar`,
             },
             {
               label: "Cuales Mostrar?",
-              image: "/listar-comprobante",
+              image: "/zunacc/registro/listar-comprobante.png",
               description: `Si marcas la opción Solo mis Comprobantes, solo se mostraran los que correspondan
               a tu operador, de lo contrario se mostraran todos los componentes pendientes a integrar.
               También esta la opción de filtrar por solo pendientes o solo los anulados.`,
@@ -100,13 +98,47 @@ derecho a ejecutar la pantalla de comprobantes.`,
         },
         {
           id: 4,
-          aNombre: "Integracion de Comprobantes",
-          pasos: ["Paso1", "Paso2", "Paso3"],
+          aNombre: "Integración de Comprobantes Pendientes",
+          aResumen: `El objetivo de esta opción es actualizar en el diario contable uno o más comprobantes 
+pendientes de integrar. Es una opción que permite la ejecución sobre varios comprobantes 
+que deberán seleccionarse previamente de la lista.`,
+          pasos: [
+            {
+              label: "Inicio",
+              image: "/zunacc/registro/listar-comprobante.png",
+              description: `Entrar en la opción de sistema llamada Comprobantes Pendientes a Integrar`,
+            },
+            {
+              label: "Integrar",
+              description: `Realizar la opción de INTEGRAR, de esta manera se validarán todos los datos
+              y se actualizará el Diario Contable con los Comprobantes Integrados.`,
+            },
+          ],
         },
         {
           id: 5,
-          aNombre: "Anulacion de Comprobantes",
-          pasos: ["Paso1", "Paso2", "Paso3"],
+          aNombre: "Anulación de Comprobantes Pendientes",
+          aResumen: `El objetivo de esta opción es el de anular un comprobante pendiente de integrar. Esta 
+operación el sistema la realiza individualmente para un comprobante, por tanto en caso de 
+haber seleccionado varios de ellos en la lista, solo se considerará para anular el primero de 
+dicha selección.`,
+          pasos: [
+            {
+              label: "Inicio",
+              image: "/zunacc/registro/listar-comprobante.png",
+              description: `Seleccionar de la lista de comprobantes el que se desea anular`,
+            },
+            {
+              label: "Realizar Anulación",
+              description: `Cliquear la opción de anular comprobante`,
+            },
+            {
+              label: "Motivo",
+              image: "/zunacc/registro/motivo-anulacion.png",
+              description: `Introducir en el cuadro de texto el motivo por el que se
+              desea anular el comprobante en cuestión.`,
+            },
+          ],
         },
         {
           id: 2,

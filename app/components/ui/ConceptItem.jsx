@@ -10,6 +10,7 @@ export const ConceptItem = ({ accion }) => {
       sx={{
         display: "flex",
         alignItems: "center",
+        justifyContent: "center",
         gap: "10px",
         padding: "10px",
         marginTop: "5px",
