@@ -141,9 +141,60 @@ dicha selección.`,
           ],
         },
         {
-          id: 2,
-          aNombre: "Recuperacion de Comprobantes",
-          pasos: ["Paso1", "Paso2", "Paso3"],
+          id: 6,
+          aNombre: "Recuperación de un Comprobante Anulado",
+          aResumen: `El objetivo de esta opción es recuperar un comprobante que se ha anulado previamente. 
+Por tanto, se debe activar la pantalla para la visualización de los comprobantes anulados en 
+el botón correspondiente. La operación de recuperación se realiza individualmente para 
+cada comprobante, por tanto aunque se seleccionen varios en la lista, solo se considerará el 
+primero de la selección para ejecutar la misma.`,
+          pasos: [
+            {
+              label: "Inicio",
+              image: "/zunacc/registro/listar-comprobante.png",
+              description: `Aplicar el filtro de la opción de mostrar solo los comprobantes anulados.`,
+            },
+            {
+              label: "Selección",
+              description: `De la lista de comprobantes anulados seleccionar el comprobante a recuperar.`,
+            },
+            {
+              label: "Recuperar",
+              description: ` La operación de recuperación se realiza individualmente para 
+cada comprobante, por tanto aunque se seleccionen varios en la lista, solo se considerará el 
+primero de la selección para ejecutar la misma. Una vez recuperado, un comprobante pasa a formar parte nuevamente de los pendientes 
+de integrar.`,
+            },
+          ],
+        },
+        {
+          id: 7,
+          aNombre: "Listado Diario",
+          aResumen: `El objetivo de este reporte es el de listar apuntes del diario contable. Este listado se realiza 
+de acuerdo a criterios establecidos para casi todos los campos del diario. Los apuntes pueden listarse con la 
+moneda en que fueron registrados o ser previamente convertidos a la moneda base de la 
+empresa seleccionada en la Barra de Herramientas.`,
+          pasos: [
+            {
+              label: "Inicio",
+              image: "/zunacc/registro/listado-diario.png",
+              description: `Ir a la opción de Listado de Diario y llenar los campos de la parte superior,
+              como son ejercicio, desde, hasta etc. `,
+            },
+            {
+              label: "Aplicar",
+              description: `Click en la opción aplicar para que se muestre la lista de diario. Cuentas con
+              varias opciones de agrupación, como son: Total por Día, Total por Comprobante o la opción de
+              convertir a moneda base. `,
+            },
+            {
+              label: "*Cabe destacar*",
+              description: `La casilla Convertir a Moneda Base se marcará cuando se requiere que los importes de 
+todos los apuntes se muestren en el listado convertidos a la moneda base de la empresa 
+según la tasa de cambio del comprobante. En caso de que se quiera el listado con los 
+apuntes en su moneda original, no se marcará esta casilla. `,
+            },
+          ],
         },
       ],
     },
