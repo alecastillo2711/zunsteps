@@ -99,7 +99,11 @@ export default function AccordionExpandIcon({ seccion }) {
             resetFunction={restSearch}
           />
           <Typography variant="h6">Sugerencias:</Typography>
-          {resultSearch && resultSearch.length === 0 && <NoResults />}
+
+          {
+            /***Con eto me aseguro de que no existan resultados de la busqueda */
+            resultSearch && resultSearch.length === 0 && <NoResults />
+          }
           {resultSearch
             ? resultSearch.map((el) => <ConceptItem key={el.id} accion={el} />)
             : seccion.acciones

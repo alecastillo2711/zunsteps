@@ -196,6 +196,43 @@ apuntes en su moneda original, no se marcará esta casilla. `,
             },
           ],
         },
+        {
+          id: 8,
+          aNombre: "Extracto de Cuentas",
+          aResumen: `Este listado tiene como objetivo  listar los apuntes de una cuenta durante el período dado, 
+así como el saldo que tenía al iniciar el período y el total de sus movimientos en el mismo. Los apuntes pueden listarse con la moneda en que fueron registrados o ser previamente 
+convertidos a la moneda base de la empresa seleccionada en la Barra de Herramientas.`,
+          pasos: [
+            {
+              label: "Inicio",
+              image: "/zunacc/registro/listado-diario.png",
+              description: `Ir a la opción de Extracto de Cuentas en la barra de herramientas. `,
+            },
+            {
+              label: "Seleccionar Cuenta",
+              image: "/zunacc/registro/extracto-cuenta.png",
+              description: `En el combo-box Cuenta puedes seleccionar una o varias cuentas con sus centros de costos
+              de las cuales se emitirá un extracto. `,
+            },
+            {
+              label: "Aplicar",
+              description: `Clickear la opción Aplicar para que se aplique el extracto a la cuenta o cuentas seleccionadas
+               `,
+            },
+            {
+              label: "Reporte",
+              description: `Clickear la opción Reporte para visualizar el reporte correspondiente
+              al extracto de la cuenta.`,
+            },
+            {
+              label: "*Consideraciones*",
+              image: "/zunacc/registro/extracto-cuenta-rango.png",
+              description: `Si el operador seleccionó Rango o Plantilla de cuentas, la pantalla será mostrada como 
+aparece a continuación:
+               `,
+            },
+          ],
+        },
       ],
     },
     {
