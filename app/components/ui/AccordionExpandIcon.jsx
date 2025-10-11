@@ -13,6 +13,7 @@ import { ConceptItem } from "./ConceptItem";
 import VerticalLinearStepper from "./VerticalLinearStepper";
 import { ModuloContext } from "@/app/lib/contexts/ModulosContext";
 import { ArrowDropDownCircleOutlined } from "@mui/icons-material";
+import { NoResults } from "./NoResults";
 
 export default function AccordionExpandIcon({ seccion }) {
   const { modulo } = React.useContext(ModuloContext);
@@ -97,6 +98,8 @@ export default function AccordionExpandIcon({ seccion }) {
             searchFunction={searchAccion}
             resetFunction={restSearch}
           />
+          <Typography variant="h6">Sugerencias:</Typography>
+          {resultSearch && resultSearch.length === 0 && <NoResults />}
           {resultSearch
             ? resultSearch.map((el) => <ConceptItem key={el.id} accion={el} />)
             : seccion.acciones
