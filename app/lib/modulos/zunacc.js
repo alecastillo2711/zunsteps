@@ -233,6 +233,122 @@ aparece a continuación:
             },
           ],
         },
+        {
+          id: 9,
+          aNombre: "Balance de Comprobación",
+          aResumen: `Este listado tiene como objetivo obtener para cada cuenta en el período seleccionado: 
+*Período
+ : total de los apuntes al debe menos total de los apuntes al haber, y el saldo 
+del período 
+*Acumulado
+ : total de los apuntes al debe menos total de los apuntes al haber, y el 
+saldo acumulado hasta el período 
+* Ambos
+ : saldo antes del período, total de los apuntes al debe y al haber 
+respectivamente, saldo del período y el saldo al final del período seleccionado `,
+          pasos: [
+            {
+              label: "Inicio",
+              // image: "/zunacc/registro/listado-diario.png",
+              description: `Ir a la opción de Balance de Comprobación en la barra de herramientas. `,
+            },
+            {
+              label: "Selecionar Período de Tiempo",
+              // image: "/zunacc/registro/listado-diario.png",
+              description: `Lo primero que se debe definir es el período de tiempo para el cual se desea obtener la 
+información. Para esto tiene tres opciones: Todo el ejercicio, un Período o Fecha Inicial y 
+Fecha Final`,
+            },
+            {
+              label: "Selección de artículos a incluir",
+              // image: "/zunacc/registro/listado-diario.png",
+              description: `LLenar los campos: Empresa, Tipo de Cuenta, Cuenta y Centro de Costo o Gasto. En los dos primeros 
+casos se permite la selección múltiple escogiendo en sendas listas de opciones. Para Cuenta 
+se escogerá en un combo box Rango o Plantilla, y para Centro de Costo un rango.*Ten en cuenta que el campo Empresa es obligatorio*
+`,
+            },
+            {
+              label: "Seleccionar a que niveles de información se desea",
+              // image: "/zunacc/registro/listado-diario.png",
+              description: `Mayor,  en que sólo aparecen en el listado las cuentas de estructura de este tipo,
+              Estructura, en que aparecen en el listado todas las cuentas definidas en la estructura,
+              Detalle, en que aparecen en el listado todas las cuentas definidas en el plan de 
+cuentas detallado y la acumulación de importes sólo será la correspondiente a los 
+apuntes de cada cuenta en el período seleccionado y antes de éste
+Todo, en que aparecen en el listado todas las cuentas definidas en la estructura más 
+todas las definidas en el detalle, mezcladas según el código y las de detalle se 
+muestran con un desplazamiento de una posición hacia la derecha. `,
+            },
+            {
+              label: "Optener Reporte",
+              // image: "/zunacc/registro/listado-diario.png",
+              description: `Los botones OK y Salir ejecutan la emisión del reporte con las condiciones seleccionadas y 
+la salida de la pantalla respectivamente.`,
+            },
+            {
+              label: "Consideraciones adicionales*",
+              // image: "/zunacc/registro/listado-diario.png",
+              description: `El reporte puede ser Comparativo o no, en dependencia de si se marca o no el campo 
+correspondiente. Cuando se marca, se permite especificar, mediante un botón de radio, si 
+la comparación se realizará con el Real o con el Presupuesto.
+La casilla Incluir cuentas con saldo Cero posibilita cuando está marcado que aparezcan en el 
+listado las cuentas que en todas las columnas del listado tengan el valor cero. En caso 
+contrario, aparecerán en el listado los datos de todas las cuentas que hayan tenido apuntes 
+dentro del período solicitado.`,
+            },
+          ],
+        },
+        {
+          id: 2,
+          aNombre: "Traslado entre Cuentas",
+          aResumen: `El objetivo de esta opción es generar un comprobante que anule todos los apuntes de una 
+cuenta origen y los abra en una cuenta destino.Una vez integrado este comprobante, la cuenta origen podrá ser puesta como inactiva si se 
+requiere. Esta opción nos permite realizar todas estas operaciones.`,
+          pasos: [
+            {
+              label: "Inicio",
+              // image: "/zunacc/registro/modificar-comprobante.png",
+              description: `Dirigirse a la opción Traslado de apuntes entre cuentas en el menú del sistema.`,
+            },
+            {
+              label: "Llenar campos requeridos",
+              image: "/zunacc/registro/traslado-cuentas.png",
+              description: `Llenar cada uno de los campos requeridos en la acción. Como son cuenta de origen, cuenta de 
+              destino con sus respectivos centros de costos en caso de tenerlos.`,
+            },
+            {
+              label: "Fecha de Contabilización",
+              // image: "/zunacc/registro/modificar-comprobante.png",
+              description: `se debe introducir la que debe llevar el comprobante a 
+generar. Debe pertenecer a uno de los períodos vigentes del ejercicio activo. Ahora bien, en 
+el comprobante generado, cada apunte de la cuenta nueva tendrá como fecha valor la del 
+apunte correspondiente de la vieja y los apuntes a la cuenta vieja llevarán en este campo la 
+fecha del sistema. De esta forma, no cambiará la edad de las facturas implicadas si las 
+cuentas a trasladar son por pagar,  por cobrar o tarjetas de crédito.`,
+            },
+            {
+              label: `Mantener los apuntes de apertura en el libro de Inicio de 
+Ejercicio`,
+              image: "/zunacc/registro/traslado-cuentas.png",
+              description: `(de estar seleccionado) que si la cuenta tuvo apuntes en el 
+período de apertura del ejercicio, el comprobante resultante de la operación mantendrá 
+dichos apuntes en el mismo libro.`,
+            },
+            {
+              label: "Trasladar",
+              image: "/zunacc/registro/traslado-cuentas2.png",
+              description: `Con el botón Trasladar se ejecuta la operación que genera los comprobantes que realizan el 
+traslado. La pantalla reflejará la cantidad de comprobantes resultantes y dará la 
+oportunidad de listarlos e integrarlos posteriormente.`,
+            },
+            {
+              label: "*Tener en cuenta*",
+              description: `El comprobante generado se considera manual, por lo que el usuario podrá modificarlo o 
+anularlo una vez generado aunque si la intención es inactivar la cuenta origen no tendrá 
+sentido realizar modificaciones al mismo. `,
+            },
+          ],
+        },
       ],
     },
     {
