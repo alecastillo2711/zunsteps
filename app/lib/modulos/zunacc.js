@@ -299,7 +299,7 @@ dentro del período solicitado.`,
           ],
         },
         {
-          id: 2,
+          id: 10,
           aNombre: "Traslado entre Cuentas",
           aResumen: `El objetivo de esta opción es generar un comprobante que anule todos los apuntes de una 
 cuenta origen y los abra en una cuenta destino.Una vez integrado este comprobante, la cuenta origen podrá ser puesta como inactiva si se 
@@ -358,7 +358,51 @@ sentido realizar modificaciones al mismo. `,
         {
           id: 2,
           aNombre: "Balance General",
-          pasos: ["Paso1", "Paso2", "Paso3"],
+          aResumen: `Esta opción tiene como objetivos la emisión del Balance General de la entidad en dos 
+formatos posibles, comparativo o no y seleccionando uno de tres niveles de información. 
+Asimismo permite la obtención del balance de una empresa o de varias consolidado.`,
+          pasos: [
+            {
+              label: "Inicio",
+              image: "/zunacc/estados_financieros/balance-general.png",
+              description: `Dirigirse a la opción Balance General.`,
+            },
+            {
+              label: "Definir el período",
+              // image: "/zunacc/estados_financieros/balance-general.png",
+              description: `Se debe definir el período de tiempo para el cual se desea obtener la información.`,
+            },
+            {
+              label: "Seleccionar Empresa",
+              // image: "/zunacc/estados_financieros/balance-general.png",
+              description: `La selección de al 
+menos una empresa es obligatoria.`,
+            },
+            {
+              label: "Elegir Nivel",
+              image: "/zunacc/estados_financieros/balance-general.png",
+              description: `Si el tipo de balance seleccionado es por cuentas, es posible obtener la información a 
+diferentes niveles, siendo los permitidos: Mayor, Estructura o Detalle.`,
+            },
+            {
+              label: "Definir la moneda",
+              // image: "/zunacc/estados_financieros/balance-general.png",
+              description: `El listado puede obtenerse en cualquier moneda de las definidas, ya que primeramente se 
+convierten los importes de los apuntes según sus tasas a la moneda base de la empresa y 
+después según la tasa vigente a la moneda solicitada en el campo Moneda`,
+            },
+            {
+              label: "Realizar Comentario",
+              // image: "/zunacc/estados_financieros/balance-general.png",
+              description: `Así mismo se puede realizar un Comentario al Balance que será impreso en los reportes.`,
+            },
+            {
+              label: "Reporte",
+              // image: "/zunacc/estados_financieros/balance-general.png",
+              description: `Los botones Reporte y Cerrar ejecutan la emisión del reporte con las condiciones 
+seleccionadas y la salida de la pantalla respectivamente.`,
+            },
+          ],
         },
       ],
     },
@@ -368,7 +412,124 @@ sentido realizar modificaciones al mismo. `,
       acciones: [
         {
           id: 2,
-          aNombre: "Cobros",
+          aNombre: "Abonos directos",
+          aResumen: `Consejos prácticos y errores comunes
+- **Validar cliente** antes de aplicar el abono para evitar cargos en cuentas equivocadas.  
+- **Verificar referencias de transferencia** para poder rastrear fondos en caso de discrepancia.  
+- **No cerrar la ventana** hasta confirmar que el recibo se generó; algunos sistemas no permiten reversar fácilmente.  
+- **Si aparece error de autorización**, revisa permisos de tu usuario o contacta al administrador.`,
+          pasos: [
+            {
+              label: "Ingresar al sistema",
+              description: `Inicia sesión con tu usuario y contraseña en el módulo principal del sistema.`,
+            },
+            {
+              label: "Abrir el módulo de cuentas por cobrar / caja",
+              description: `En el menú principal selecciona **Cuentas por cobrar**, **Cobros** o **Caja**, según aparezca.`,
+            },
+            {
+              label: "Seleccionar la opción Abonos / Registrar abono",
+              description: `Haz clic en **Abonos**, **Registrar abono** o **Abono directo** para abrir la pantalla de entrada de pago.`,
+            },
+            {
+              label: "Elegir el cliente",
+              description: `Busca y selecciona el cliente al que le aplicarás el abono mediante nombre, 
+              código o documento de identidad.`,
+            },
+            {
+              label: "Seleccionar la cuenta o factura a abonar",
+              description: `Si el sistema pide, elige la factura(s) o la cuenta pendiente a la que se aplicará el abono; si es un abono sin factura, 
+              selecciona la cuenta corriente o marca “Abono sin factura” si existe esa opción.`,
+            },
+            {
+              label: "Ingresar la fecha del abono",
+              description: `Establece la fecha en la que se realiza el abono; por defecto suele venir la fecha del día, 
+              cámbiala si corresponde.`,
+            },
+            {
+              label: "Registrar el monto del abono",
+              description: `Introduce el importe que se recibe como abono. Verifica la moneda y decimales.`,
+            },
+            {
+              label: "Seleccionar la forma de pago",
+              description: `Elige entre **Efectivo**, **Transferencia**, **Tarjeta**, **Cheque** u otra forma; 
+              si corresponde, anota número de cheque o referencia de la transacción.`,
+            },
+            {
+              label: "Aplicar descuentos, retenciones o ajustes (si aplica)",
+              description: `Indica cualquier descuento, retención o ajuste antes de confirmar para que el sistema compute el saldo correctamente.`,
+            },
+            {
+              label:
+                "Asignar centro de costo o cuenta contable (si el sistema lo solicita)",
+              description: `Selecciona el centro de costo, proyecto o cuenta contable vinculada al abono para registro contable correcto.
+`,
+            },
+            {
+              label: "Agregar observaciones o referencia",
+              description: `Escribe una nota breve 
+              (por ejemplo: “Abono parcial factura 1234”, o referencia de la transferencia) para facilitar auditoría.`,
+            },
+            {
+              label: "Verificar totales y saldo resultante",
+              description: `Revisa el total aplicado y el nuevo saldo de la factura o cuenta; 
+              confirma que los importes coinciden con lo recibido.`,
+            },
+            {
+              label: "Guardar / Registrar el abono",
+              description: `Haz clic en **Guardar**, **Registrar** o **Confirmar pago** para finalizar el registro.`,
+            },
+            {
+              label: "Emitir comprobante o recibo",
+              description: `Genera e imprime o envía por correo electrónico el recibo o comprobante de abono
+               si el sistema ofrece esa opción.`,
+            },
+            {
+              label: "*Conciliar en caja y actualizar arqueo",
+              description: `Asegúrate de incluir el abono en el arqueo del día y en los reportes de caja para cuadre diario.
+`,
+            },
+            {
+              label: "*Revisar reportes y saldos",
+              description: `Consulta el reporte de movimientos del cliente o el estado de cuenta para verificar
+               que el abono quedó correctamente aplicado.
+`,
+            },
+          ],
+        },
+        {
+          id: 3,
+          aNombre: "Pagos Anticipados",
+          pasos: ["Paso1", "Paso2", "Paso3"],
+        },
+        {
+          id: 4,
+          aNombre: "Abonos desde Pagos Ant.",
+          pasos: ["Paso1", "Paso2", "Paso3"],
+        },
+        {
+          id: 5,
+          aNombre: "Comiciones y Reducciones",
+          pasos: ["Paso1", "Paso2", "Paso3"],
+        },
+        {
+          id: 6,
+          aNombre: "Traspaso de Documentos",
+          pasos: ["Paso1", "Paso2", "Paso3"],
+        },
+        {
+          id: 7,
+          aNombre: "Estado Clientes y Proveedores",
+          pasos: ["Paso1", "Paso2", "Paso3"],
+        },
+        {
+          id: 8,
+          aNombre: "Resumen de Cobros y Pagos",
+          pasos: ["Paso1", "Paso2", "Paso3"],
+        },
+        {
+          id: 9,
+          aNombre: "Cuentas por Edades",
           pasos: ["Paso1", "Paso2", "Paso3"],
         },
       ],

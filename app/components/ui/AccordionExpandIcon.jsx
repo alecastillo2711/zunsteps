@@ -67,12 +67,12 @@ export default function AccordionExpandIcon({ seccion }) {
               marginBottom: "10px",
             }}
           >
-            <ResponsiveDialog
+            {/* <ResponsiveDialog
               title={"Atajo1"}
               importat={true}
               content={<VerticalLinearStepper />}
             />
-            <ResponsiveDialog title={"Atajo2"} importat={false} />
+            <ResponsiveDialog title={"Atajo2"} importat={false} /> */}
           </Box>
           <Typography color="primary.text">{mResumen}</Typography>
         </AccordionDetails>
@@ -98,7 +98,7 @@ export default function AccordionExpandIcon({ seccion }) {
             searchFunction={searchAccion}
             resetFunction={restSearch}
           />
-          <Typography variant="h6">Sugerencias:</Typography>
+          <Typography variant="h6">Contenidos:</Typography>
 
           {
             /***Con eto me aseguro de que no existan resultados de la busqueda */

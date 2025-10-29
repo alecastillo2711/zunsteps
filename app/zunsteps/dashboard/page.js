@@ -53,7 +53,11 @@ export default function Dashboard(params) {
               alignItems: "center",
             }}
           >
-            <SideBtnItem title={"ZUNacc"} handleModulo={setZunacc} />
+            <SideBtnItem
+              title={"ZUNacc"}
+              handleModulo={setZunacc}
+              marked={true}
+            />
             <SideBtnItem title={"ZUNpms"} icon={<ScienceOutlined />} />
             <SideBtnItem title={"ZUNst"} icon={<ScienceOutlined />} />
             <SideBtnItem title={"ZUNhr"} icon={<ScienceOutlined />} />

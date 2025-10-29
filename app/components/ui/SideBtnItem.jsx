@@ -8,8 +8,8 @@ import {
 import { Button, Box } from "@mui/material";
 import { useState } from "react";
 
-export const SideBtnItem = ({ title, icon, handleModulo }) => {
-  const [selected, setSelected] = useState(false);
+export const SideBtnItem = ({ title, icon, handleModulo, marked }) => {
+  const [selected, setSelected] = useState(marked);
 
   const handleSelected = () => {
     setSelected(!selected);
