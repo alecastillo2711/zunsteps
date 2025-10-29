@@ -11,7 +11,7 @@ import React, { useContext, useState } from "react";
 import { ModuloContext } from "@/app/lib/contexts/ModulosContext";
 
 export default function Dashboard(params) {
-  const { modulo, setZunacc } = useContext(ModuloContext);
+  const { modulo, setZunacc, setZunhr } = useContext(ModuloContext);
 
   return (
     <Box sx={{ display: "flex", justifyContent: "center", gap: "30px" }}>
@@ -56,11 +56,15 @@ export default function Dashboard(params) {
             <SideBtnItem
               title={"ZUNacc"}
               handleModulo={setZunacc}
-              marked={true}
+              marked={false}
             />
             <SideBtnItem title={"ZUNpms"} icon={<ScienceOutlined />} />
             <SideBtnItem title={"ZUNst"} icon={<ScienceOutlined />} />
-            <SideBtnItem title={"ZUNhr"} icon={<ScienceOutlined />} />
+            <SideBtnItem
+              title={"ZUNhr"}
+              marked={true}
+              handleModulo={setZunhr}
+            />
             <SideBtnItem title={"ZUNpr"} icon={<ScienceOutlined />} />
             <SideBtnItem title={"ZUNcc"} icon={<ScienceOutlined />} />
             <SideBtnItem title={"ZUNaft"} icon={<ScienceOutlined />} />
