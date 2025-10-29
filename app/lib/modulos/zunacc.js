@@ -913,7 +913,131 @@ Organizar la carga de trabajo entre usuarios o sucursales según necesidad.`,
       acciones: [
         {
           id: 2,
-          aNombre: "Balance General",
+          aNombre: "Presupuesto",
+          aResumen: `Los pasos del módulo de presupuesto permiten planificar y controlar los recursos financieros de forma anticipada. Sirven para:
+
+Establecer metas financieras por área, proyecto o cuenta contable.
+
+Comparar lo planificado con lo ejecutado para detectar desviaciones.
+
+Asignar responsabilidades sobre el uso de fondos.
+
+Facilitar la toma de decisiones basada en datos presupuestarios.
+
+Generar reportes claros para dirección, auditoría y seguimiento operativo.`,
+          pasos: [
+            {
+              label: "Acceder al módulo de Presupuesto",
+              description:
+                "Desde el menú principal, selecciona la opción Presupuesto o Gestión presupuestaria.",
+            },
+            {
+              label: "Seleccionar el período presupuestal",
+              description:
+                "Define el año o rango de fechas para el cual deseas crear o consultar el presupuesto.",
+            },
+            {
+              label: "Elegir el tipo de presupuesto",
+              description:
+                "Selecciona si el presupuesto será por centro de costo, por cuenta contable, por proyecto, o por área funcional.",
+            },
+            {
+              label: "Ingresar los valores presupuestados",
+              description:
+                "Introduce los montos estimados para cada categoría o cuenta, distribuidos por mes o trimestre según el formato del sistema.",
+            },
+            {
+              label: "Asignar responsables o unidades",
+              description:
+                "Vincula cada partida presupuestaria con el responsable, unidad operativa o centro de costo correspondiente.",
+            },
+            {
+              label: "Agregar observaciones o notas",
+              description:
+                "Incluye comentarios que expliquen supuestos, ajustes o condiciones del presupuesto.",
+            },
+            {
+              label: "Guardar el presupuesto",
+              description:
+                "Haz clic en Guardar, Registrar o Confirmar para almacenar el presupuesto en el sistema.",
+            },
+            {
+              label: "Consultar ejecución presupuestaria",
+              description:
+                "Accede a reportes que comparan lo presupuestado con lo ejecutado, para evaluar desviaciones.",
+            },
+            {
+              label: "Exportar o imprimir el presupuesto",
+              description:
+                "Si el sistema lo permite, exporta el presupuesto a Excel o PDF, o imprímelo para respaldo.",
+            },
+          ],
+        },
+        {
+          id: 3,
+          aNombre: "Configuración Flujo de Efectivo",
+          aResumen: `Los pasos del módulo de presupuesto permiten planificar y controlar los recursos financieros de forma anticipada. Sirven para:
+
+Establecer metas financieras por área, proyecto o cuenta contable.
+
+Comparar lo planificado con lo ejecutado para detectar desviaciones.
+
+Asignar responsabilidades sobre el uso de fondos.
+
+Facilitar la toma de decisiones basada en datos presupuestarios.
+
+Generar reportes claros para dirección, auditoría y seguimiento operativo.`,
+          pasos: [
+            {
+              label: "Acceder al módulo de Presupuesto",
+              description:
+                "Desde el menú principal, selecciona la opción Presupuesto o Gestión presupuestaria.",
+            },
+            {
+              label: "Seleccionar el período presupuestal",
+              description:
+                "Define el año o rango de fechas para el cual deseas crear o consultar el presupuesto.",
+            },
+            {
+              label: "Elegir el tipo de presupuesto",
+              description:
+                "Selecciona si el presupuesto será por centro de costo, por cuenta contable, por proyecto, o por área funcional.",
+            },
+            {
+              label: "Ingresar los valores presupuestados",
+              description:
+                "Introduce los montos estimados para cada categoría o cuenta, distribuidos por mes o trimestre según el formato del sistema.",
+            },
+            {
+              label: "Asignar responsables o unidades",
+              description:
+                "Vincula cada partida presupuestaria con el responsable, unidad operativa o centro de costo correspondiente.",
+            },
+            {
+              label: "Agregar observaciones o notas",
+              description:
+                "Incluye comentarios que expliquen supuestos, ajustes o condiciones del presupuesto.",
+            },
+            {
+              label: "Guardar el presupuesto",
+              description:
+                "Haz clic en Guardar, Registrar o Confirmar para almacenar el presupuesto en el sistema.",
+            },
+            {
+              label: "Consultar ejecución presupuestaria",
+              description:
+                "Accede a reportes que comparan lo presupuestado con lo ejecutado, para evaluar desviaciones.",
+            },
+            {
+              label: "Exportar o imprimir el presupuesto",
+              description:
+                "Si el sistema lo permite, exporta el presupuesto a Excel o PDF, o imprímelo para respaldo.",
+            },
+          ],
+        },
+        {
+          id: 4,
+          aNombre: "Modificar la estructura del plan de cuentas",
           pasos: ["Paso1", "Paso2", "Paso3"],
         },
       ],
