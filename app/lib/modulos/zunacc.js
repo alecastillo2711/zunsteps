@@ -499,38 +499,411 @@ seleccionadas y la salida de la pantalla respectivamente.`,
         },
         {
           id: 3,
-          aNombre: "Pagos Anticipados",
-          pasos: ["Paso1", "Paso2", "Paso3"],
+          aNombre: "Conciliación Bancaria",
+          aResumen: `Los pasos de conciliación bancaria permiten verificar que los movimientos registrados en el sistema contable coincidan con los del estado de cuenta del banco. Sirven para:
+
+Detectar errores o diferencias entre lo que se registró internamente y lo que realmente ocurrió en el banco.
+
+Registrar ajustes como comisiones, intereses o depósitos omitidos.
+
+Marcar movimientos conciliados para mantener un control financiero preciso.
+
+Generar reportes confiables para auditorías, cierres contables y toma de decisiones.
+
+Evitar fraudes o duplicaciones al revisar cada transacción con respaldo bancario.`,
+          pasos: [
+            {
+              label: "Acceder al sistema",
+              description: "Inicia sesión con tu usuario y contraseña.",
+            },
+            {
+              label: "Ir al módulo de Conciliación bancaria",
+              description:
+                "En el menú principal, selecciona Conciliación bancaria o Conciliar cuenta bancaria.",
+            },
+            {
+              label: "Seleccionar la cuenta bancaria a conciliar",
+              description:
+                "Elige la cuenta que deseas conciliar. Puedes buscarla por nombre, número o banco.",
+            },
+            {
+              label: "Establecer el período de conciliación",
+              description:
+                "Define el rango de fechas que deseas conciliar (por ejemplo: del 1 al 30 de septiembre).",
+            },
+            {
+              label: "Cargar movimientos del sistema",
+              description:
+                "El sistema mostrará todos los movimientos registrados en esa cuenta durante el período.",
+            },
+            {
+              label: "Comparar con el estado de cuenta bancario",
+              description:
+                "Revisa cada movimiento y marca como conciliado aquellos que aparecen en el estado de cuenta del banco.",
+            },
+            {
+              label: "Registrar diferencias o ajustes",
+              description:
+                "Si hay diferencias, puedes registrar ajustes o notas para dejar constancia.",
+            },
+            {
+              label: "Guardar conciliación",
+              description:
+                "Haz clic en Guardar, Registrar conciliación o Finalizar para completar el proceso.",
+            },
+            {
+              label: "Generar reporte de conciliación",
+              description:
+                "Genera un reporte que muestre los movimientos conciliados, los pendientes y los ajustes realizados.",
+            },
+          ],
         },
         {
           id: 4,
-          aNombre: "Abonos desde Pagos Ant.",
-          pasos: ["Paso1", "Paso2", "Paso3"],
+          aNombre: "Cuentas por edades",
+          aResumen: `Los pasos de Cuentas por edades permiten analizar qué saldos están pendientes de cobro o pago según su antigüedad. Sirven para:
+
+Identificar deudas vencidas y priorizar su gestión.
+
+Evaluar la salud financiera de la cartera de clientes o proveedores.
+
+Tomar decisiones informadas sobre cobros, renegociaciones o provisiones.
+
+Facilitar auditorías y reportes con información agrupada por rangos de tiempo.`,
+          pasos: [
+            {
+              label: "Acceder al módulo",
+              description:
+                "En el menú principal, selecciona Cuentas por edades o Análisis de antigüedad de saldos.",
+            },
+            {
+              label: "Elegir tipo de cuenta",
+              description:
+                "Selecciona si deseas ver Cuentas por cobrar (clientes) o Cuentas por pagar (proveedores).",
+            },
+            {
+              label: "Establecer filtros de búsqueda",
+              description:
+                "Define el rango de fechas, cliente/proveedor, sucursal, tipo de documento, etc.",
+            },
+            {
+              label: "Ejecutar la consulta",
+              description:
+                "Haz clic en Buscar, Filtrar o Consultar para mostrar los resultados.",
+            },
+            {
+              label: "Visualizar el informe",
+              description:
+                "El sistema mostrará una tabla con los saldos agrupados por rangos de antigüedad.",
+            },
+            {
+              label: "Acceder a detalles",
+              description:
+                "Haz clic en el nombre del cliente/proveedor para ver los documentos que componen cada saldo.",
+            },
+            {
+              label: "Exportar o imprimir el informe",
+              description:
+                "Exporta el informe a Excel o PDF, o imprímelo directamente si el sistema lo permite.",
+            },
+          ],
         },
         {
           id: 5,
-          aNombre: "Comiciones y Reducciones",
-          pasos: ["Paso1", "Paso2", "Paso3"],
+          aNombre: "Pagos anticipados",
+          aResumen: `Los pasos de pagos anticipados permiten registrar correctamente los fondos que un cliente entrega antes de recibir una factura. Sirven para:
+
+Controlar saldos a favor de clientes que pagan por adelantado.
+
+Evitar errores contables al no vincular el pago a una factura inexistente.
+
+Facilitar la aplicación futura del anticipo cuando se emita la factura correspondiente.
+
+Generar comprobantes claros que respalden el movimiento financiero.
+
+Mantener orden en reportes de anticipos y saldos disponibles.`,
+          pasos: [
+            {
+              label: "Acceder al sistema",
+              description:
+                "Inicia sesión con tu usuario y contraseña en el sistema ZUNacc.",
+            },
+            {
+              label: "Ir al módulo de Cobros / Caja / Cuentas por cobrar",
+              description:
+                "En el menú principal, selecciona el módulo donde se gestionan los pagos de clientes.",
+            },
+            {
+              label: "Seleccionar la opción Pagos anticipados",
+              description:
+                "Haz clic en Pagos anticipados, Registrar pago anticipado o una opción similar.",
+            },
+            {
+              label: "Elegir el cliente",
+              description:
+                "Busca y selecciona el cliente que está realizando el pago anticipado.",
+            },
+            {
+              label: "Ingresar la fecha del pago",
+              description:
+                "Establece la fecha en que se recibe el pago; por defecto suele ser la fecha actual.",
+            },
+            {
+              label: "Registrar el monto recibido",
+              description:
+                "Introduce el importe del pago anticipado. Verifica que esté en la moneda correcta.",
+            },
+            {
+              label: "Seleccionar la forma de pago",
+              description:
+                "Elige entre Efectivo, Transferencia, Cheque, Tarjeta, etc. Registra referencias si aplica.",
+            },
+            {
+              label: "Asignar cuenta contable o centro de costo (si aplica)",
+              description:
+                "Selecciona la cuenta contable o centro de costo donde se registrará el pago anticipado.",
+            },
+            {
+              label: "Agregar observaciones o referencia",
+              description:
+                "Escribe una nota como 'Pago anticipado para futura factura' o 'Anticipo por contrato X'.",
+            },
+            {
+              label: "Verificar que no se vincula a ninguna factura",
+              description:
+                "Asegúrate de que el pago no se asocie a una factura específica en este momento.",
+            },
+            {
+              label: "Guardar / Registrar el pago anticipado",
+              description:
+                "Haz clic en Guardar, Registrar o Confirmar para completar el proceso.",
+            },
+            {
+              label: "Emitir comprobante o recibo",
+              description:
+                "Genera el recibo del pago anticipado y entrégalo al cliente o envíalo por correo.",
+            },
+            {
+              label: "Consultar saldo disponible del cliente",
+              description:
+                "Verifica que el sistema haya registrado el anticipo como saldo a favor del cliente.",
+            },
+            {
+              label: "Aplicar el pago anticipado en futuras facturas",
+              description:
+                "Cuando se emita una factura, podrás aplicar el saldo del pago anticipado como forma de pago.",
+            },
+            {
+              label: "Revisar reportes de anticipos",
+              description:
+                "Consulta los reportes de pagos anticipados para verificar que el movimiento esté correctamente registrado.",
+            },
+          ],
         },
         {
           id: 6,
-          aNombre: "Traspaso de Documentos",
-          pasos: ["Paso1", "Paso2", "Paso3"],
+          aNombre: "Pagos directos",
+          aResumen: `Los pasos de pagos directos permiten registrar correctamente los egresos que no están vinculados a una factura específica. Sirven para:
+
+Controlar pagos anticipados o por servicios no facturados aún.
+
+Evitar errores contables al registrar pagos sin documento de respaldo inmediato.
+
+Generar comprobantes claros que respalden el movimiento financiero.
+
+Mantener orden en reportes de pagos y saldos de proveedores.
+
+Facilitar conciliaciones bancarias al tener referencias precisas del pago.`,
+          pasos: [
+            {
+              label: "Acceder al sistema",
+              description:
+                "Inicia sesión con tu usuario y contraseña en el sistema ZUNacc.",
+            },
+            {
+              label: "Ir al módulo de Pagos / Cuentas por pagar / Caja",
+              description:
+                "En el menú principal, selecciona la opción relacionada con Pagos directos o Registrar pago.",
+            },
+            {
+              label: "Seleccionar proveedor o beneficiario",
+              description:
+                "Busca y elige el proveedor al que se le realizará el pago. Puedes usar nombre, código o número de identificación.",
+            },
+            {
+              label: "Indicar tipo de pago",
+              description:
+                "Selecciona Pago directo como tipo de operación. Este tipo de pago no está vinculado a una factura específica en el momento del registro.",
+            },
+            {
+              label: "Ingresar fecha del pago",
+              description:
+                "Establece la fecha en que se realiza el pago. Por defecto suele ser la fecha actual.",
+            },
+            {
+              label: "Registrar monto del pago",
+              description:
+                "Introduce el importe total que se está pagando. Verifica moneda y decimales.",
+            },
+            {
+              label: "Seleccionar forma de pago",
+              description:
+                "Elige entre Efectivo, Transferencia, Cheque, Tarjeta, etc. Si corresponde, registra número de cheque o referencia de la transacción.",
+            },
+            {
+              label: "Asignar cuenta contable o centro de costo (si aplica)",
+              description:
+                "Selecciona la cuenta contable o centro de costo donde se registrará el pago.",
+            },
+            {
+              label: "Agregar observaciones o motivo del pago",
+              description:
+                "Escribe una nota como 'Pago directo por servicios generales' o 'Anticipo sin factura'.",
+            },
+            {
+              label: "Verificar que no se vincula a ninguna factura",
+              description:
+                "Asegúrate de que el pago no esté asociado a una factura específica en este momento.",
+            },
+            {
+              label: "Guardar / Registrar el pago",
+              description:
+                "Haz clic en Guardar, Registrar o Confirmar para completar el proceso.",
+            },
+            {
+              label: "Emitir comprobante o recibo",
+              description:
+                "Genera el recibo del pago directo y entrégalo al proveedor o guárdalo para auditoría.",
+            },
+            {
+              label: "Consultar saldos y reportes",
+              description:
+                "Verifica que el pago haya sido registrado correctamente en los reportes de pagos y en el estado de cuenta del proveedor.",
+            },
+          ],
         },
         {
           id: 7,
-          aNombre: "Estado Clientes y Proveedores",
-          pasos: ["Paso1", "Paso2", "Paso3"],
-        },
-        {
-          id: 8,
-          aNombre: "Resumen de Cobros y Pagos",
-          pasos: ["Paso1", "Paso2", "Paso3"],
+          aNombre: "Resumen de cobros y pagos",
+          aResumen: `Los pasos del resumen de cobros y pagos permiten visualizar y controlar todos los movimientos financieros registrados en el sistema. Sirven para:
+
+Consultar ingresos y egresos de forma consolidada y filtrada.
+
+Verificar estados de conciliación y detectar movimientos pendientes.
+
+Acceder rápidamente a comprobantes para auditoría o respaldo.
+
+Exportar información útil para reportes contables o análisis financiero.
+
+Mantener trazabilidad de cada operación registrada por usuario, fecha y forma de pago.`,
+          pasos: [
+            {
+              label: "Acceder al módulo",
+              description:
+                "En el menú principal, selecciona Resumen de Cobros y Pagos o una opción similar.",
+            },
+            {
+              label: "Establecer filtros de búsqueda",
+              description:
+                "Define el rango de fechas, tipo de operación (cobro/pago), cliente/proveedor, forma de pago, estado, usuario, etc.",
+            },
+            {
+              label: "Ejecutar la consulta",
+              description:
+                "Haz clic en Buscar, Consultar o Filtrar para mostrar los resultados.",
+            },
+            {
+              label: "Revisar los resultados",
+              description:
+                "Verifica cada movimiento: fecha, monto, forma de pago, estado, observaciones.",
+            },
+            {
+              label: "Acceder a detalles o comprobantes",
+              description:
+                "Haz clic en el número de documento para ver el detalle completo o imprimir el comprobante.",
+            },
+            {
+              label: "Conciliar movimientos (si aplica)",
+              description:
+                "Marca como conciliado o pendiente según el estado real del movimiento.",
+            },
+            {
+              label: "Exportar o imprimir resumen",
+              description:
+                "Si el sistema lo permite, exporta el resumen a Excel o PDF, o imprime directamente desde la pantalla.",
+            },
+          ],
         },
         {
           id: 9,
-          aNombre: "Cuentas por Edades",
-          pasos: ["Paso1", "Paso2", "Paso3"],
+          aNombre: "Traspaso de documentos",
+          aResumen: `Los pasos de traspaso de documentos permiten mover registros entre módulos, usuarios o áreas dentro del sistema. Sirven para:
+
+Reasignar documentos por cambios operativos o administrativos.
+
+Mantener trazabilidad de quién gestionó cada documento y cuándo.
+
+Evitar duplicaciones o pérdidas al centralizar el control del flujo documental.
+
+Facilitar auditorías internas con reportes e historial de movimientos.
+
+Organizar la carga de trabajo entre usuarios o sucursales según necesidad.`,
+          pasos: [
+            {
+              label: "Acceder al sistema",
+              description: "Inicia sesión en ZUNacc con tus credenciales.",
+            },
+            {
+              label: "Ir al módulo de Traspasos / Documentos",
+              description:
+                "En el menú principal, selecciona la opción Traspaso de documentos, Transferencia de documentos o similar.",
+            },
+            {
+              label: "Seleccionar tipo de documento a traspasar",
+              description:
+                "Elige el tipo de documento que deseas mover: factura, nota de crédito, recibo, etc.",
+            },
+            {
+              label: "Indicar documento origen",
+              description:
+                "Selecciona el documento que será traspasado. Puedes buscarlo por número, cliente, fecha o estado.",
+            },
+            {
+              label: "Elegir destino del traspaso",
+              description:
+                "Define a qué módulo, usuario, sucursal o área se enviará el documento. Si el sistema lo permite, selecciona el nuevo estado o clasificación.",
+            },
+            {
+              label: "Verificar datos del documento",
+              description:
+                "Revisa que los datos del documento estén correctos antes de confirmar el traspaso.",
+            },
+            {
+              label: "Agregar observaciones o motivo del traspaso",
+              description:
+                "Escribe una nota breve explicando por qué se realiza el traspaso (por ejemplo: 'Reasignación por cambio de sucursal').",
+            },
+            {
+              label: "Confirmar el traspaso",
+              description:
+                "Haz clic en Traspasar, Confirmar o Ejecutar traspaso para completar la operación.",
+            },
+            {
+              label: "Verificar que el documento aparece en el destino",
+              description:
+                "Revisa que el documento se haya movido correctamente al módulo o usuario destino.",
+            },
+            {
+              label: "Consultar historial de traspasos",
+              description:
+                "Si el sistema lo permite, accede al historial para ver cuándo y por quién se realizó el traspaso.",
+            },
+            {
+              label: "Emitir reporte de traspasos (opcional)",
+              description:
+                "Genera un reporte de documentos traspasados si necesitas respaldo o auditoría.",
+            },
+          ],
         },
       ],
     },
