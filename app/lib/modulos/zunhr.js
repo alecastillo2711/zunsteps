@@ -1749,9 +1749,104 @@ Evitar errores de digitación y omisiones, al automatizar la carga de eventos la
       sNombre: "Reloj",
       acciones: [
         {
+          id: 1,
+          aNombre: "Gestionar Usuarios",
+          aResume: `El módulo Gestionar Usuarios permite administrar los accesos al sistema ZUNhr, asignando roles, credenciales y permisos a cada usuario. Sirve para:
+
+Registrar nuevos usuarios con sus datos de identificación y perfil de acceso.
+
+Modificar roles, contraseñas y permisos según la función que desempeñan en la organización.
+
+Controlar el acceso a módulos específicos, garantizando seguridad y trazabilidad en el uso del sistema.
+
+Evitar accesos no autorizados o inconsistencias operativas, al mantener una estructura clara y validada de usuarios.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Gestionar Usuarios",
+              description:
+                "Desde el menú Configuración, selecciona la opción Usuarios para administrar los accesos al sistema.",
+            },
+            {
+              label: "Visualizar listado de usuarios registrados",
+              description:
+                "Se muestra una tabla con nombre de usuario, rol asignado, estado activo/inactivo y fecha de creación.",
+            },
+            {
+              label: "Añadir un nuevo usuario",
+              description:
+                "Haz clic en Añadir para activar el formulario inferior y registrar un nuevo usuario en el sistema.",
+            },
+            {
+              label: "Completar datos del usuario",
+              description:
+                "Introduce el nombre de usuario, contraseña, nombre completo, correo electrónico y rol de acceso (administrador, operador, consulta, etc.).",
+            },
+            {
+              label: "Asignar permisos específicos",
+              description:
+                "Define los módulos o funcionalidades a los que tendrá acceso el usuario, según su rol.",
+            },
+            {
+              label: "Modificar un usuario existente",
+              description:
+                "Selecciona un usuario del listado y haz clic en Modificar para ajustar sus datos o permisos.",
+            },
+            {
+              label: "Eliminar un usuario",
+              description:
+                "Selecciona el usuario y haz clic en Eliminar. El sistema pedirá confirmación antes de borrarlo.",
+            },
+            {
+              label: "Guardar los cambios",
+              description:
+                "Haz clic en Aceptar para confirmar la adición o modificación del usuario, o en Cancelar para descartar.",
+            },
+          ],
+        },
+        {
           id: 2,
-          aNombre: "Balance General",
-          pasos: ["Paso1", "Paso2", "Paso3"],
+          aNombre: "Actualizar Datos del Reloj",
+          aResume: `El módulo Actualizar Datos del Reloj permite sincronizar la información de empleados con el sistema de control horario. Sirve para:
+
+Actualizar los datos de identificación y parámetros de marcación en los relojes biométricos o digitales.
+
+Garantizar que los trabajadores puedan registrar correctamente sus entradas y salidas.
+
+Facilitar la integración entre el sistema ZUNhr y los dispositivos de control de asistencia.
+
+Evitar errores de lectura, duplicaciones o bloqueos por datos desactualizados.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Actualizar Datos del Reloj",
+              description:
+                "Desde el menú Incidencias o Configuración, selecciona la opción Actualizar Datos del Reloj para iniciar el proceso.",
+            },
+            {
+              label: "Seleccionar los empleados a actualizar",
+              description:
+                "Utiliza los filtros disponibles para localizar a los trabajadores por unidad organizativa, cargo o número de identidad.",
+            },
+            {
+              label: "Verificar datos de marcación",
+              description:
+                "Confirma que cada empleado tenga asignado un código de marcación, nombre correcto y estado activo.",
+            },
+            {
+              label: "Ejecutar la actualización",
+              description:
+                "Haz clic en Actualizar para enviar los datos al sistema de relojes. Se mostrará un resumen de registros procesados.",
+            },
+            {
+              label: "Confirmar sincronización",
+              description:
+                "Verifica que los datos hayan sido transmitidos correctamente al dispositivo de control horario.",
+            },
+            {
+              label: "Resolver errores si aplica",
+              description:
+                "Si se detectan inconsistencias, revisa los datos del empleado o la configuración del reloj antes de repetir el proceso.",
+            },
+          ],
         },
       ],
     },
@@ -1760,9 +1855,49 @@ Evitar errores de digitación y omisiones, al automatizar la carga de eventos la
       sNombre: "Reportes",
       acciones: [
         {
-          id: 2,
-          aNombre: "Balance General",
-          pasos: ["Paso1", "Paso2", "Paso3"],
+          id: 12,
+          aNombre: "Reportes",
+          aResume: `El módulo Reportes permite generar, visualizar e imprimir informes relacionados con la gestión de recursos humanos y nómina. Sirve para:
+
+Obtener listados detallados de empleados, cargos, incidencias, jornadas, movimientos y estructura organizativa.
+
+Filtrar y ordenar la información según parámetros específicos como unidad organizativa, fechas, tipo de evento o estado laboral.
+
+Facilitar auditorías internas, análisis de cobertura, control de asistencia y planificación estratégica.
+
+Evitar errores en la toma de decisiones, al contar con reportes confiables y actualizados.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Reportes",
+              description:
+                "Desde el menú principal, selecciona la opción Reportes para ingresar al generador de informes.",
+            },
+            {
+              label: "Seleccionar el tipo de reporte",
+              description:
+                "Elige entre las categorías disponibles: empleados, cargos, incidencias, jornadas, estructura organizativa, entre otros.",
+            },
+            {
+              label: "Definir los parámetros del reporte",
+              description:
+                "Establece filtros como unidad organizativa, fechas, estado del empleado, tipo de incidencia o jornada.",
+            },
+            {
+              label: "Visualizar el reporte en pantalla",
+              description:
+                "Haz clic en Visualizar para generar el informe según los criterios seleccionados.",
+            },
+            {
+              label: "Imprimir o exportar el reporte",
+              description:
+                "Utiliza las opciones disponibles para imprimir el reporte o exportarlo en formato PDF o Excel.",
+            },
+            {
+              label: "Guardar configuración de reporte (opcional)",
+              description:
+                "Puedes guardar los parámetros utilizados para reutilizarlos en futuras consultas.",
+            },
+          ],
         },
       ],
     },
