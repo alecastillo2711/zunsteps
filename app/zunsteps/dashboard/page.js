@@ -6,6 +6,8 @@ import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 import { DefaultButton } from "@/app/components/ui/DefaultButton";
 import { ScienceOutlined } from "@mui/icons-material";
 import React, { useContext, useState } from "react";
+import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 
 /*Modulos */
 import { ModuloContext } from "@/app/lib/contexts/ModulosContext";
@@ -56,14 +58,16 @@ export default function Dashboard(params) {
             <SideBtnItem
               title={"ZUNacc"}
               handleModulo={setZunacc}
-              marked={false}
+              marked={true}
+              icon={<ReceiptLongIcon />}
             />
             <SideBtnItem title={"ZUNpms"} icon={<ScienceOutlined />} />
             <SideBtnItem title={"ZUNst"} icon={<ScienceOutlined />} />
             <SideBtnItem
               title={"ZUNhr"}
-              marked={true}
+              marked={false}
               handleModulo={setZunhr}
+              icon={<PersonOutlineIcon />}
             />
             <SideBtnItem title={"ZUNpr"} icon={<ScienceOutlined />} />
             <SideBtnItem title={"ZUNcc"} icon={<ScienceOutlined />} />

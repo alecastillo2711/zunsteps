@@ -11,6 +11,7 @@ import { useState } from "react";
 export const SideBtnItem = ({ title, icon, handleModulo, marked }) => {
   const [selected, setSelected] = useState(marked);
 
+  //Manejo del que el boton salga marcado
   const handleSelected = () => {
     setSelected(!selected);
     console.log(selected);
@@ -32,8 +33,8 @@ export const SideBtnItem = ({ title, icon, handleModulo, marked }) => {
             handleSelected();
           }}
         >
-          {title}
           {icon}
+          {title}
         </Button>
       ) : (
         <Button
@@ -48,8 +49,8 @@ export const SideBtnItem = ({ title, icon, handleModulo, marked }) => {
             handleSelected();
           }}
         >
-          {title}
           {icon}
+          {title}
         </Button>
       )}
     </Box>
