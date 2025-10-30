@@ -14,6 +14,21 @@ import { ModuloContext } from "@/app/lib/contexts/ModulosContext";
 
 export default function Dashboard(params) {
   const { modulo, setZunacc, setZunhr } = useContext(ModuloContext);
+  const [acc, setAcc] = useState(true);
+  const [hr, setHr] = useState(false);
+
+  //Manejo de si esta marcado o no para Acc
+  const handleMarkupAcc = () => {
+    setAcc(true);
+    setHr(false);
+    console.log(acc);
+  };
+  //Manejo de si esta marcado o no para Hr
+  const handleMarkupHr = () => {
+    setHr(true);
+    setAcc(false);
+    console.log(hr);
+  };
 
   return (
     <Box sx={{ display: "flex", justifyContent: "center", gap: "30px" }}>
@@ -58,14 +73,16 @@ export default function Dashboard(params) {
             <SideBtnItem
               title={"ZUNacc"}
               handleModulo={setZunacc}
-              marked={true}
+              marked={acc}
+              toMark={handleMarkupAcc}
               icon={<ReceiptLongIcon />}
             />
             <SideBtnItem title={"ZUNpms"} icon={<ScienceOutlined />} />
             <SideBtnItem title={"ZUNst"} icon={<ScienceOutlined />} />
             <SideBtnItem
               title={"ZUNhr"}
-              marked={false}
+              marked={hr}
+              toMark={handleMarkupHr}
               handleModulo={setZunhr}
               icon={<PersonOutlineIcon />}
             />

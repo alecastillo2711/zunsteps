@@ -8,18 +8,15 @@ import {
 import { Button, Box } from "@mui/material";
 import { useState } from "react";
 
-export const SideBtnItem = ({ title, icon, handleModulo, marked }) => {
-  const [selected, setSelected] = useState(marked);
-
+export const SideBtnItem = ({ title, icon, handleModulo, marked, toMark }) => {
   //Manejo del que el boton salga marcado
   const handleSelected = () => {
-    setSelected(!selected);
-    console.log(selected);
+    toMark();
   };
 
   return (
     <Box>
-      {selected ? (
+      {marked ? (
         <Button
           variant="outlined"
           sx={{
