@@ -1,7 +1,10 @@
 export const zunhr = {
   mNombre: "ZUNHr",
   mImage: "/acc",
-  mResumen: "Resumen",
+  mResumen: `ZUNhr es un sistema integral de gestión de recursos humanos que permite registrar, 
+  controlar y auditar todos los procesos laborales de una entidad: altas, bajas, reubicaciones, horarios, 
+  incidencias, jornadas, cargos, plantilla, usuarios y reportes. Su enfoque modular y trazable garantiza precisión 
+  operativa, seguridad de acceso y eficiencia administrativa.`,
   mSecciones: [
     {
       id: 1,

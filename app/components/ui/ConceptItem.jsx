@@ -3,6 +3,7 @@
 import { Card, Typography } from "@mui/material";
 import ResponsiveDialog from "./ResponsiveDialog";
 import VerticalLinearStepper from "./VerticalLinearStepper";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 export const ConceptItem = ({ accion }) => {
   return (
@@ -10,7 +11,7 @@ export const ConceptItem = ({ accion }) => {
       sx={{
         display: "flex",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "space-between",
         gap: "10px",
         padding: "10px",
         marginTop: "5px",
