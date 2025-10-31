@@ -1,6 +1,7 @@
 "use client";
 
 import { zunacc } from "../modulos/zunacc";
+import { zunaft } from "../modulos/zunaft";
 import { zunhr } from "../modulos/zunhr";
 
 const { createContext, useState } = require("react");
@@ -18,11 +19,16 @@ export const ModuloProvider = ({ children }) => {
   const setZunhr = () => {
     setModulo(zunhr); //cambiar aqui
   };
+  //funcion que activa zunaft
+  const setZunaft = () => {
+    setModulo(zunaft); //cambiar aqui
+  };
 
   const values = {
     modulo,
     setZunacc,
     setZunhr,
+    setZunaft,
   };
   return (
     <ModuloContext.Provider value={values}>{children}</ModuloContext.Provider>

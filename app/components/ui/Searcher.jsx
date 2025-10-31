@@ -13,7 +13,7 @@ export const Searcher = ({ collection, searchFunction, resetFunction }) => {
         sx={{ width: "100%" }}
         onChange={(e) => setItem(e.target.value)}
         type="text"
-        placeholder="ej:Listado de Comprobantes"
+        placeholder="Buscar un contenido específico..."
         value={item}
       >
         {item}

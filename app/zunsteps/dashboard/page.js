@@ -6,28 +6,36 @@ import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 import { DefaultButton } from "@/app/components/ui/DefaultButton";
 import { ScienceOutlined } from "@mui/icons-material";
 import React, { useContext, useState } from "react";
-import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
-import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import CurrencyExchangeOutlinedIcon from "@mui/icons-material/CurrencyExchangeOutlined";
+import Diversity3OutlinedIcon from "@mui/icons-material/Diversity3Outlined";
+import ChairOutlinedIcon from "@mui/icons-material/ChairOutlined";
 
 /*Modulos */
 import { ModuloContext } from "@/app/lib/contexts/ModulosContext";
 
 export default function Dashboard(params) {
-  const { modulo, setZunacc, setZunhr } = useContext(ModuloContext);
+  const { modulo, setZunacc, setZunhr, setZunaft } = useContext(ModuloContext);
   const [acc, setAcc] = useState(true);
   const [hr, setHr] = useState(false);
+  const [aft, setAft] = useState(false);
 
   //Manejo de si esta marcado o no para Acc
   const handleMarkupAcc = () => {
     setAcc(true);
     setHr(false);
-    console.log(acc);
+    setAft(false);
   };
   //Manejo de si esta marcado o no para Hr
   const handleMarkupHr = () => {
     setHr(true);
     setAcc(false);
-    console.log(hr);
+    setAft(false);
+  };
+  //Manejo de si esta marcado o no para AFT
+  const handleMarkupAft = () => {
+    setAft(true);
+    setHr(false);
+    setAcc(false);
   };
 
   return (
@@ -75,7 +83,7 @@ export default function Dashboard(params) {
               handleModulo={setZunacc}
               marked={acc}
               toMark={handleMarkupAcc}
-              icon={<ReceiptLongIcon />}
+              icon={<CurrencyExchangeOutlinedIcon />}
             />
             <SideBtnItem title={"ZUNpms"} icon={<ScienceOutlined />} />
             <SideBtnItem title={"ZUNst"} icon={<ScienceOutlined />} />
@@ -84,11 +92,17 @@ export default function Dashboard(params) {
               marked={hr}
               toMark={handleMarkupHr}
               handleModulo={setZunhr}
-              icon={<PersonOutlineIcon />}
+              icon={<Diversity3OutlinedIcon />}
             />
             <SideBtnItem title={"ZUNpr"} icon={<ScienceOutlined />} />
             <SideBtnItem title={"ZUNcc"} icon={<ScienceOutlined />} />
-            <SideBtnItem title={"ZUNaft"} icon={<ScienceOutlined />} />
+            <SideBtnItem
+              title={"ZUNaft"}
+              marked={aft}
+              handleModulo={setZunaft}
+              toMark={handleMarkupAft}
+              icon={<ChairOutlinedIcon />}
+            />
             <SideBtnItem title={"ZUNut"} icon={<ScienceOutlined />} />
 
             <Box>
