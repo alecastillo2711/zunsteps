@@ -8,7 +8,7 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import Image from "next/image";
 import { Box, IconButton, Tooltip } from "@mui/material";
 import { Searcher } from "./Searcher";
-import ResponsiveDialog from "./ResponsiveDialog";
+import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 import { ConceptItem } from "./ConceptItem";
 import VerticalLinearStepper from "./VerticalLinearStepper";
 import { ModuloContext } from "@/app/lib/contexts/ModulosContext";
@@ -19,6 +19,22 @@ export default function AccordionExpandIcon({ seccion }) {
   const { modulo } = React.useContext(ModuloContext);
   const { mNombre, mResumen } = modulo;
   const [resultSearch, setResultSearch] = React.useState();
+
+  //Mostrar en grupos de 5 los contenidos
+  const [leftValue, setLeftValue] = React.useState(0);
+  const [rightValue, setRightValue] = React.useState(5);
+  const [showPaginButton, setShowPaginButton] = React.useState(true);
+
+  //Mostrar los 5 siguientes
+  const handlePaging = () => {
+    //Condicion para mostrar o no el boton para paginar
+    if (seccion.acciones.length - rightValue <= 5) {
+      setShowPaginButton(false);
+    }
+    //Aunmemtando de 5 en 5 la dimencion de la muestra de paginado
+    setLeftValue(leftValue + 5);
+    setRightValue(rightValue + 5);
+  };
 
   const searchAccion = (goal, list) => {
     let lowerGoal = goal.toLowerCase();
@@ -77,7 +93,7 @@ export default function AccordionExpandIcon({ seccion }) {
           <Typography color="primary.text">{mResumen}</Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion>
+      <Accordion defaultExpanded="true">
         <AccordionSummary
           expandIcon={<ArrowDropDownIcon />}
           aria-controls="panel2-content"
@@ -107,13 +123,18 @@ export default function AccordionExpandIcon({ seccion }) {
           {resultSearch
             ? resultSearch.map((el) => <ConceptItem key={el.id} accion={el} />)
             : seccion.acciones
-                .slice(0, 5)
+                .slice(leftValue, rightValue)
                 .map((el) => <ConceptItem key={el.id} accion={el} />)}
-          <Tooltip title="Mostrar Todos">
-            <IconButton>
-              <ArrowDropDownCircleOutlined />
-            </IconButton>
-          </Tooltip>
+          {
+            //Asegurandome que el existan mas de 5 contenidos para mostrar el boton de paginacion quintuple
+            showPaginButton && seccion.acciones.length > 5 && (
+              <Tooltip title="Siguiente">
+                <IconButton onClick={handlePaging}>
+                  <ArrowForwardIosOutlinedIcon />
+                </IconButton>
+              </Tooltip>
+            )
+          }
         </AccordionDetails>
       </Accordion>
     </div>
