@@ -1060,5 +1060,918 @@ Evitar errores de digitación y acelerar la incorporación de activos al sistema
         },
       ],
     },
+    {
+      id: 6,
+      sNombre: "Bajas",
+      acciones: [
+        {
+          id: 14,
+          aNombre: "Baja por Transferencia",
+          aResumen: `Este módulo permite registrar la salida de activos fijos tangibles (AFT) que son transferidos a otra entidad. Sirve para:
+
+Formalizar la baja de medios que dejan de pertenecer a la entidad por transferencia institucional.
+
+Registrar los datos del medio, la entidad receptora y el comprobante contable correspondiente.
+
+Actualizar el inventario y reflejar la salida patrimonial de forma trazable y documentada.
+
+Evitar inconsistencias contables y garantizar el cierre correcto de la operación de transferencia.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Baja por Transferencia",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Baja por Transferencia para iniciar el registro de salida del medio.",
+            },
+            {
+              label: "Seleccionar el medio a transferir",
+              description:
+                "Busca y selecciona el activo que será transferido. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Introducir datos de la transferencia",
+              description:
+                "Completa los campos requeridos: entidad receptora, número de documento, fecha de transferencia y motivo.",
+            },
+            {
+              label: "Confirmar y guardar la baja",
+              description:
+                "Haz clic en Aceptar para registrar la baja. El sistema generará automáticamente el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de transferencia",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de baja por transferencia.",
+            },
+          ],
+        },
+        {
+          id: 15,
+          aNombre: "Baja por Donación",
+          aResumen: `Este módulo permite registrar la salida de activos fijos tangibles (AFT) que son donados a otra entidad. Sirve para:
+
+Formalizar la baja de medios entregados como donación, reflejando correctamente la salida patrimonial.
+
+Registrar los datos del medio, la entidad beneficiaria y el comprobante contable correspondiente.
+
+Actualizar el inventario y garantizar la trazabilidad de los activos donados.
+
+Evitar inconsistencias contables y asegurar el cierre documentado de la operación de donación.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Baja por Donación",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Baja por Donación para iniciar el registro de salida del medio.",
+            },
+            {
+              label: "Seleccionar el medio a donar",
+              description:
+                "Busca y selecciona el activo que será donado. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Introducir datos de la donación",
+              description:
+                "Completa los campos requeridos: entidad beneficiaria, número de documento, fecha de donación y motivo.",
+            },
+            {
+              label: "Confirmar y guardar la baja",
+              description:
+                "Haz clic en Aceptar para registrar la baja. El sistema generará automáticamente el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de donación",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de baja por donación.",
+            },
+          ],
+        },
+        {
+          id: 16,
+          aNombre: "Baja por Ajuste",
+          aResumen: `Este módulo permite registrar la salida de activos fijos tangibles (AFT) que se eliminan del sistema por ajustes contables, errores de registro o regularización patrimonial. Sirve para:
+
+Eliminar medios que fueron registrados incorrectamente o que no corresponden a la realidad operativa.
+
+Registrar el motivo del ajuste y generar el comprobante contable correspondiente.
+
+Actualizar el inventario para reflejar únicamente los activos válidos y operativos.
+
+Evitar distorsiones contables y garantizar la coherencia entre el inventario físico y el sistema.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Baja por Ajuste",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Baja por Ajuste para iniciar el registro de salida del medio.",
+            },
+            {
+              label: "Seleccionar el medio a ajustar",
+              description:
+                "Busca y selecciona el activo que será dado de baja por ajuste. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Introducir datos del ajuste",
+              description:
+                "Completa los campos requeridos: motivo del ajuste, fecha de baja y observaciones relevantes.",
+            },
+            {
+              label: "Confirmar y guardar la baja",
+              description:
+                "Haz clic en Aceptar para registrar la baja. El sistema generará automáticamente el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de ajuste",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de baja por ajuste.",
+            },
+          ],
+        },
+        {
+          id: 17,
+          aNombre: "Baja por Pérdida",
+          aResumen: `Este módulo permite registrar la salida de activos fijos tangibles (AFT) que han sido extraviados, robados o no localizados durante procesos de verificación. Sirve para:
+
+Formalizar la baja de medios que no se encuentran físicamente y no pueden recuperarse.
+
+Registrar el motivo de la pérdida, generar el comprobante contable y actualizar el inventario.
+
+Garantizar la trazabilidad del evento y documentar la salida patrimonial por causas no operativas.
+
+Evitar inconsistencias contables y asegurar el cierre legal y administrativo del activo perdido.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Baja por Pérdida",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Baja por Pérdida para iniciar el registro de salida del medio.",
+            },
+            {
+              label: "Seleccionar el medio perdido",
+              description:
+                "Busca y selecciona el activo que será dado de baja por pérdida. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Introducir datos de la pérdida",
+              description:
+                "Completa los campos requeridos: fecha de pérdida, motivo (robo, extravío, no localizado), y observaciones relevantes.",
+            },
+            {
+              label: "Confirmar y guardar la baja",
+              description:
+                "Haz clic en Aceptar para registrar la baja. El sistema generará automáticamente el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de pérdida",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de baja por pérdida.",
+            },
+          ],
+        },
+        {
+          id: 18,
+          aNombre: "Baja por Siniestro",
+          aResumen: `Este módulo permite registrar la salida de activos fijos tangibles (AFT) que han sido destruidos o inutilizados por eventos fortuitos como incendios, inundaciones o accidentes. Sirve para:
+
+Formalizar la baja de medios afectados por siniestros, reflejando correctamente la pérdida patrimonial.
+
+Registrar el evento, el medio afectado y generar el comprobante contable correspondiente.
+
+Actualizar el inventario y garantizar la trazabilidad del activo siniestrado.
+
+Evitar inconsistencias contables y asegurar el cierre legal y administrativo de la baja por siniestro.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Baja por Siniestro",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Baja por Siniestro para iniciar el registro de salida del medio afectado.",
+            },
+            {
+              label: "Seleccionar el medio siniestrado",
+              description:
+                "Busca y selecciona el activo que será dado de baja por siniestro. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Introducir datos del siniestro",
+              description:
+                "Completa los campos requeridos: tipo de siniestro (incendio, inundación, accidente), fecha del evento, y observaciones relevantes.",
+            },
+            {
+              label: "Confirmar y guardar la baja",
+              description:
+                "Haz clic en Aceptar para registrar la baja. El sistema generará automáticamente el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de siniestro",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de baja por siniestro.",
+            },
+          ],
+        },
+        {
+          id: 19,
+          aNombre: "Baja por Obsolescencia",
+          aResumen: `Este módulo permite registrar la salida de activos fijos tangibles (AFT) que han quedado obsoletos por razones tecnológicas, funcionales o normativas. Sirve para:
+
+Formalizar la baja de medios que ya no cumplen con los requisitos operativos o técnicos actuales.
+
+Registrar el motivo de obsolescencia y generar el comprobante contable correspondiente.
+
+Actualizar el inventario para reflejar únicamente activos vigentes y funcionales.
+
+Evitar sobrecostos operativos y garantizar la eficiencia patrimonial de la entidad.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Baja por Obsolescencia",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Baja por Obsolescencia para iniciar el registro de salida del medio.",
+            },
+            {
+              label: "Seleccionar el medio obsoleto",
+              description:
+                "Busca y selecciona el activo que será dado de baja por obsolescencia. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Introducir datos de la obsolescencia",
+              description:
+                "Completa los campos requeridos: fecha de baja, motivo (tecnológico, funcional, normativo) y observaciones relevantes.",
+            },
+            {
+              label: "Confirmar y guardar la baja",
+              description:
+                "Haz clic en Aceptar para registrar la baja. El sistema generará automáticamente el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de obsolescencia",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de baja por obsolescencia.",
+            },
+          ],
+        },
+        {
+          id: 20,
+          aNombre: "Baja por Venta",
+          aResumen: `Este módulo permite registrar la salida de activos fijos tangibles (AFT) que han sido vendidos a terceros. Sirve para:
+
+Formalizar la baja de medios que generan ingresos por venta, reflejando correctamente la salida patrimonial.
+
+Registrar los datos del comprador, el valor de venta y el comprobante contable correspondiente.
+
+Actualizar el inventario y garantizar la trazabilidad del activo vendido.
+
+Evitar inconsistencias contables y asegurar el cierre legal y financiero de la operación de venta.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Baja por Venta",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Baja por Venta para iniciar el registro de salida del medio.",
+            },
+            {
+              label: "Seleccionar el medio vendido",
+              description:
+                "Busca y selecciona el activo que será dado de baja por venta. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Introducir datos de la venta",
+              description:
+                "Completa los campos requeridos: comprador, valor de venta, número de factura o documento, fecha de venta y motivo.",
+            },
+            {
+              label: "Confirmar y guardar la baja",
+              description:
+                "Haz clic en Aceptar para registrar la baja. El sistema generará automáticamente el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de venta",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de baja por venta.",
+            },
+          ],
+        },
+        {
+          id: 21,
+          aNombre: "Baja por Retiro",
+          aResumen: `Este módulo permite registrar la salida de activos fijos tangibles (AFT) que son retirados de uso por decisión administrativa, sin que medie siniestro, venta o transferencia. Sirve para:
+
+Formalizar la baja de medios que dejan de ser utilizados por obsolescencia operativa, reorganización o desuso.
+
+Registrar el motivo del retiro y generar el comprobante contable correspondiente.
+
+Actualizar el inventario para reflejar únicamente los activos en uso efectivo.
+
+Evitar distorsiones patrimoniales y garantizar la trazabilidad de los activos retirados.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Baja por Retiro",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Baja por Retiro para iniciar el registro de salida del medio.",
+            },
+            {
+              label: "Seleccionar el medio retirado",
+              description:
+                "Busca y selecciona el activo que será dado de baja por retiro. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Introducir datos del retiro",
+              description:
+                "Completa los campos requeridos: fecha de retiro, motivo (desuso, reorganización, decisión administrativa) y observaciones relevantes.",
+            },
+            {
+              label: "Confirmar y guardar la baja",
+              description:
+                "Haz clic en Aceptar para registrar la baja. El sistema generará automáticamente el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de retiro",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de baja por retiro.",
+            },
+          ],
+        },
+        {
+          id: 22,
+          aNombre: "Traspaso Efectuado",
+          aResumen: `Este módulo permite registrar el movimiento interno de activos fijos tangibles (AFT) entre áreas, subáreas o responsables dentro de la misma entidad. Sirve para:
+
+Formalizar el cambio de ubicación o responsable de un medio sin que implique baja ni alta.
+
+Actualizar los datos administrativos del activo, manteniendo su trazabilidad operativa y contable.
+
+Generar el comprobante contable correspondiente al traspaso efectuado.
+
+Evitar inconsistencias en la asignación de medios y garantizar el control interno del inventario.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Traspaso Efectuado",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Traspaso Efectuado para iniciar el movimiento interno del medio.",
+            },
+            {
+              label: "Seleccionar el medio a traspasar",
+              description:
+                "Busca y selecciona el activo que será trasladado. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Introducir nuevos datos administrativos",
+              description:
+                "Completa los campos requeridos: nuevo centro de costo, área, subárea, responsable y fecha de traspaso.",
+            },
+            {
+              label: "Confirmar y guardar el traspaso",
+              description:
+                "Haz clic en Aceptar para registrar el movimiento. El sistema actualizará los datos y generará el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de traspaso",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de traspaso efectuado.",
+            },
+          ],
+        },
+        {
+          id: 23,
+          aNombre: "Devolución del Préstamo",
+          aResumen: `Este módulo permite registrar la salida de activos fijos tangibles (AFT) que fueron recibidos en calidad de préstamo y ahora se devuelven a su entidad de origen. Sirve para:
+
+Formalizar la devolución de medios prestados, cerrando correctamente el ciclo de responsabilidad temporal.
+
+Actualizar el inventario y eliminar el vínculo operativo con el medio devuelto.
+
+Generar el comprobante contable correspondiente a la operación de devolución.
+
+Evitar inconsistencias patrimoniales y garantizar la trazabilidad del activo durante todo el período de préstamo.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Devolución del Préstamo",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Devolución del Préstamo para iniciar el registro de salida del medio.",
+            },
+            {
+              label: "Seleccionar el medio a devolver",
+              description:
+                "Busca y selecciona el activo que fue recibido en préstamo y será devuelto. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Introducir datos de la devolución",
+              description:
+                "Completa los campos requeridos: entidad propietaria, fecha de devolución, número de documento y observaciones relevantes.",
+            },
+            {
+              label: "Confirmar y guardar la devolución",
+              description:
+                "Haz clic en Aceptar para registrar la salida. El sistema actualizará el inventario y generará el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de devolución",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de devolución del préstamo.",
+            },
+          ],
+        },
+        {
+          id: 24,
+          aNombre: "Devolución del Alquiler",
+          aResumen: `Este módulo permite registrar la salida de activos fijos tangibles (AFT) que fueron recibidos en calidad de alquiler y ahora se devuelven al proveedor. Sirve para:
+
+Formalizar la devolución de medios alquilados, cerrando correctamente el ciclo de uso temporal.
+
+Actualizar el inventario y eliminar el vínculo operativo con el medio devuelto.
+
+Generar el comprobante contable correspondiente a la operación de devolución.
+
+Evitar inconsistencias patrimoniales y garantizar la trazabilidad del activo durante todo el período de alquiler.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Devolución del Alquiler",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Devolución del Alquiler para iniciar el registro de salida del medio.",
+            },
+            {
+              label: "Seleccionar el medio a devolver",
+              description:
+                "Busca y selecciona el activo que fue recibido en alquiler y será devuelto. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Introducir datos de la devolución",
+              description:
+                "Completa los campos requeridos: proveedor, fecha de devolución, número de contrato y observaciones relevantes.",
+            },
+            {
+              label: "Confirmar y guardar la devolución",
+              description:
+                "Haz clic en Aceptar para registrar la salida. El sistema actualizará el inventario y generará el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de devolución",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de devolución del alquiler.",
+            },
+          ],
+        },
+        {
+          id: 25,
+          aNombre: "Baja por Faltante",
+          aResumen: `Este módulo permite registrar la salida de activos fijos tangibles (AFT) que no se encuentran durante procesos de verificación física o auditoría. Sirve para:
+
+Formalizar la baja de medios que no aparecen en su ubicación asignada y no han sido recuperados.
+
+Registrar el evento de faltante, generar el comprobante contable y actualizar el inventario.
+
+Documentar la pérdida operativa y garantizar la trazabilidad del activo durante el proceso de verificación.
+
+Evitar inconsistencias patrimoniales y asegurar el cierre administrativo del medio faltante.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Baja por Faltante",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Baja por Faltante para iniciar el registro de salida del medio no localizado.",
+            },
+            {
+              label: "Seleccionar el medio faltante",
+              description:
+                "Busca y selecciona el activo que será dado de baja por faltante. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Introducir datos del evento",
+              description:
+                "Completa los campos requeridos: fecha de verificación, motivo del faltante (no localizado, sin trazabilidad), y observaciones relevantes.",
+            },
+            {
+              label: "Confirmar y guardar la baja",
+              description:
+                "Haz clic en Aceptar para registrar la baja. El sistema generará automáticamente el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de faltante",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de baja por faltante.",
+            },
+          ],
+        },
+        {
+          id: 26,
+          aNombre: "Baja por Lote",
+          aResumen: `Este módulo permite registrar la salida simultánea de múltiples activos fijos tangibles (AFT) que comparten un mismo motivo de baja. Sirve para:
+
+Agilizar el proceso de eliminación de medios cuando se trata de grupos homogéneos o eventos masivos.
+
+Registrar todos los medios involucrados en una sola operación, manteniendo trazabilidad y consistencia contable.
+
+Generar un único comprobante contable que respalde la baja colectiva.
+
+Evitar registros individuales repetitivos y facilitar auditorías sobre eventos de baja masiva.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Baja por Lote",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Baja por Lote para iniciar el registro colectivo de salida.",
+            },
+            {
+              label: "Seleccionar los medios a dar de baja",
+              description:
+                "Busca y selecciona todos los activos que serán dados de baja en el lote. Puedes filtrar por centro de costo, área, subárea o responsable.",
+            },
+            {
+              label: "Introducir datos comunes de la baja",
+              description:
+                "Completa los campos requeridos: fecha de baja, motivo (obsolescencia, siniestro, reorganización, etc.), y observaciones generales.",
+            },
+            {
+              label: "Confirmar y guardar la operación",
+              description:
+                "Haz clic en Aceptar para registrar la baja masiva. El sistema generará automáticamente un comprobante contable único para el lote.",
+            },
+            {
+              label: "Imprimir comprobante de baja por lote",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable que respalda la operación colectiva.",
+            },
+          ],
+        },
+        {
+          id: 27,
+          aNombre: "Baja Masiva desde Excel",
+          aResumen: `Este módulo permite registrar la salida de múltiples activos fijos tangibles (AFT) mediante la importación de una hoja de cálculo Excel. Sirve para:
+
+Agilizar el proceso de baja cuando se trata de grandes volúmenes de medios.
+
+Estandarizar la estructura de datos mediante una plantilla predefinida que garantiza consistencia y validación.
+
+Generar automáticamente los comprobantes contables de cada medio dado de baja.
+
+Evitar errores de digitación y facilitar auditorías sobre eventos de baja masiva.`,
+          pasos: [
+            {
+              label: "Acceder al módulo de Baja Masiva",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Baja Masiva desde Excel para iniciar el proceso de importación.",
+            },
+            {
+              label: "Descargar plantilla de Excel",
+              description:
+                "Haz clic en Plantilla para obtener el archivo con los campos requeridos: código del medio, motivo de baja, fecha, observaciones, etc.",
+            },
+            {
+              label: "Completar la plantilla",
+              description:
+                "Llena la hoja de Excel respetando el formato y validaciones indicadas. No modifiques los encabezados ni el orden de las columnas.",
+            },
+            {
+              label: "Importar archivo Excel",
+              description:
+                "Haz clic en Importar, selecciona el archivo completado y espera la validación automática del sistema.",
+            },
+            {
+              label: "Revisar medios cargados",
+              description:
+                "Verifica que los medios hayan sido procesados correctamente. El sistema mostrará errores si hay campos inválidos.",
+            },
+            {
+              label: "Confirmar y generar comprobantes",
+              description:
+                "Haz clic en Aceptar para confirmar la baja. Se generarán automáticamente los comprobantes contables de cada medio.",
+            },
+            {
+              label: "Imprimir resumen de baja masiva",
+              description:
+                "Haz clic en Imprimir para obtener un listado de los medios dados de baja y sus comprobantes asociados.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 7,
+      sNombre: "Traslados",
+      acciones: [
+        {
+          id: 70,
+          aNombre: "Enviado a Reparación",
+          aResumen: `Este módulo permite registrar el envío de activos fijos tangibles (AFT) a reparación, ya sea interna o externa. Sirve para:
+
+Controlar los medios que salen temporalmente del inventario operativo por fallas o mantenimiento.
+
+Registrar los datos del medio, el tipo de reparación, el proveedor o área técnica responsable y la fecha de envío.
+
+Generar el comprobante contable correspondiente al movimiento de reparación.
+
+Evitar pérdidas de trazabilidad y garantizar el seguimiento técnico y administrativo del activo reparado.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Enviado a Reparación",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Enviado a Reparación para iniciar el registro del medio que será reparado.",
+            },
+            {
+              label: "Seleccionar el medio a reparar",
+              description:
+                "Busca y selecciona el activo que será enviado a reparación. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Introducir datos de la reparación",
+              description:
+                "Completa los campos requeridos: tipo de reparación (interna o externa), proveedor o área técnica, fecha de envío, motivo y observaciones.",
+            },
+            {
+              label: "Confirmar y guardar el envío",
+              description:
+                "Haz clic en Aceptar para registrar el movimiento. El sistema actualizará el estado del medio y generará el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de reparación",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de envío a reparación.",
+            },
+          ],
+        },
+        {
+          id: 1,
+          aNombre: "Traslado Interno",
+          aResumen: `Este módulo permite registrar el movimiento físico de activos fijos tangibles (AFT) dentro de la misma entidad, sin que implique cambio de responsable ni baja. Sirve para:
+
+Formalizar el traslado de medios entre áreas, subáreas o ubicaciones físicas internas.
+
+Actualizar la ubicación operativa del activo, manteniendo su trazabilidad sin alterar su asignación administrativa.
+
+Generar el comprobante contable correspondiente al traslado físico.
+
+Evitar inconsistencias logísticas y garantizar el control interno del inventario.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Traslado Interno",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Traslado Interno para iniciar el registro del movimiento físico del medio.",
+            },
+            {
+              label: "Seleccionar el medio a trasladar",
+              description:
+                "Busca y selecciona el activo que será trasladado. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Introducir nueva ubicación física",
+              description:
+                "Completa los campos requeridos: nueva ubicación, área, subárea, fecha de traslado y observaciones relevantes.",
+            },
+            {
+              label: "Confirmar y guardar el traslado",
+              description:
+                "Haz clic en Aceptar para registrar el movimiento. El sistema actualizará la ubicación del medio y generará el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de traslado",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de traslado interno.",
+            },
+          ],
+        },
+        {
+          id: 2,
+          aNombre: "Recibido de Reparación",
+          aResumen: `Este módulo permite registrar el retorno de activos fijos tangibles (AFT) que fueron enviados a reparación, ya sea interna o externa. Sirve para:
+
+Formalizar el reingreso de medios reparados al inventario operativo.
+
+Actualizar el estado del activo, registrar los detalles de la reparación y generar el comprobante contable correspondiente.
+
+Restablecer la trazabilidad del medio y garantizar su reincorporación técnica y administrativa.
+
+Evitar inconsistencias patrimoniales y asegurar el cierre del ciclo de reparación.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Recibido de Reparación",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Recibido de Reparación para iniciar el registro del retorno del medio.",
+            },
+            {
+              label: "Seleccionar el medio reparado",
+              description:
+                "Busca y selecciona el activo que fue enviado a reparación y ahora retorna. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Introducir datos del retorno",
+              description:
+                "Completa los campos requeridos: fecha de retorno, tipo de reparación realizada, proveedor o área técnica, y observaciones.",
+            },
+            {
+              label: "Confirmar y guardar el ingreso",
+              description:
+                "Haz clic en Aceptar para registrar el retorno. El sistema actualizará el estado del medio y generará el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de recepción",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de recibido de reparación.",
+            },
+          ],
+        },
+        {
+          id: 3,
+          aNombre: "Préstamo Efectuado",
+          aResumen: `Este módulo permite registrar el envío temporal de activos fijos tangibles (AFT) a otra entidad o área, bajo condiciones de préstamo. Sirve para:
+
+Formalizar el movimiento de medios que salen del inventario operativo sin implicar baja patrimonial.
+
+Registrar los datos del medio, la entidad receptora, el período de préstamo y el comprobante contable correspondiente.
+
+Actualizar el estado del activo para reflejar su condición de préstamo y garantizar trazabilidad.
+
+Evitar pérdidas de control y asegurar el seguimiento técnico y administrativo del activo prestado.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Préstamo Efectuado",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Préstamo Efectuado para iniciar el registro del medio que será prestado.",
+            },
+            {
+              label: "Seleccionar el medio a prestar",
+              description:
+                "Busca y selecciona el activo que será enviado en préstamo. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Introducir datos del préstamo",
+              description:
+                "Completa los campos requeridos: entidad receptora, fecha de inicio, fecha estimada de devolución, motivo y observaciones.",
+            },
+            {
+              label: "Confirmar y guardar el préstamo",
+              description:
+                "Haz clic en Aceptar para registrar el movimiento. El sistema actualizará el estado del medio y generará el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de préstamo",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de préstamo efectuado.",
+            },
+          ],
+        },
+        {
+          id: 4,
+          aNombre: "Préstamo Recibido",
+          aResumen: `Este módulo permite registrar el ingreso temporal de activos fijos tangibles (AFT) que han sido prestados por otra entidad. Sirve para:
+
+Formalizar la incorporación de medios ajenos al inventario operativo bajo condiciones de préstamo.
+
+Registrar los datos del medio, la entidad prestadora, el período de préstamo y el comprobante contable correspondiente.
+
+Actualizar el estado del activo para reflejar su condición de préstamo y garantizar trazabilidad.
+
+Evitar inconsistencias patrimoniales y asegurar el seguimiento técnico y administrativo del activo recibido.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Préstamo Recibido",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Préstamo Recibido para iniciar el registro del medio recibido en préstamo.",
+            },
+            {
+              label: "Registrar el medio recibido",
+              description:
+                "Introduce los datos del activo prestado: código, descripción, valor, estado y ubicación física.",
+            },
+            {
+              label: "Introducir datos del préstamo",
+              description:
+                "Completa los campos requeridos: entidad prestadora, fecha de inicio, fecha estimada de devolución, motivo y observaciones.",
+            },
+            {
+              label: "Confirmar y guardar el ingreso",
+              description:
+                "Haz clic en Aceptar para registrar el ingreso. El sistema actualizará el estado del medio y generará el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de préstamo recibido",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de préstamo recibido.",
+            },
+          ],
+        },
+        {
+          id: 5,
+          aNombre: "Alquiler Efectuado",
+          aResumen: `Este módulo permite registrar el envío temporal de activos fijos tangibles (AFT) a otra entidad bajo contrato de alquiler. Sirve para:
+
+Formalizar el movimiento de medios alquilados, reflejando correctamente la salida patrimonial temporal.
+
+Registrar los datos del medio, el arrendatario, el contrato de alquiler y el comprobante contable correspondiente.
+
+Actualizar el estado del activo para reflejar su condición de alquiler y garantizar trazabilidad.
+
+Evitar inconsistencias contables y asegurar el seguimiento técnico y administrativo del activo alquilado.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Alquiler Efectuado",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Alquiler Efectuado para iniciar el registro del medio que será alquilado.",
+            },
+            {
+              label: "Seleccionar el medio a alquilar",
+              description:
+                "Busca y selecciona el activo que será enviado en alquiler. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Introducir datos del contrato",
+              description:
+                "Completa los campos requeridos: entidad arrendataria, número de contrato, fecha de inicio, fecha estimada de devolución, y observaciones.",
+            },
+            {
+              label: "Confirmar y guardar el alquiler",
+              description:
+                "Haz clic en Aceptar para registrar el movimiento. El sistema actualizará el estado del medio y generará el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de alquiler",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de alquiler efectuado.",
+            },
+          ],
+        },
+        {
+          id: 6,
+          aNombre: "Alquiler Recibido",
+          aResumen: `Este módulo permite registrar el ingreso temporal de activos fijos tangibles (AFT) que han sido alquilados a un proveedor externo. Sirve para:
+
+Formalizar la incorporación de medios alquilados al inventario operativo bajo contrato vigente.
+
+Registrar los datos del medio, el proveedor, el contrato de alquiler y el comprobante contable correspondiente.
+
+Actualizar el estado del activo para reflejar su condición de alquiler y garantizar trazabilidad.
+
+Evitar inconsistencias patrimoniales y asegurar el seguimiento técnico y administrativo del activo alquilado.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Alquiler Recibido",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Alquiler Recibido para iniciar el registro del medio recibido en alquiler.",
+            },
+            {
+              label: "Registrar el medio alquilado",
+              description:
+                "Introduce los datos del activo recibido: código, descripción, valor, estado y ubicación física.",
+            },
+            {
+              label: "Introducir datos del contrato",
+              description:
+                "Completa los campos requeridos: proveedor, número de contrato, fecha de inicio, fecha estimada de devolución, y observaciones.",
+            },
+            {
+              label: "Confirmar y guardar el ingreso",
+              description:
+                "Haz clic en Aceptar para registrar el ingreso. El sistema actualizará el estado del medio y generará el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de alquiler recibido",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de alquiler recibido.",
+            },
+          ],
+        },
+        {
+          id: 7,
+          aNombre: "Traslado Interno por Lote",
+          aResumen: `Este módulo permite registrar el movimiento físico simultáneo de múltiples activos fijos tangibles (AFT) dentro de la misma entidad. Sirve para:
+
+Agilizar el traslado de grupos de medios entre áreas, subáreas o ubicaciones físicas internas.
+
+Actualizar la ubicación operativa de todos los activos involucrados en una sola operación.
+
+Generar un único comprobante contable que respalde el traslado colectivo.
+
+Evitar registros individuales repetitivos y garantizar trazabilidad logística en eventos masivos.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Traslado Interno por Lote",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Traslado Interno por Lote para iniciar el registro colectivo del movimiento físico.",
+            },
+            {
+              label: "Seleccionar los medios a trasladar",
+              description:
+                "Busca y selecciona todos los activos que serán trasladados. Puedes filtrar por centro de costo, área, subárea o ubicación actual.",
+            },
+            {
+              label: "Introducir nueva ubicación física común",
+              description:
+                "Completa los campos requeridos: nueva ubicación, área, subárea, fecha de traslado y observaciones generales.",
+            },
+            {
+              label: "Confirmar y guardar el traslado",
+              description:
+                "Haz clic en Aceptar para registrar el movimiento. El sistema actualizará la ubicación de todos los medios y generará el comprobante contable único.",
+            },
+            {
+              label: "Imprimir comprobante de traslado por lote",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable que respalda la operación colectiva.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 8,
+      sNombre: "Ajustes",
+      acciones: [
+        {
+          id: 2,
+          aNombre: "Balance General",
+          pasos: ["Paso1", "Paso2", "Paso3"],
+        },
+      ],
+    },
   ],
 };
