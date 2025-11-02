@@ -1967,9 +1967,484 @@ Evitar registros individuales repetitivos y garantizar trazabilidad logística e
       sNombre: "Ajustes",
       acciones: [
         {
+          id: 84,
+          aNombre: "Ajuste de Importe",
+          aResumen: `Este módulo permite modificar el valor contable de un activo fijo tangible (AFT) sin alterar su existencia física. Sirve para:
+
+Registrar incrementos o disminuciones en el valor del medio por correcciones contables, ajustes técnicos o decisiones administrativas.
+
+Actualizar el importe del activo en el sistema, manteniendo trazabilidad y respaldo documental.
+
+Generar el comprobante contable correspondiente al ajuste realizado.
+
+Evitar distorsiones en los estados financieros y asegurar la integridad del inventario patrimonial.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Ajuste de Importe",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Ajuste de Importe para iniciar la modificación del valor del medio.",
+            },
+            {
+              label: "Seleccionar el medio a ajustar",
+              description:
+                "Busca y selecciona el activo cuyo importe será modificado. Verifica sus datos actuales antes de continuar.",
+            },
+            {
+              label: "Introducir nuevo importe y motivo",
+              description:
+                "Completa los campos requeridos: nuevo valor, motivo del ajuste (corrección, revaluación, error de carga, etc.) y observaciones.",
+            },
+            {
+              label: "Confirmar y guardar el ajuste",
+              description:
+                "Haz clic en Aceptar para registrar el nuevo importe. El sistema actualizará el valor del medio y generará el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de ajuste",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de ajuste de importe.",
+            },
+          ],
+        },
+        {
+          id: 85,
+          aNombre: "Ajuste de Depreciación",
+          aResumen: `Este módulo permite modificar el valor acumulado de depreciación de un activo fijo tangible (AFT), sin alterar su importe original ni su existencia física. Sirve para:
+
+Registrar correcciones contables en la depreciación acumulada por errores, cambios de criterio o ajustes técnicos.
+
+Actualizar el valor depreciado del medio, manteniendo trazabilidad y respaldo documental.
+
+Generar el comprobante contable correspondiente al ajuste realizado.
+
+Evitar distorsiones en los estados financieros y asegurar la integridad del inventario patrimonial.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Ajuste de Depreciación",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Ajuste de Depreciación para iniciar la modificación del valor depreciado del medio.",
+            },
+            {
+              label: "Seleccionar el medio a ajustar",
+              description:
+                "Busca y selecciona el activo cuyo valor de depreciación acumulada será modificado. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Introducir nuevo valor de depreciación y motivo",
+              description:
+                "Completa los campos requeridos: nuevo valor acumulado, motivo del ajuste (corrección, cambio de criterio, error de carga, etc.) y observaciones.",
+            },
+            {
+              label: "Confirmar y guardar el ajuste",
+              description:
+                "Haz clic en Aceptar para registrar el nuevo valor. El sistema actualizará la depreciación acumulada y generará el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de ajuste",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de ajuste de depreciación.",
+            },
+          ],
+        },
+        {
+          id: 1,
+          aNombre: "Ajuste de Moneda",
+          aResumen: `Este módulo permite modificar la moneda de registro contable de un activo fijo tangible (AFT), sin alterar su existencia ni su valor original. Sirve para:
+
+Actualizar la moneda base del activo por cambios en políticas contables, migraciones de sistema o correcciones administrativas.
+
+Registrar el nuevo tipo de moneda y aplicar la tasa de conversión correspondiente.
+
+Generar el comprobante contable que respalde el ajuste de moneda.
+
+Evitar inconsistencias en los reportes financieros y asegurar la trazabilidad del activo en su nueva denominación.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Ajuste de Moneda",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Ajuste de Moneda para iniciar el cambio de denominación contable del medio.",
+            },
+            {
+              label: "Seleccionar el medio a ajustar",
+              description:
+                "Busca y selecciona el activo cuya moneda será modificada. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Introducir nueva moneda y tasa de conversión",
+              description:
+                "Completa los campos requeridos: nueva moneda, tasa de conversión, fecha de ajuste y motivo del cambio.",
+            },
+            {
+              label: "Confirmar y guardar el ajuste",
+              description:
+                "Haz clic en Aceptar para registrar el cambio. El sistema actualizará la moneda del medio y generará el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de ajuste de moneda",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de ajuste de moneda.",
+            },
+          ],
+        },
+        {
           id: 2,
-          aNombre: "Balance General",
-          pasos: ["Paso1", "Paso2", "Paso3"],
+          aNombre: "Cambio de Submayor",
+          aResumen: `Este módulo permite modificar la cuenta contable asociada a un activo fijo tangible (AFT), sin alterar su existencia ni su valor. Sirve para:
+
+Reasignar el submayor contable del medio por correcciones administrativas, reorganización contable o cambios de clasificación.
+
+Actualizar la cuenta contable del activo en el sistema, manteniendo trazabilidad y respaldo documental.
+
+Generar el comprobante contable correspondiente al cambio de submayor.
+
+Evitar inconsistencias en los reportes financieros y asegurar la correcta clasificación patrimonial del activo.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Cambio de Submayor",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Cambio de Submayor para iniciar la modificación de la cuenta contable del medio.",
+            },
+            {
+              label: "Seleccionar el medio a modificar",
+              description:
+                "Busca y selecciona el activo cuyo submayor contable será cambiado. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Introducir nueva cuenta contable",
+              description:
+                "Completa los campos requeridos: nueva cuenta contable (submayor), fecha de cambio, motivo y observaciones.",
+            },
+            {
+              label: "Confirmar y guardar el cambio",
+              description:
+                "Haz clic en Aceptar para registrar la modificación. El sistema actualizará la cuenta contable del medio y generará el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de cambio de submayor",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de cambio de submayor.",
+            },
+          ],
+        },
+        {
+          id: 3,
+          aNombre: "Paralizar o Compactar Activos",
+          aResumen: `Este módulo permite registrar el cambio de estado operativo de activos fijos tangibles (AFT) que dejan de estar en uso temporalmente o se agrupan funcionalmente. Sirve para:
+
+Paralizar medios que no están operativos por mantenimiento, obsolescencia temporal o decisión administrativa.
+
+Compactar activos que se agrupan para operar como una unidad funcional, sin alterar su existencia individual.
+
+Actualizar el estado técnico del medio, manteniendo trazabilidad y respaldo documental.
+
+Evitar inconsistencias operativas y garantizar el control interno durante períodos de inactividad o agrupación.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Paralizar o Compactar",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Paralizar o Compactar Activos para iniciar el cambio de estado operativo.",
+            },
+            {
+              label: "Seleccionar el medio a modificar",
+              description:
+                "Busca y selecciona el activo que será paralizado o compactado. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Indicar tipo de operación",
+              description:
+                "Selecciona si se trata de una paralización o una compactación. Completa los campos requeridos: fecha, motivo y observaciones.",
+            },
+            {
+              label: "Confirmar y guardar el cambio",
+              description:
+                "Haz clic en Aceptar para registrar el nuevo estado. El sistema actualizará el estado técnico del medio y generará el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de operación",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de paralización o compactación.",
+            },
+          ],
+        },
+        {
+          id: 4,
+          aNombre: "Modificar Fecha de Adquisición",
+          aResumen: `Este módulo permite corregir la fecha de adquisición registrada para un activo fijo tangible (AFT), sin alterar su valor ni su existencia. Sirve para:
+
+Ajustar errores de carga o migración que afecten la trazabilidad contable y técnica del medio.
+
+Actualizar la fecha de adquisición en el sistema, manteniendo respaldo documental y consistencia histórica.
+
+Generar el comprobante contable correspondiente al cambio de fecha.
+
+Evitar distorsiones en los cálculos de depreciación y asegurar la integridad del inventario patrimonial.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Modificar Fecha de Adquisición",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Modificar Fecha de Adquisición para iniciar la corrección.",
+            },
+            {
+              label: "Seleccionar el medio a modificar",
+              description:
+                "Busca y selecciona el activo cuya fecha de adquisición será corregida. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Introducir nueva fecha y motivo",
+              description:
+                "Completa los campos requeridos: nueva fecha de adquisición, motivo del cambio (error, migración, ajuste técnico) y observaciones.",
+            },
+            {
+              label: "Confirmar y guardar la modificación",
+              description:
+                "Haz clic en Aceptar para registrar la nueva fecha. El sistema actualizará el dato y generará el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de modificación",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de modificación de fecha.",
+            },
+          ],
+        },
+        {
+          id: 5,
+          aNombre: "Unificar activos",
+          aResumen: `Este módulo permite consolidar dos o más activos fijos tangibles (AFT) que representan físicamente un mismo bien, pero fueron registrados por separado. Sirve para:
+
+Evitar duplicidades en el inventario patrimonial y reflejar correctamente la existencia real de los medios.
+
+Seleccionar un medio principal y absorber los secundarios, sumando sus valores y trazabilidad.
+
+Actualizar los datos del medio resultante y generar el comprobante contable correspondiente.
+
+Mantener la integridad técnica y contable del inventario, especialmente tras migraciones o errores de carga.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Unificar activos",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Unificar activos para iniciar el proceso de consolidación.",
+            },
+            {
+              label: "Seleccionar el medio principal",
+              description:
+                "Busca y selecciona el activo que quedará como producto principal tras la unificación.",
+            },
+            {
+              label: "Seleccionar los medios a unificar",
+              description:
+                "Selecciona uno o más activos que serán absorbidos por el medio principal. Verifica que correspondan físicamente al mismo bien.",
+            },
+            {
+              label: "Confirmar la unificación",
+              description:
+                "Haz clic en Aceptar para consolidar los medios. El sistema sumará los valores y actualizará la trazabilidad en el medio principal.",
+            },
+            {
+              label: "Imprimir comprobante de unificación",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de unificación de activos.",
+            },
+          ],
+        },
+        {
+          id: 6,
+          aNombre: "Separar Activos",
+          aResumen: `Este módulo permite dividir un activo fijo tangible (AFT) en dos o más medios independientes, cuando originalmente fueron registrados como una sola unidad. Sirve para:
+
+Reflejar correctamente la existencia física de medios que operan por separado pero fueron agrupados en el sistema.
+
+Crear nuevos registros individuales a partir del medio original, asignando valores, ubicaciones y responsables específicos.
+
+Actualizar la trazabilidad técnica y contable del inventario patrimonial.
+
+Evitar inconsistencias operativas y facilitar el control individual de cada componente separado.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Separar activos",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Separar activos para iniciar el proceso de división.",
+            },
+            {
+              label: "Seleccionar el medio a separar",
+              description:
+                "Busca y selecciona el activo que será dividido en varios componentes. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Definir los nuevos activos",
+              description:
+                "Completa los campos requeridos para cada nuevo medio: descripción, valor, ubicación, responsable y observaciones.",
+            },
+            {
+              label: "Confirmar la separación",
+              description:
+                "Haz clic en Aceptar para registrar la operación. El sistema creará los nuevos medios y ajustará el valor del original.",
+            },
+            {
+              label: "Imprimir comprobante de separación",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de separación de activos.",
+            },
+          ],
+        },
+        {
+          id: 7,
+          aNombre: "Cambiar Número de Inventario",
+          aResumen: `Este módulo permite modificar el número de inventario asignado a un activo fijo tangible (AFT), sin alterar su existencia ni sus valores contables. Sirve para:
+
+Corregir errores de digitación, duplicidades o inconsistencias en la numeración de medios registrados.
+
+Actualizar el identificador del activo en el sistema, manteniendo trazabilidad y respaldo documental.
+
+Evitar conflictos en auditorías, conciliaciones físicas y reportes patrimoniales.
+
+Garantizar la unicidad y consistencia del número de inventario en todo el ciclo de vida del medio.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Cambiar Número de Inventario",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Cambiar Número de Inventario para iniciar la modificación.",
+            },
+            {
+              label: "Seleccionar el medio a modificar",
+              description:
+                "Busca y selecciona el activo cuyo número de inventario será corregido. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Introducir nuevo número de inventario",
+              description:
+                "Completa los campos requeridos: nuevo número, motivo del cambio (error, duplicidad, migración, etc.) y observaciones.",
+            },
+            {
+              label: "Confirmar y guardar la modificación",
+              description:
+                "Haz clic en Aceptar para registrar el nuevo número. El sistema actualizará el identificador y generará el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de modificación",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de cambio de número de inventario.",
+            },
+          ],
+        },
+        {
+          id: 8,
+          aNombre: "Ajuste de Vida Útil",
+          aResumen: `Este módulo permite modificar la vida útil registrada de un activo fijo tangible (AFT), sin alterar su valor original ni su existencia física. Sirve para:
+
+Corregir errores de carga o actualizar la vida útil por cambios técnicos, normativos o administrativos.
+
+Recalcular la depreciación futura del medio en función de su nueva vida útil.
+
+Generar el comprobante contable correspondiente al ajuste realizado.
+
+Asegurar la consistencia entre el uso real del activo y su tratamiento contable.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Ajuste de Vida Útil",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Ajuste de Vida Útil para iniciar la modificación.",
+            },
+            {
+              label: "Seleccionar el medio a ajustar",
+              description:
+                "Busca y selecciona el activo cuya vida útil será modificada. Verifica sus datos antes de continuar.",
+            },
+            {
+              label: "Introducir nueva vida útil y motivo",
+              description:
+                "Completa los campos requeridos: nueva vida útil (en años o meses), motivo del cambio y observaciones.",
+            },
+            {
+              label: "Confirmar y guardar el ajuste",
+              description:
+                "Haz clic en Aceptar para registrar la nueva vida útil. El sistema recalculará la depreciación futura y generará el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de ajuste",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de ajuste de vida útil.",
+            },
+          ],
+        },
+        {
+          id: 9,
+          aNombre: "Cambio de Datos a Medios",
+          aResumen: `Este módulo permite modificar información descriptiva o técnica de un activo fijo tangible (AFT), sin alterar su valor contable ni su existencia física. Sirve para:
+
+Corregir errores de digitación, actualizar datos obsoletos o completar campos faltantes en el registro del medio.
+
+Modificar atributos como descripción, marca, modelo, número de serie, ubicación física, responsable, entre otros.
+
+Mantener la integridad documental del inventario y asegurar la trazabilidad operativa del activo.
+
+Evitar inconsistencias en reportes, conciliaciones y procesos de auditoría.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Cambio de Datos a Medios",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Cambio de Datos a Medios para iniciar la modificación.",
+            },
+            {
+              label: "Seleccionar el medio a modificar",
+              description:
+                "Busca y selecciona el activo cuyos datos serán actualizados. Verifica sus datos actuales antes de continuar.",
+            },
+            {
+              label: "Modificar los campos necesarios",
+              description:
+                "Edita los campos que requieren corrección o actualización: descripción, marca, modelo, serie, ubicación, responsable, etc.",
+            },
+            {
+              label: "Confirmar y guardar los cambios",
+              description:
+                "Haz clic en Aceptar para registrar las modificaciones. El sistema actualizará los datos del medio y generará el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de modificación",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de cambio de datos.",
+            },
+          ],
+        },
+        {
+          id: 10,
+          aNombre: "Actualizar Datos Principales de Transportes",
+          aResumen: `Este módulo permite modificar los datos técnicos y administrativos clave de los medios de transporte registrados como activos fijos tangibles (AFT). Sirve para:
+
+Corregir errores o completar información faltante en vehículos, equipos móviles o medios de transporte.
+
+Actualizar campos como matrícula, marca, modelo, número de motor, número de chasis, tipo de combustible, capacidad, y responsable.
+
+Mantener la trazabilidad operativa y documental del transporte, asegurando consistencia en reportes y auditorías.
+
+Evitar inconsistencias en procesos de control técnico, asignación y mantenimiento.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Actualizar Datos de Transportes",
+              description:
+                "Desde el menú Operaciones, selecciona la opción Actualizar Datos Principales de Transportes para iniciar la modificación.",
+            },
+            {
+              label: "Seleccionar el medio de transporte",
+              description:
+                "Busca y selecciona el vehículo o equipo móvil cuyos datos serán actualizados. Verifica sus datos actuales antes de continuar.",
+            },
+            {
+              label: "Modificar los campos técnicos y administrativos",
+              description:
+                "Edita los campos necesarios: matrícula, marca, modelo, número de motor, chasis, tipo de combustible, capacidad, responsable, etc.",
+            },
+            {
+              label: "Confirmar y guardar los cambios",
+              description:
+                "Haz clic en Aceptar para registrar las modificaciones. El sistema actualizará los datos del medio y generará el comprobante contable correspondiente.",
+            },
+            {
+              label: "Imprimir comprobante de modificación",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la operación de actualización de datos de transporte.",
+            },
+          ],
         },
       ],
     },
