@@ -12,14 +12,16 @@ import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutl
 import { ConceptItem } from "./ConceptItem";
 import VerticalLinearStepper from "./VerticalLinearStepper";
 import { ModuloContext } from "@/app/lib/contexts/ModulosContext";
-import { ArrowDropDownCircleOutlined } from "@mui/icons-material";
 import { NoResults } from "./NoResults";
+import { PaginatorDots } from "./PaginatorDots";
 
 export default function AccordionExpandIcon({ seccion }) {
   const { modulo } = React.useContext(ModuloContext);
   const { mNombre, mResumen } = modulo;
   const [resultSearch, setResultSearch] = React.useState();
 
+  //Cantidad de puntos por pintar
+  let countDots = (seccion.acciones.length / 5).toFixed(0);
   //Mostrar en grupos de 5 los contenidos
   const [leftValue, setLeftValue] = React.useState(0);
   const [rightValue, setRightValue] = React.useState(5);
@@ -128,11 +130,11 @@ export default function AccordionExpandIcon({ seccion }) {
           {
             //Asegurandome que el existan mas de 5 contenidos para mostrar el boton de paginacion quintuple
             showPaginButton && seccion.acciones.length > 5 && (
-              <Tooltip title="Siguiente">
-                <IconButton onClick={handlePaging}>
-                  <ArrowForwardIosOutlinedIcon />
-                </IconButton>
-              </Tooltip>
+              <PaginatorDots
+                handlePaging={handlePaging}
+                dots={countDots}
+                showNext={showPaginButton}
+              />
             )
           }
         </AccordionDetails>
