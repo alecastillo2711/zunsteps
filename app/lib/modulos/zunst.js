@@ -5,55 +5,88 @@ export const zunst = {
   mSecciones: [
     {
       id: 1,
-      sNombre: "Configuración",
+      sNombre: "Nomencladores",
       acciones: [
         {
-          id: 1,
-          aNombre: "Enlaces Empresa / Moneda",
-          aResumen: `Este módulo permite definir la empresa que utilizará el sistema y vincularla con la moneda oficial de operación. Sirve para:
-
-Establecer la identidad institucional dentro del sistema ZUNst.
-
-Configurar la moneda base en la que se registrarán los valores contables.
-
-Evitar errores en cálculos, reportes y comprobantes contables por falta de configuración inicial.
-
-Asegurar que todas las operaciones se realicen bajo un contexto contable coherente.`,
+          id: 21,
+          aNombre: "Configuración de Parámetros Generales",
+          aResumen:
+            "Define el comportamiento base del sistema ZUNstock para productos, almacenes, documentos y usuarios.",
           pasos: [
             {
-              label: "Acceder al módulo Enlaces Empresa / Moneda",
+              label: "Acceder al módulo de Parámetros Generales",
               description:
-                "Desde el menú Parámetros Generales, selecciona la opción Enlaces Empresa / Moneda.",
+                "Desde el menú principal, ir a Configuración > Parámetros Generales.",
             },
             {
-              label: "Seleccionar la empresa",
+              label: "Revisar cada grupo de parámetros",
               description:
-                "Elige la empresa o entidad que utilizará el sistema. Verifica que el nombre y código sean correctos.",
+                "Explora las secciones de productos, almacén, documentos, usuarios e integración.",
             },
             {
-              label: "Definir la moneda oficial",
+              label: "Modificar según políticas institucionales",
               description:
-                "Selecciona la moneda en la que se registrarán los valores contables. Esta será la base para todas las operaciones.",
+                "Activa o desactiva opciones según las reglas operativas de tu entidad.",
             },
             {
-              label: "Guardar la configuración",
+              label: "Guardar y validar",
               description:
-                "Haz clic en Aceptar para registrar los enlaces. El sistema aplicará esta configuración a todos los módulos.",
+                "Haz clic en Guardar. El sistema aplicará los cambios en todos los módulos afectados.",
             },
           ],
         },
         {
-          id: 2,
+          id: 22,
+          aNombre: "Enlace Empresa/Moneda",
+          aResumen: `Este módulo permite vincular cada empresa registrada en el sistema con una o más monedas de operación, asegurando que los movimientos de inventario se registren con la unidad monetaria correcta. Sirve para:
+
+Establecer la moneda oficial de trabajo para cada empresa o unidad institucional.
+
+Evitar errores en la valorización de productos por uso de monedas no autorizadas.
+
+Facilitar la conversión de valores y la generación de reportes financieros por empresa.
+
+Permitir operaciones multimoneda en instituciones que manejan inventario en diferentes divisas.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Enlace Empresa/Moneda",
+              description:
+                "Desde el menú Parámetros Generales, selecciona la opción Enlace Empresa/Moneda.",
+            },
+            {
+              label: "Seleccionar la empresa",
+              description:
+                "Busca y selecciona la empresa registrada en el sistema que deseas vincular con una moneda.",
+            },
+            {
+              label: "Asignar moneda de operación",
+              description:
+                "Selecciona la moneda principal (ej. CUP, USD, EUR) que utilizará la empresa para sus operaciones de inventario.",
+            },
+            {
+              label: "Definir moneda secundaria (si aplica)",
+              description:
+                "Si la empresa opera en más de una moneda, puedes asignar una moneda secundaria para operaciones específicas.",
+            },
+            {
+              label: "Guardar la configuración",
+              description:
+                "Haz clic en Aceptar para registrar el enlace. El sistema aplicará esta moneda en todos los movimientos y reportes vinculados a la empresa.",
+            },
+          ],
+        },
+        {
+          id: 23,
           aNombre: "Cuentas Especiales",
-          aResumen: `Este módulo permite definir cuentas contables específicas que serán utilizadas por el sistema para operaciones automáticas, como ajustes, retiros, depreciación y revalorización. Sirve para:
+          aResumen: `Este módulo permite configurar las cuentas contables que se utilizarán automáticamente en operaciones específicas del sistema, como ajustes, pérdidas, sobrantes o consumos. Sirve para:
 
-Evitar que el usuario tenga que seleccionar cuentas manualmente en cada operación.
+Asegurar que cada operación técnica tenga su correspondencia contable definida.
 
-Asegurar que los comprobantes contables se generen con las cuentas correctas.
+Evitar errores por falta de codificación contable en movimientos críticos.
 
-Facilitar la integración con el sistema contable institucional.
+Facilitar la generación automática de comprobantes contables desde los módulos de inventario.
 
-Prevenir errores contables por omisión o selección incorrecta de cuentas.`,
+Permitir trazabilidad financiera de operaciones no estándar como ajustes por auditoría o regularización.`,
           pasos: [
             {
               label: "Acceder al módulo Cuentas Especiales",
@@ -61,109 +94,69 @@ Prevenir errores contables por omisión o selección incorrecta de cuentas.`,
                 "Desde el menú Parámetros Generales, selecciona la opción Cuentas Especiales.",
             },
             {
-              label: "Definir cuentas por tipo de operación",
+              label: "Seleccionar tipo de operación",
               description:
-                "Asigna las cuentas contables para cada tipo de operación: depreciación, retiro, ajuste de importe, revalorización, etc.",
+                "Elige la operación que deseas vincular (ej. Ajuste por pérdida, Consumo interno, Regularización por sobrante).",
             },
             {
-              label: "Verificar la estructura contable",
+              label: "Asignar cuenta contable",
               description:
-                "Confirma que las cuentas seleccionadas pertenecen al plan contable vigente y están activas.",
-            },
-            {
-              label: "Guardar la configuración",
-              description:
-                "Haz clic en Aceptar para registrar las cuentas especiales. El sistema las usará automáticamente en los módulos correspondientes.",
-            },
-          ],
-        },
-        {
-          id: 3,
-          aNombre: "Configuración de Monedas",
-          aResumen: `Este módulo permite definir las monedas que serán utilizadas en el sistema, incluyendo su código, nombre, símbolo y tipo de cambio. Sirve para:
-
-Establecer las monedas oficiales y secundarias que se usarán en operaciones contables y técnicas.
-
-Configurar el tipo de cambio para operaciones en moneda extranjera.
-
-Evitar errores en cálculos, reportes y comprobantes por falta de definición monetaria.
-
-Facilitar la integración con sistemas contables multimoneda y reportes financieros.`,
-          pasos: [
-            {
-              label: "Acceder al módulo Configuración de Monedas",
-              description:
-                "Desde el menú Parámetros Generales, selecciona la opción Monedas para visualizar y gestionar las monedas disponibles.",
-            },
-            {
-              label: "Registrar nueva moneda",
-              description:
-                "Haz clic en Agregar. Ingresa el código de la moneda, nombre, símbolo y tipo de cambio respecto a la moneda base.",
-            },
-            {
-              label: "Editar moneda existente",
-              description:
-                "Selecciona una moneda registrada y haz clic en Editar para modificar su tipo de cambio o datos descriptivos.",
-            },
-            {
-              label: "Definir moneda base",
-              description:
-                "Marca la moneda principal que se usará como referencia contable. Esta será la base para todos los cálculos.",
+                "Selecciona la cuenta contable correspondiente desde el catálogo institucional. Puedes definir más de una si aplica.",
             },
             {
               label: "Guardar la configuración",
               description:
-                "Haz clic en Aceptar para registrar los cambios. El sistema aplicará esta configuración en todos los módulos contables.",
+                "Haz clic en Aceptar para registrar el enlace. El sistema aplicará estas cuentas automáticamente al generar comprobantes desde los módulos operativos.",
             },
           ],
         },
         {
-          id: 4,
-          aNombre: "Configuración de Unidades de Medida",
-          aResumen: `Este módulo permite definir las unidades de medida que se utilizarán para describir las cantidades físicas de los activos fijos tangibles (AFT). Sirve para:
+          id: 24,
+          aNombre: "Unidades de Medida",
+          aResumen: `Este módulo permite registrar y gestionar las unidades de medida utilizadas para cuantificar productos en el sistema, como unidades, kilogramos, litros, metros, etc. Sirve para:
 
-Establecer unidades estándar como unidad, metro, litro, kilogramo, etc., según el tipo de bien.
+Establecer criterios uniformes de medición en ingresos, salidas y ajustes de inventario.
 
-Evitar ambigüedades en la descripción técnica de los medios.
+Evitar errores por uso de unidades inconsistentes o no definidas.
 
-Asegurar consistencia en reportes, fichas técnicas y operaciones de inventario.
+Facilitar el control de stock por tipo de producto y su presentación física.
 
-Facilitar la clasificación y valorización de activos físicos.`,
+Permitir reportes precisos por cantidad, volumen o peso según la unidad registrada.`,
           pasos: [
             {
               label: "Acceder al módulo Unidades de Medida",
               description:
-                "Desde el menú Parámetros Generales, selecciona la opción Unidades de Medida para visualizar y gestionar las unidades disponibles.",
+                "Desde el menú Parámetros Generales, selecciona la opción Unidades de Medida.",
             },
             {
               label: "Agregar nueva unidad",
               description:
-                "Haz clic en Agregar. Ingresa el nombre de la unidad (ej. Unidad, Metro, Litro), su abreviatura y descripción si aplica.",
+                "Haz clic en Agregar. Ingresa el nombre de la unidad (ej. Unidad, Kg, Litro), su abreviatura y descripción si aplica.",
             },
             {
-              label: "Editar o eliminar unidades existentes",
+              label: "Definir tipo de unidad",
               description:
-                "Selecciona una unidad registrada y haz clic en Editar para modificarla o en Eliminar si ya no se utiliza.",
+                "Selecciona si la unidad corresponde a cantidad, peso, volumen, longitud u otro tipo según el producto.",
             },
             {
               label: "Guardar la configuración",
               description:
-                "Haz clic en Aceptar para registrar los cambios. Las unidades estarán disponibles en los formularios de carga y modificación de medios.",
+                "Haz clic en Aceptar para registrar la unidad. Estará disponible en la ficha de productos y en los módulos operativos.",
             },
           ],
         },
         {
-          id: 5,
+          id: 25,
           aNombre: "Especialidad de Proveedores",
-          aResumen: `Este módulo permite definir y clasificar las especialidades de los proveedores registrados en el sistema, según el tipo de bienes o servicios que ofrecen. Sirve para:
+          aResumen: `Este módulo permite registrar y gestionar las especialidades técnicas o comerciales que se asignan a los proveedores institucionales. Sirve para:
 
-Organizar los proveedores por categoría funcional (ej. tecnología, mobiliario, transporte, construcción).
+Clasificar a los proveedores según el tipo de producto, insumo o servicio que ofrecen.
 
-Facilitar la selección de proveedores adecuados en procesos de adquisición o mantenimiento.
+Facilitar la selección de proveedores adecuados en procesos de ingreso, reposición o ajuste de inventario.
 
-Evitar errores al asignar proveedores a medios o servicios que no corresponden a su especialidad.
+Evitar errores al vincular proveedores con productos fuera de su especialidad.
 
-Mejorar la trazabilidad y análisis de compras por tipo de proveedor.`,
+Mejorar la trazabilidad de compras y servicios por categoría técnica.`,
           pasos: [
             {
               label: "Acceder al módulo Especialidad de Proveedores",
@@ -173,7 +166,7 @@ Mejorar la trazabilidad y análisis de compras por tipo de proveedor.`,
             {
               label: "Agregar nueva especialidad",
               description:
-                "Haz clic en Agregar. Ingresa el nombre de la especialidad (ej. Equipos Informáticos, Vehículos, Mantenimiento Civil) y una descripción si aplica.",
+                "Haz clic en Agregar. Ingresa el nombre de la especialidad (ej. Material de Oficina, Equipos Médicos, Repuestos Industriales) y una descripción si aplica.",
             },
             {
               label: "Editar o eliminar especialidades existentes",
@@ -183,32 +176,37 @@ Mejorar la trazabilidad y análisis de compras por tipo de proveedor.`,
             {
               label: "Guardar la configuración",
               description:
-                "Haz clic en Aceptar para registrar los cambios. Las especialidades estarán disponibles al registrar o modificar proveedores.",
+                "Haz clic en Aceptar para registrar los cambios. Las especialidades estarán disponibles al registrar o editar proveedores.",
             },
           ],
         },
         {
-          id: 6,
+          id: 26,
           aNombre: "Clientes",
-          aResumen: `Este módulo permite registrar y gestionar los datos de los clientes institucionales que reciben bienes, servicios o atención vinculada a los activos fijos tangibles (AFT). Sirve para:
+          aResumen: `Este módulo permite registrar clientes institucionales o externos que reciben productos desde el almacén, ya sea por consumo interno, distribución o entrega. Sirve para:
 
-Identificar claramente a las entidades o personas que interactúan con el sistema como receptores.
+Identificar claramente a las áreas, dependencias o terceros que reciben productos.
 
-Facilitar la trazabilidad de entregas, asignaciones o servicios vinculados a medios.
+Evitar errores en la asignación de salidas por falta de identificación del receptor.
 
-Evitar errores en la asignación de activos o en la generación de comprobantes técnicos.
+Facilitar la trazabilidad de entregas por cliente, sede o unidad organizativa.
 
-Organizar la información de clientes por tipo, ubicación, contacto y especialidad.`,
+Permitir reportes por consumo o distribución según cliente registrado.`,
           pasos: [
             {
               label: "Acceder al módulo Clientes",
               description:
-                "Desde el menú Parámetros Generales, selecciona la opción Clientes para visualizar y gestionar los registros existentes.",
+                "Desde el menú Parámetros Generales, selecciona la opción Clientes para visualizar los registros existentes.",
             },
             {
               label: "Agregar nuevo cliente",
               description:
-                "Haz clic en Agregar. Ingresa los datos del cliente: nombre, tipo (institucional, externo), dirección, contacto y especialidad si aplica.",
+                "Haz clic en Agregar. Ingresa el nombre del cliente, código institucional, tipo (interno o externo), dirección y datos de contacto si aplica.",
+            },
+            {
+              label: "Asignar unidad organizativa o sede",
+              description:
+                "Si el cliente pertenece a la institución, vincúlalo con su unidad organizativa o sede para facilitar la trazabilidad.",
             },
             {
               label: "Editar o eliminar clientes existentes",
@@ -218,32 +216,37 @@ Organizar la información de clientes por tipo, ubicación, contacto y especiali
             {
               label: "Guardar la configuración",
               description:
-                "Haz clic en Aceptar para registrar los cambios. Los clientes estarán disponibles en los módulos de asignación, entrega o atención técnica.",
+                "Haz clic en Aceptar para registrar los cambios. Los clientes estarán disponibles en los módulos de salida, asignación y distribución de productos.",
             },
           ],
         },
         {
-          id: 7,
+          id: 27,
           aNombre: "Conceptos de Gastos",
-          aResumen: `Este módulo permite definir y clasificar los conceptos de gasto que se utilizarán en las operaciones patrimoniales, como adquisiciones, mantenimientos, retiros o revalorizaciones. Sirve para:
+          aResumen: `Este módulo permite registrar y gestionar los conceptos que justifican la salida de productos del almacén, como consumo interno, distribución, reposición o baja. Sirve para:
 
-Establecer categorías contables y presupuestarias que se aplican a cada tipo de operación.
+Clasificar las salidas de productos según su finalidad operativa o administrativa.
 
-Evitar errores al registrar comprobantes contables por falta de codificación de gasto.
+Evitar ambigüedades al registrar movimientos sin causa definida.
 
-Facilitar la integración con sistemas presupuestarios y reportes de ejecución financiera.
+Facilitar reportes por tipo de gasto, área usuaria o frecuencia de consumo.
 
-Organizar los gastos por tipo, naturaleza y aplicación institucional.`,
+Permitir trazabilidad institucional sobre cómo y por qué se utilizan los productos almacenados.`,
           pasos: [
             {
               label: "Acceder al módulo Conceptos de Gastos",
               description:
-                "Desde el menú Parámetros Generales, selecciona la opción Conceptos de Gastos para visualizar y gestionar los registros existentes.",
+                "Desde el menú Parámetros Generales, selecciona la opción Conceptos de Gastos.",
             },
             {
-              label: "Agregar nuevo concepto de gasto",
+              label: "Agregar nuevo concepto",
               description:
-                "Haz clic en Agregar. Ingresa el código, nombre, tipo de gasto (corriente, capitalizable, mantenimiento, etc.) y descripción si aplica.",
+                "Haz clic en Agregar. Ingresa el nombre del concepto (ej. Consumo Interno, Entrega a Cliente, Reposición Técnica) y una descripción si aplica.",
+            },
+            {
+              label: "Definir tipo de salida",
+              description:
+                "Indica si el concepto corresponde a una salida operativa, administrativa, técnica o por baja.",
             },
             {
               label: "Editar o eliminar conceptos existentes",
@@ -253,22 +256,22 @@ Organizar los gastos por tipo, naturaleza y aplicación institucional.`,
             {
               label: "Guardar la configuración",
               description:
-                "Haz clic en Aceptar para registrar los cambios. Los conceptos estarán disponibles en los módulos de operación contable y técnica.",
+                "Haz clic en Aceptar para registrar los cambios. Los conceptos estarán disponibles en los módulos de salida y distribución de productos.",
             },
           ],
         },
         {
-          id: 10,
+          id: 28,
           aNombre: "Temporadas",
-          aResumen: `Este módulo permite definir los períodos contables o de gestión patrimonial que segmentan el uso del sistema por año o ciclo. Sirve para:
+          aResumen: `Este módulo permite definir los períodos operativos en los que se registrarán los movimientos de inventario. Sirve para:
 
-Establecer el marco temporal en el que se registrarán las operaciones patrimoniales.
+Delimitar el uso del sistema por año, trimestre u otro ciclo definido por la institución.
 
-Evitar que se realicen operaciones fuera de temporada o en períodos no habilitados.
+Evitar registros fuera de temporada o en períodos cerrados.
 
-Facilitar el cierre contable, la depreciación y la trazabilidad por año.
+Facilitar el control, la auditoría y los reportes por período activo.
 
-Organizar los reportes y análisis por temporada activa.`,
+Permitir la apertura y cierre de temporadas según la política institucional.`,
           pasos: [
             {
               label: "Acceder al módulo Temporadas",
@@ -278,12 +281,12 @@ Organizar los reportes y análisis por temporada activa.`,
             {
               label: "Agregar nueva temporada",
               description:
-                "Haz clic en Agregar. Ingresa el nombre de la temporada (ej. 2025), la fecha de inicio y la fecha de cierre.",
+                "Haz clic en Agregar. Ingresa el nombre del período (ej. 2025), la fecha de inicio y la fecha de cierre.",
             },
             {
               label: "Activar temporada",
               description:
-                "Marca la temporada como activa para permitir operaciones dentro de ese período.",
+                "Marca la temporada como activa para permitir operaciones dentro de ese rango de fechas.",
             },
             {
               label: "Guardar la configuración",
@@ -293,17 +296,17 @@ Organizar los reportes y análisis por temporada activa.`,
           ],
         },
         {
-          id: 11,
+          id: 29,
           aNombre: "Enlaces de Temporadas",
-          aResumen: `Este módulo permite vincular cada temporada con parámetros clave como cuentas contables, monedas, submayores y responsables, asegurando que las operaciones se registren correctamente según el período activo. Sirve para:
+          aResumen: `Este módulo permite vincular cada temporada con parámetros clave como almacenes, monedas, cuentas contables y responsables. Sirve para:
 
-Evitar errores contables por falta de asociación entre temporada y parámetros operativos.
+Asegurar que cada operación dentro de una temporada utilice los parámetros correctos.
 
-Automatizar la selección de cuentas, monedas y responsables según el período vigente.
+Evitar errores por falta de asociación entre temporada y configuración operativa.
 
-Facilitar la trazabilidad de operaciones por temporada y su integración contable.
+Facilitar la trazabilidad contable y técnica por período.
 
-Asegurar que cada temporada tenga sus propios enlaces funcionales definidos.`,
+Permitir que cada temporada tenga sus propios enlaces funcionales definidos.`,
           pasos: [
             {
               label: "Acceder al módulo Enlaces de Temporadas",
@@ -313,12 +316,12 @@ Asegurar que cada temporada tenga sus propios enlaces funcionales definidos.`,
             {
               label: "Seleccionar temporada activa",
               description:
-                "Elige la temporada que deseas vincular con parámetros contables y operativos.",
+                "Elige la temporada que deseas vincular con parámetros operativos.",
             },
             {
               label: "Definir enlaces funcionales",
               description:
-                "Asocia la temporada con cuentas contables, monedas, submayores, responsables y otros parámetros necesarios.",
+                "Asocia la temporada con almacenes, monedas, cuentas contables, responsables y otros parámetros necesarios.",
             },
             {
               label: "Guardar la configuración",
@@ -328,22 +331,62 @@ Asegurar que cada temporada tenga sus propios enlaces funcionales definidos.`,
           ],
         },
         {
-          id: 13,
-          aNombre: "Impuestos",
-          aResumen: `Este módulo permite registrar y gestionar los tipos de impuestos que se aplican a los bienes patrimoniales, como el IVA u otros tributos institucionales. Sirve para:
+          id: 30,
+          aNombre: "Clasificación",
+          aResumen: `Este módulo permite definir las categorías o grupos funcionales en los que se organizan los productos del almacén. Sirve para:
 
-Definir los porcentajes de impuestos aplicables en adquisiciones, revalorizaciones o servicios vinculados a activos.
+Facilitar la búsqueda, el ingreso y la salida de productos por tipo o familia.
 
-Evitar errores en la valorización contable por omisión o cálculo incorrecto de tributos.
+Evitar errores al registrar productos sin categoría definida.
 
-Facilitar la generación automática de comprobantes con impuestos incluidos.
+Permitir reportes por grupo funcional, tipo de uso o área técnica.
 
-Asegurar coherencia entre la ficha técnica del medio y su impacto fiscal.`,
+Mejorar la trazabilidad operativa y administrativa del inventario.`,
           pasos: [
             {
-              label: "Acceder al módulo Impuestos",
+              label: "Acceder al módulo Clasificación",
               description:
-                "Desde el menú Parámetros Generales, selecciona la opción Impuestos para visualizar y gestionar los tributos registrados.",
+                "Desde el menú Parámetros Generales, selecciona la opción Clasificación.",
+            },
+            {
+              label: "Agregar nueva clasificación",
+              description:
+                "Haz clic en Agregar. Ingresa el nombre de la clasificación (ej. Material de Oficina, Insumos Médicos, Herramientas) y una descripción si aplica.",
+            },
+            {
+              label: "Definir tipo o familia",
+              description:
+                "Puedes establecer si la clasificación corresponde a una familia técnica, tipo de producto o categoría funcional.",
+            },
+            {
+              label: "Editar o eliminar clasificaciones existentes",
+              description:
+                "Selecciona una clasificación registrada y haz clic en Editar para modificarla o en Eliminar si ya no se utiliza.",
+            },
+            {
+              label: "Guardar la configuración",
+              description:
+                "Haz clic en Aceptar para registrar los cambios. Las clasificaciones estarán disponibles al registrar productos y en los reportes operativos.",
+            },
+          ],
+        },
+        {
+          id: 31,
+          aNombre: "Impuesto",
+          aResumen: `Este módulo permite registrar y gestionar los impuestos aplicables a productos o movimientos dentro del sistema ZUNstock. Sirve para:
+
+Definir tasas impositivas como IVA, aranceles u otros cargos según normativa vigente.
+
+Evitar errores en la valorización de productos por omisión de impuestos.
+
+Facilitar la generación de reportes financieros con valores netos y brutos.
+
+Permitir que los comprobantes reflejen correctamente el impacto tributario de cada operación.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Impuesto",
+              description:
+                "Desde el menú Parámetros Generales, selecciona la opción Impuesto.",
             },
             {
               label: "Agregar nuevo impuesto",
@@ -353,7 +396,7 @@ Asegurar coherencia entre la ficha técnica del medio y su impacto fiscal.`,
             {
               label: "Definir aplicación del impuesto",
               description:
-                "Indica si el impuesto se aplica en adquisiciones, servicios, revalorizaciones u otras operaciones patrimoniales.",
+                "Indica si el impuesto se aplica por producto, por operación (ej. ingreso, salida) o por proveedor.",
             },
             {
               label: "Editar o eliminar impuestos existentes",
@@ -363,159 +406,77 @@ Asegurar coherencia entre la ficha técnica del medio y su impacto fiscal.`,
             {
               label: "Guardar la configuración",
               description:
-                "Haz clic en Aceptar para registrar los cambios. El sistema aplicará estos impuestos automáticamente en los módulos operativos.",
+                "Haz clic en Aceptar para registrar los cambios. El sistema aplicará el impuesto en los módulos operativos según la configuración definida.",
             },
           ],
         },
-      ],
-    },
-    {
-      id: 2,
-      sNombre: "Almacén y Parámetros",
-      acciones: [
         {
-          id: 14,
-          aNombre: "Crear Nuevos Almacenes",
-          aResumen: `Este módulo permite registrar nuevos almacenes físicos dentro del sistema, donde se ubicarán y gestionarán los activos fijos tangibles (AFT). Sirve para:
+          id: 32,
+          aNombre: "Almacén y Parámetros",
+          aResumen: `Este módulo permite registrar los almacenes físicos donde se gestionan los productos, así como definir parámetros operativos específicos para cada uno. Sirve para:
 
-Establecer depósitos institucionales donde se almacenan, asignan o trasladan los bienes patrimoniales.
+Establecer la estructura física de almacenamiento por sede, zona o tipo de producto.
 
-Evitar confusión en la ubicación física de los medios registrados.
+Evitar errores en la asignación de productos a almacenes no configurados.
 
-Facilitar la trazabilidad de activos por almacén, sede o dependencia.
+Permitir que cada almacén tenga sus propias reglas de operación, responsables y ubicaciones.
 
-Permitir operaciones como ingreso, transferencia, retiro y asignación desde ubicaciones definidas.`,
+Facilitar la trazabilidad por almacén en ingresos, salidas, ajustes y transferencias.`,
           pasos: [
             {
-              label: "Acceder al módulo Almacenes",
+              label: "Acceder al módulo Almacén y Parámetros",
               description:
-                "Desde el menú Parámetros de Almacén, selecciona la opción Almacenes para visualizar los registros existentes.",
+                "Desde el menú principal, selecciona la opción Almacén > Almacén y Parámetros.",
             },
             {
               label: "Agregar nuevo almacén",
               description:
-                "Haz clic en Agregar. Ingresa el nombre del almacén, código identificador, ubicación física y descripción si aplica.",
+                "Haz clic en Agregar. Ingresa el nombre del almacén, código, sede, tipo (central, técnico, de consumo) y descripción.",
             },
             {
-              label: "Definir tipo y responsable",
+              label: "Definir parámetros operativos",
               description:
-                "Selecciona el tipo de almacén (central, auxiliar, temporal) y asigna un responsable institucional.",
+                "Configura si el almacén permite transferencias, si requiere ubicación obligatoria, si tiene responsable asignado, y otras reglas específicas.",
             },
             {
-              label: "Guardar la configuración",
+              label: "Asignar responsable del almacén",
               description:
-                "Haz clic en Aceptar para registrar el nuevo almacén. Estará disponible en los módulos operativos de ingreso, transferencia y asignación de medios.",
-            },
-          ],
-        },
-        {
-          id: 15,
-          aNombre: "Modificar o Eliminar Almacenes",
-          aResumen: `Este módulo permite editar los datos de almacenes registrados o eliminarlos si ya no se utilizan. Sirve para:
-
-Actualizar información como nombre, ubicación o responsable del almacén.
-
-Eliminar depósitos obsoletos o mal registrados que no tienen medios asignados.
-
-Evitar confusión en la trazabilidad física de los activos.
-
-Mantener una estructura de almacenes limpia y operativa.`,
-          pasos: [
-            {
-              label: "Acceder al módulo Almacenes",
-              description:
-                "Desde el menú Parámetros de Almacén, selecciona la opción Almacenes para visualizar los registros existentes.",
-            },
-            {
-              label: "Seleccionar el almacén a modificar o eliminar",
-              description:
-                "Ubica el almacén en la lista y haz clic sobre él para acceder a sus datos.",
-            },
-            {
-              label: "Modificar datos del almacén",
-              description:
-                "Haz clic en Editar. Actualiza el nombre, ubicación, tipo o responsable según corresponda.",
-            },
-            {
-              label: "Eliminar almacén",
-              description:
-                "Haz clic en Eliminar. El sistema verificará que no existan medios asignados antes de permitir la eliminación.",
-            },
-            {
-              label: "Guardar los cambios",
-              description:
-                "Haz clic en Aceptar para registrar las modificaciones o confirmar la eliminación. El sistema actualizará la estructura de almacenes.",
-            },
-          ],
-        },
-        {
-          id: 17,
-          aNombre: "Parámetros",
-          aResumen: `Este módulo permite configurar valores técnicos y operativos que afectan el comportamiento general del sistema, como la numeración de comprobantes, el control de fechas, y la validación de operaciones. Sirve para:
-
-Establecer reglas institucionales sobre cómo se comportan los módulos técnicos y contables.
-
-Evitar errores por falta de control en fechas, numeraciones o validaciones automáticas.
-
-Asegurar coherencia entre los procesos operativos y las políticas internas de gestión patrimonial.
-
-Adaptar el sistema a las necesidades específicas de cada entidad usuaria.`,
-          pasos: [
-            {
-              label: "Acceder al módulo Parámetros",
-              description:
-                "Desde el menú de administración técnica, selecciona la opción Parámetros para visualizar las configuraciones disponibles.",
-            },
-            {
-              label: "Revisar las secciones disponibles",
-              description:
-                "El módulo está dividido en secciones como: numeración de comprobantes, control de fechas, validaciones, y comportamiento de módulos.",
-            },
-            {
-              label: "Modificar valores según necesidad institucional",
-              description:
-                "Edita los campos según las políticas de tu entidad: por ejemplo, permitir operaciones retroactivas, activar validación de responsables, o definir el formato de numeración.",
+                "Selecciona el usuario responsable de las operaciones en ese almacén. Esto permite trazabilidad y control.",
             },
             {
               label: "Guardar la configuración",
               description:
-                "Haz clic en Aceptar para registrar los cambios. El sistema aplicará estos parámetros en todos los módulos afectados.",
+                "Haz clic en Aceptar para registrar el almacén y sus parámetros. Estará disponible en todos los módulos operativos.",
             },
           ],
         },
-      ],
-    },
-    {
-      id: 3,
-      sNombre: "Proveedores",
-      acciones: [
         {
-          id: 18,
+          id: 33,
           aNombre: "Proveedores y Especialidades",
-          aResumen: `Este módulo permite registrar proveedores institucionales y clasificarlos según su especialidad técnica o comercial. Sirve para:
+          aResumen: `Este módulo permite registrar proveedores institucionales y vincularlos con una o más especialidades técnicas o comerciales. Sirve para:
 
-Organizar los proveedores por tipo de bien o servicio que ofrecen (ej. tecnología, mobiliario, transporte).
+Organizar los proveedores por tipo de producto o servicio que ofrecen.
 
-Facilitar la selección de proveedores adecuados en procesos de adquisición, mantenimiento o retiro.
+Facilitar la selección de proveedores adecuados en procesos de ingreso, reposición o ajuste.
 
-Evitar errores al asignar proveedores a medios que no corresponden a su especialidad.
+Evitar errores al asignar proveedores a productos fuera de su especialidad.
 
-Mejorar la trazabilidad de compras, servicios y contratos por tipo de proveedor.`,
+Mejorar la trazabilidad de compras y servicios por categoría técnica.`,
           pasos: [
             {
               label: "Acceder al módulo Proveedores",
               description:
-                "Desde el menú Parámetros Generales, selecciona la opción Proveedores para visualizar los registros existentes.",
+                "Desde el menú Parámetros Generales, selecciona la opción Proveedores y Especialidades.",
             },
             {
               label: "Agregar nuevo proveedor",
               description:
-                "Haz clic en Agregar. Ingresa los datos del proveedor: nombre, RUC o identificación, dirección, contacto y especialidad.",
+                "Haz clic en Agregar. Ingresa los datos del proveedor: nombre, identificación fiscal, dirección, contacto y estado.",
             },
             {
-              label: "Seleccionar especialidad del proveedor",
+              label: "Asignar especialidades",
               description:
-                "Elige una especialidad previamente registrada (ej. Equipos Informáticos, Mantenimiento Civil). Si no existe, agrégala desde el módulo Especialidad de Proveedores.",
+                "Selecciona una o más especialidades previamente registradas que describan el tipo de productos o servicios que ofrece el proveedor.",
             },
             {
               label: "Editar o eliminar proveedores existentes",
@@ -525,11 +486,872 @@ Mejorar la trazabilidad de compras, servicios y contratos por tipo de proveedor.
             {
               label: "Guardar la configuración",
               description:
-                "Haz clic en Aceptar para registrar los cambios. Los proveedores estarán disponibles en los módulos de ingreso, mantenimiento y retiro de medios.",
+                "Haz clic en Aceptar para registrar los cambios. Los proveedores estarán disponibles en los módulos de ingreso, ajuste y reposición de productos.",
+            },
+          ],
+        },
+        {
+          id: 34,
+          aNombre: "Ubicación de Productos",
+          aResumen: `Este módulo permite registrar y asignar ubicaciones físicas dentro del almacén para cada producto, como zonas, estantes, niveles o contenedores. Sirve para:
+
+Optimizar la organización interna del almacén y el proceso de búsqueda de productos.
+
+Evitar errores en el picking, la preparación de pedidos y los movimientos internos.
+
+Facilitar la trazabilidad física del inventario por ubicación específica.
+
+Permitir reportes por zona, estante o nivel dentro de cada almacén.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Ubicación de Productos",
+              description:
+                "Desde el menú Almacén, selecciona la opción Ubicación de Productos.",
+            },
+            {
+              label: "Seleccionar el producto",
+              description:
+                "Busca el producto por código o nombre. Haz clic sobre él para abrir su ficha de ubicación.",
+            },
+            {
+              label: "Asignar ubicación física",
+              description:
+                "Selecciona el almacén correspondiente y define la ubicación específica (ej. Zona A, Estante 3, Nivel 2). Puedes usar códigos estructurados o etiquetas personalizadas.",
+            },
+            {
+              label: "Guardar la asignación",
+              description:
+                "Haz clic en Aceptar para registrar la ubicación. El sistema actualizará los documentos de movimiento y los reportes de inventario.",
+            },
+          ],
+        },
+        {
+          id: 35,
+          aNombre: "Grupo, Familia y Subfamilia",
+          aResumen: `Este módulo permite definir una estructura jerárquica para clasificar los productos del inventario en tres niveles: grupo, familia y subfamilia. Sirve para:
+
+Organizar los productos por categorías técnicas, funcionales o administrativas.
+
+Facilitar la búsqueda, el ingreso y la salida de productos por nivel de clasificación.
+
+Evitar errores al registrar productos sin estructura definida.
+
+Permitir reportes detallados por grupo, familia o subfamilia según el tipo de producto.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Grupo, Familia y Subfamilia",
+              description:
+                "Desde el menú Parámetros Generales, selecciona la opción Grupo, Familia y Subfamilia.",
+            },
+            {
+              label: "Agregar nuevo grupo",
+              description:
+                "Haz clic en Agregar Grupo. Ingresa el nombre del grupo (ej. Medicamentos, Material de Oficina, Herramientas) y una descripción si aplica.",
+            },
+            {
+              label: "Agregar familia dentro del grupo",
+              description:
+                "Selecciona el grupo correspondiente y haz clic en Agregar Familia. Ingresa el nombre de la familia (ej. Antibióticos, Papelería, Manuales) y su descripción.",
+            },
+            {
+              label: "Agregar subfamilia dentro de la familia",
+              description:
+                "Selecciona la familia correspondiente y haz clic en Agregar Subfamilia. Ingresa el nombre de la subfamilia (ej. Penicilinas, Cuadernos, Llaves) y su descripción.",
+            },
+            {
+              label: "Guardar la configuración",
+              description:
+                "Haz clic en Aceptar para registrar la estructura. Estará disponible al registrar productos y en los reportes operativos.",
+            },
+          ],
+        },
+        {
+          id: 36,
+          aNombre: "Secciones",
+          aResumen: `Este módulo permite registrar y gestionar las secciones internas del almacén, como áreas, zonas o bloques físicos donde se ubican productos. Sirve para:
+
+Organizar el almacén en unidades funcionales que faciliten la ubicación y el control de productos.
+
+Evitar errores en el registro de movimientos por falta de referencia física.
+
+Permitir reportes por sección, zona o área operativa.
+
+Mejorar la trazabilidad física del inventario y la eficiencia en el picking.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Secciones",
+              description:
+                "Desde el menú Almacén, selecciona la opción Secciones.",
+            },
+            {
+              label: "Agregar nueva sección",
+              description:
+                "Haz clic en Agregar. Ingresa el nombre de la sección (ej. Zona A, Área Técnica, Bloque 1), el código y una descripción si aplica.",
+            },
+            {
+              label: "Asignar almacén correspondiente",
+              description:
+                "Selecciona el almacén al que pertenece la sección. Esto permite vincular la estructura física correctamente.",
+            },
+            {
+              label: "Editar o eliminar secciones existentes",
+              description:
+                "Selecciona una sección registrada y haz clic en Editar para modificarla o en Eliminar si ya no se utiliza.",
+            },
+            {
+              label: "Guardar la configuración",
+              description:
+                "Haz clic en Aceptar para registrar la sección. Estará disponible al asignar ubicaciones físicas y en los reportes operativos.",
+            },
+          ],
+        },
+        {
+          id: 37,
+          aNombre: "Productos",
+          aResumen: `Este módulo permite registrar todos los productos que serán gestionados en el sistema ZUNstock, incluyendo insumos, bienes de consumo, herramientas, equipos y otros. Sirve para:
+
+Establecer la ficha técnica de cada producto con sus atributos clave.
+
+Evitar errores en el ingreso, salida o ajuste por falta de codificación o clasificación.
+
+Facilitar la trazabilidad por código, nombre, unidad de medida, clasificación y ubicación.
+
+Permitir reportes por tipo de producto, familia, proveedor o ubicación física.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Productos",
+              description:
+                "Desde el menú Almacén, selecciona la opción Productos.",
+            },
+            {
+              label: "Agregar nuevo producto",
+              description:
+                "Haz clic en Agregar. Ingresa el nombre, código, unidad de medida, clasificación (grupo, familia, subfamilia), tipo de control (por lote o serie), y descripción si aplica.",
+            },
+            {
+              label: "Asignar proveedor y especialidad",
+              description:
+                "Selecciona el proveedor habitual y su especialidad técnica para facilitar la trazabilidad.",
+            },
+            {
+              label: "Definir ubicación física",
+              description:
+                "Asocia el producto con su ubicación dentro del almacén (zona, estante, nivel) si aplica.",
+            },
+            {
+              label: "Guardar la configuración",
+              description:
+                "Haz clic en Aceptar para registrar el producto. Estará disponible en los módulos de ingreso, salida, ajuste y reportes.",
+            },
+          ],
+        },
+        {
+          id: 38,
+          aNombre: "Conversión de Unidad de Medida",
+          aResumen: `Este módulo permite registrar equivalencias entre diferentes unidades de medida para un mismo producto, como cajas a unidades, litros a mililitros, etc. Sirve para:
+
+Facilitar el ingreso, salida o ajuste de productos en distintas presentaciones.
+
+Evitar errores de cálculo al convertir entre unidades mayores y menores.
+
+Permitir que el sistema realice conversiones automáticas en movimientos y reportes.
+
+Mejorar la trazabilidad y valorización de productos con múltiples unidades asociadas.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Conversión de Unidad de Medida",
+              description:
+                "Desde el menú Parámetros Generales, selecciona la opción Conversión de Unidad de Medida.",
+            },
+            {
+              label: "Seleccionar producto o categoría",
+              description:
+                "Busca el producto o grupo de productos que requieren conversión entre unidades.",
+            },
+            {
+              label: "Definir unidad base y unidad secundaria",
+              description:
+                "Selecciona la unidad principal (ej. Caja) y la unidad secundaria (ej. Unidad).",
+            },
+            {
+              label: "Establecer factor de conversión",
+              description:
+                "Indica cuántas unidades secundarias equivalen a una unidad base (ej. 1 Caja = 12 Unidades).",
+            },
+            {
+              label: "Guardar la configuración",
+              description:
+                "Haz clic en Aceptar para registrar la conversión. El sistema aplicará esta equivalencia en los módulos operativos.",
+            },
+          ],
+        },
+        {
+          id: 39,
+          aNombre: "Cambio de Código",
+          aResumen: `Este módulo permite modificar el código principal de un producto registrado en el sistema, manteniendo su historial de movimientos, ubicación y trazabilidad. Sirve para:
+
+Actualizar códigos institucionales por cambios normativos, migraciones o correcciones técnicas.
+
+Evitar duplicidad de productos por errores en el registro inicial.
+
+Preservar el historial de ingresos, salidas y ajustes sin pérdida de información.
+
+Permitir que el nuevo código se aplique en todos los módulos operativos y reportes.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Cambio de Código",
+              description:
+                "Desde el menú Almacén, selecciona la opción Cambio de Código.",
+            },
+            {
+              label: "Buscar el producto por código actual",
+              description:
+                "Ingresa el código vigente del producto que deseas modificar. Verifica que el producto esté activo.",
+            },
+            {
+              label: "Ingresar nuevo código",
+              description:
+                "Escribe el nuevo código institucional que reemplazará al anterior. El sistema validará que no esté duplicado.",
+            },
+            {
+              label: "Confirmar el cambio",
+              description:
+                "Revisa los datos del producto y haz clic en Aceptar para aplicar el cambio. El sistema actualizará automáticamente todos los registros vinculados.",
+            },
+            {
+              label: "Verificar trazabilidad",
+              description:
+                "Consulta los reportes de movimientos y ubicación para confirmar que el nuevo código se refleja correctamente.",
+            },
+          ],
+        },
+        {
+          id: 40,
+          aNombre: "Actualización de Cambio de Código",
+          aResumen: `Este módulo permite revisar y actualizar los cambios de código realizados sobre productos registrados, asegurando que la trazabilidad y los vínculos operativos se mantengan intactos. Sirve para:
+
+Verificar que el nuevo código se haya aplicado correctamente en todos los módulos.
+
+Corregir errores en cambios de código que afecten la trazabilidad o la valorización.
+
+Revertir cambios si el nuevo código fue asignado incorrectamente.
+
+Auditar el historial de modificaciones para control técnico o contable.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Actualización de Cambio de Código",
+              description:
+                "Desde el menú Almacén, selecciona la opción Actualización de Cambio de Código.",
+            },
+            {
+              label: "Buscar el producto por código nuevo o anterior",
+              description:
+                "Ingresa el código actual o el código anterior para localizar el producto afectado.",
+            },
+            {
+              label: "Revisar historial de cambio",
+              description:
+                "Consulta la fecha, usuario responsable y motivo del cambio registrado. Verifica si el nuevo código está activo.",
+            },
+            {
+              label: "Actualizar o revertir el código",
+              description:
+                "Si el cambio fue incorrecto, puedes revertir al código anterior o asignar uno nuevo. El sistema validará duplicados y trazabilidad.",
+            },
+            {
+              label: "Guardar la actualización",
+              description:
+                "Haz clic en Aceptar para aplicar los cambios. El sistema actualizará automáticamente los registros vinculados.",
             },
           ],
         },
       ],
+    },
+    {
+      id: 2,
+      sNombre: "Enlaces(Nomencladores)",
+      acciones: [
+        {
+          id: 41,
+          aNombre: "Enlace Almacén con Grupo",
+          aResumen: `Este módulo permite vincular cada almacén con los grupos de productos que está autorizado a gestionar. Sirve para:
+
+Restringir el uso de productos a los almacenes correspondientes según su naturaleza o función.
+
+Evitar errores al ingresar, transferir o ajustar productos en almacenes no habilitados para ese grupo.
+
+Facilitar la trazabilidad operativa por almacén y grupo funcional.
+
+Permitir reportes y validaciones por almacén según los grupos asignados.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Enlace Almacén con Grupo",
+              description:
+                "Desde el menú Enlaces con Nomencladores, selecciona la opción Almacén con Grupo.",
+            },
+            {
+              label: "Seleccionar almacén",
+              description:
+                "Elige el almacén que deseas vincular con uno o más grupos de productos.",
+            },
+            {
+              label: "Asignar grupos permitidos",
+              description:
+                "Marca los grupos de productos que el almacén está autorizado a recibir, almacenar y despachar.",
+            },
+            {
+              label: "Guardar la configuración",
+              description:
+                "Haz clic en Aceptar para registrar los enlaces. El sistema validará estos vínculos en los módulos de ingreso, salida y ajuste.",
+            },
+          ],
+        },
+        {
+          id: 42,
+          aNombre: "Enlace Almacén con Subfamilia",
+          aResumen: `Este módulo permite vincular cada almacén con las subfamilias específicas de productos que puede gestionar. Sirve para:
+
+Restringir el uso de productos a nivel detallado dentro de cada almacén.
+
+Evitar errores al ingresar o mover productos que no corresponden a la subfamilia autorizada.
+
+Facilitar la trazabilidad operativa por almacén y subfamilia técnica.
+
+Permitir reportes y validaciones más precisas por almacén según las subfamilias asignadas.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Enlace Almacén con Subfamilia",
+              description:
+                "Desde el menú Enlaces con Nomencladores, selecciona la opción Almacén con Subfamilia.",
+            },
+            {
+              label: "Seleccionar almacén",
+              description:
+                "Elige el almacén que deseas vincular con una o más subfamilias de productos.",
+            },
+            {
+              label: "Asignar subfamilias permitidas",
+              description:
+                "Marca las subfamilias que el almacén está autorizado a recibir, almacenar y despachar.",
+            },
+            {
+              label: "Guardar la configuración",
+              description:
+                "Haz clic en Aceptar para registrar los enlaces. El sistema validará estos vínculos en los módulos de ingreso, salida y ajuste.",
+            },
+          ],
+        },
+        {
+          id: 43,
+          aNombre: "Enlace Almacén con Sección",
+          aResumen: `Este módulo permite vincular cada almacén con las secciones físicas que lo componen, como zonas, áreas o bloques. Sirve para:
+
+Establecer la estructura interna del almacén y facilitar la organización de productos.
+
+Evitar errores al asignar ubicaciones que no pertenecen al almacén seleccionado.
+
+Permitir reportes por sección dentro de cada almacén.
+
+Mejorar la trazabilidad física y operativa en los procesos de ingreso, salida y ajuste.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Enlace Almacén con Sección",
+              description:
+                "Desde el menú Enlaces con Nomencladores, selecciona la opción Almacén con Sección.",
+            },
+            {
+              label: "Seleccionar almacén",
+              description:
+                "Elige el almacén que deseas vincular con una o más secciones internas.",
+            },
+            {
+              label: "Asignar secciones disponibles",
+              description:
+                "Marca las secciones que pertenecen físicamente al almacén seleccionado. Puedes usar códigos o nombres descriptivos.",
+            },
+            {
+              label: "Guardar la configuración",
+              description:
+                "Haz clic en Aceptar para registrar los enlaces. El sistema validará esta estructura en los módulos de ubicación y movimientos internos.",
+            },
+          ],
+        },
+        {
+          id: 44,
+          aNombre: "Enlace Almacén con Proveedores",
+          aResumen: `Este módulo permite vincular cada almacén con los proveedores que están autorizados a abastecerlo, según su especialidad o ubicación. Sirve para:
+
+Restringir el ingreso de productos a proveedores válidos para cada almacén.
+
+Evitar errores al registrar compras o ingresos desde proveedores no autorizados.
+
+Facilitar la trazabilidad por almacén y proveedor en los reportes operativos.
+
+Permitir validaciones automáticas en los módulos de ingreso, reposición y ajuste.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Enlace Almacén con Proveedores",
+              description:
+                "Desde el menú Enlaces con Nomencladores, selecciona la opción Almacén con Proveedores.",
+            },
+            {
+              label: "Seleccionar almacén",
+              description:
+                "Elige el almacén que deseas vincular con uno o más proveedores.",
+            },
+            {
+              label: "Asignar proveedores autorizados",
+              description:
+                "Marca los proveedores que están habilitados para abastecer ese almacén, según su especialidad o contrato.",
+            },
+            {
+              label: "Guardar la configuración",
+              description:
+                "Haz clic en Aceptar para registrar los enlaces. El sistema validará esta relación en los módulos de ingreso y reposición.",
+            },
+          ],
+        },
+        {
+          id: 45,
+          aNombre: "Enlace Almacén–Sección–Producto",
+          aResumen: `Este módulo permite vincular productos específicos con secciones físicas dentro de un almacén determinado. Sirve para:
+
+Definir con precisión dónde se ubica cada producto dentro del almacén.
+
+Evitar errores al asignar ubicaciones que no corresponden al producto o al almacén.
+
+Facilitar el picking, la reposición y los ajustes físicos por ubicación exacta.
+
+Permitir reportes por producto, sección y almacén con trazabilidad completa.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Enlace Almacén–Sección–Producto",
+              description:
+                "Desde el menú Enlaces con Nomencladores, selecciona la opción Almacén–Sección–Producto.",
+            },
+            {
+              label: "Seleccionar almacén",
+              description:
+                "Elige el almacén donde se encuentra el producto que deseas vincular.",
+            },
+            {
+              label: "Seleccionar sección física",
+              description:
+                "Elige la sección interna del almacén (ej. Zona A, Estante 3) donde se ubica el producto.",
+            },
+            {
+              label: "Seleccionar producto",
+              description:
+                "Busca el producto por código o nombre y selecciónalo para vincularlo con la sección elegida.",
+            },
+            {
+              label: "Guardar la configuración",
+              description:
+                "Haz clic en Aceptar para registrar el enlace. El sistema validará esta ubicación en los módulos de ingreso, salida y ajuste.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 3,
+      sNombre: "Enlaces(Contables)",
+      acciones: [
+        {
+          id: 1,
+          aNombre: "Enlace Sección/Subfamilia con Cuenta Contable",
+          aResumen: `Este módulo permite vincular cada sección física del almacén y cada subfamilia de productos con una cuenta contable específica. Sirve para:
+
+Asignar cuentas contables por ubicación y tipo de producto, facilitando la integración con el sistema financiero.
+
+Evitar errores en la contabilización de ingresos, salidas y ajustes por falta de vínculo contable.
+
+Permitir reportes contables por sección, subfamilia y almacén con trazabilidad completa.
+
+Automatizar la generación de asientos contables desde los movimientos operativos.`,
+          pasos: [
+            {
+              label:
+                "Acceder al módulo Enlace Sección/Subfamilia con Cuenta Contable",
+              description:
+                "Desde el menú Enlaces Contables con Almacén, selecciona la opción Sección/Subfamilia con Cuenta Contable.",
+            },
+            {
+              label: "Seleccionar almacén y sección",
+              description:
+                "Elige el almacén y la sección física que deseas vincular con una cuenta contable.",
+            },
+            {
+              label: "Seleccionar subfamilia de productos",
+              description:
+                "Elige la subfamilia que opera en esa sección y que requiere trazabilidad contable.",
+            },
+            {
+              label: "Asignar cuenta contable",
+              description:
+                "Selecciona la cuenta contable correspondiente (ej. 1101 – Inventario de Material Médico) desde el plan de cuentas.",
+            },
+            {
+              label: "Guardar la configuración",
+              description:
+                "Haz clic en Aceptar para registrar el enlace. El sistema aplicará esta relación en los movimientos operativos y reportes contables.",
+            },
+          ],
+        },
+        {
+          id: 2,
+          aNombre: "Enlace Faltante/Sobrante con Cuenta Contable",
+          aResumen: `Este módulo permite vincular los ajustes por faltantes y sobrantes detectados en el inventario con cuentas contables específicas. Sirve para:
+
+Registrar correctamente el impacto contable de las diferencias físicas encontradas en el almacén.
+
+Evitar errores en la contabilización de ajustes por falta de vínculo contable.
+
+Permitir reportes contables por tipo de ajuste y almacén.
+
+Automatizar la generación de asientos contables en procesos de auditoría o regularización.`,
+          pasos: [
+            {
+              label:
+                "Acceder al módulo Enlace Faltante/Sobrante con Cuenta Contable",
+              description:
+                "Desde el menú Enlaces Contables con Almacén, selecciona la opción Faltante/Sobrante con Cuenta Contable.",
+            },
+            {
+              label: "Seleccionar tipo de ajuste",
+              description:
+                "Elige si deseas vincular un faltante o un sobrante detectado en el inventario.",
+            },
+            {
+              label: "Seleccionar almacén",
+              description:
+                "Elige el almacén donde se aplicará el ajuste contable.",
+            },
+            {
+              label: "Asignar cuenta contable",
+              description:
+                "Selecciona la cuenta contable correspondiente (ej. 6102 – Pérdidas por Faltantes, 4103 – Ingresos por Sobrantes).",
+            },
+            {
+              label: "Guardar la configuración",
+              description:
+                "Haz clic en Aceptar para registrar el enlace. El sistema aplicará esta relación en los módulos de ajuste y reportes contables.",
+            },
+          ],
+        },
+        {
+          id: 3,
+          aNombre: "Enlace Arancel con Cuenta Contable",
+          aResumen: `Este módulo permite vincular cada tipo de arancel registrado en el sistema con una cuenta contable específica. Sirve para:
+
+Registrar correctamente el impacto contable de los cargos arancelarios aplicados a productos.
+
+Evitar errores en la valorización contable por omisión o duplicación de aranceles.
+
+Permitir reportes financieros por tipo de arancel y cuenta contable asociada.
+
+Automatizar la generación de asientos contables en procesos de ingreso o importación de productos.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Enlace Arancel con Cuenta Contable",
+              description:
+                "Desde el menú Enlaces Contables con Almacén, selecciona la opción Arancel con Cuenta Contable.",
+            },
+            {
+              label: "Seleccionar tipo de arancel",
+              description:
+                "Elige el arancel registrado previamente (ej. IVA de importación, arancel aduanal) que deseas vincular.",
+            },
+            {
+              label: "Asignar cuenta contable",
+              description:
+                "Selecciona la cuenta contable correspondiente (ej. 5104 – Cargos por Importación) desde el plan de cuentas.",
+            },
+            {
+              label: "Guardar la configuración",
+              description:
+                "Haz clic en Aceptar para registrar el enlace. El sistema aplicará esta relación en los módulos de ingreso y valorización contable.",
+            },
+          ],
+        },
+        {
+          id: 4,
+          aNombre: "Enlace Flete con Cuenta Contable",
+          aResumen: `Este módulo permite vincular los costos de flete asociados a productos o movimientos con una cuenta contable específica. Sirve para:
+
+Registrar correctamente el impacto contable del transporte de mercancías.
+
+Evitar errores en la valorización contable por omisión o duplicación de costos logísticos.
+
+Permitir reportes financieros por tipo de gasto logístico y almacén.
+
+Automatizar la generación de asientos contables en procesos de ingreso, traslado o recepción de productos.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Enlace Flete con Cuenta Contable",
+              description:
+                "Desde el menú Enlaces Contables con Almacén, selecciona la opción Flete con Cuenta Contable.",
+            },
+            {
+              label: "Seleccionar tipo de flete",
+              description:
+                "Elige el tipo de flete registrado previamente (ej. transporte terrestre, aéreo, marítimo) que deseas vincular.",
+            },
+            {
+              label: "Asignar cuenta contable",
+              description:
+                "Selecciona la cuenta contable correspondiente (ej. 5201 – Gastos de Transporte) desde el plan de cuentas.",
+            },
+            {
+              label: "Guardar la configuración",
+              description:
+                "Haz clic en Aceptar para registrar el enlace. El sistema aplicará esta relación en los módulos de ingreso, traslado y valorización contable.",
+            },
+          ],
+        },
+        {
+          id: 5,
+          aNombre: "Enlace Manipulación con Cuenta Contable",
+          aResumen: `Este módulo permite vincular los costos de manipulación asociados a productos o movimientos internos con una cuenta contable específica. Sirve para:
+
+Registrar correctamente el impacto contable de tareas como embalaje, etiquetado, reubicación o preparación de productos.
+
+Evitar errores en la valorización contable por omisión de costos operativos internos.
+
+Permitir reportes financieros por tipo de manipulación y almacén.
+
+Automatizar la generación de asientos contables en procesos de ingreso, traslado, ajuste o salida.`,
+          pasos: [
+            {
+              label:
+                "Acceder al módulo Enlace Manipulación con Cuenta Contable",
+              description:
+                "Desde el menú Enlaces Contables con Almacén, selecciona la opción Manipulación con Cuenta Contable.",
+            },
+            {
+              label: "Seleccionar tipo de manipulación",
+              description:
+                "Elige el tipo de manipulación registrada previamente (ej. reempaque, etiquetado, consolidación) que deseas vincular.",
+            },
+            {
+              label: "Asignar cuenta contable",
+              description:
+                "Selecciona la cuenta contable correspondiente (ej. 5302 – Costos de Manipulación Interna) desde el plan de cuentas.",
+            },
+            {
+              label: "Guardar la configuración",
+              description:
+                "Haz clic en Aceptar para registrar el enlace. El sistema aplicará esta relación en los módulos de movimiento y valorización contable.",
+            },
+          ],
+        },
+        {
+          id: 6,
+          aNombre: "Enlace Embalaje con Cuenta Contable",
+          aResumen: `Este módulo permite vincular los costos de embalaje aplicables a productos o movimientos con una cuenta contable específica. Sirve para:
+
+Registrar correctamente el impacto contable de materiales y tareas de embalaje.
+
+Evitar errores en la valorización contable por omisión de costos logísticos.
+
+Permitir reportes financieros por tipo de gasto de embalaje y almacén.
+
+Automatizar la generación de asientos contables en procesos de ingreso, preparación o salida de productos.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Enlace Embalaje con Cuenta Contable",
+              description:
+                "Desde el menú Enlaces Contables con Almacén, selecciona la opción Embalaje con Cuenta Contable.",
+            },
+            {
+              label: "Seleccionar tipo de embalaje",
+              description:
+                "Elige el tipo de embalaje registrado previamente (ej. caja, envoltura, paletizado) que deseas vincular.",
+            },
+            {
+              label: "Asignar cuenta contable",
+              description:
+                "Selecciona la cuenta contable correspondiente (ej. 5303 – Costos de Embalaje) desde el plan de cuentas.",
+            },
+            {
+              label: "Guardar la configuración",
+              description:
+                "Haz clic en Aceptar para registrar el enlace. El sistema aplicará esta relación en los módulos de ingreso, salida y valorización contable.",
+            },
+          ],
+        },
+        {
+          id: 7,
+          aNombre: "Enlace Proveedor con Cuenta Contable",
+          aResumen: `Este módulo permite vincular cada proveedor registrado en el sistema con una cuenta contable específica, independientemente del almacén. Sirve para:
+
+Registrar correctamente el impacto contable de las compras y servicios recibidos por proveedor.
+
+Evitar errores en la contabilización por falta de vínculo contable directo.
+
+Permitir reportes financieros por proveedor y cuenta contable asociada.
+
+Automatizar la generación de asientos contables en procesos de ingreso, facturación y pago.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Enlace Proveedor con Cuenta Contable",
+              description:
+                "Desde el menú Enlaces Contables sin Almacén, selecciona la opción Proveedor con Cuenta Contable.",
+            },
+            {
+              label: "Seleccionar proveedor",
+              description:
+                "Elige el proveedor registrado que deseas vincular con una cuenta contable.",
+            },
+            {
+              label: "Asignar cuenta contable",
+              description:
+                "Selecciona la cuenta contable correspondiente (ej. 2101 – Cuentas por Pagar a Proveedores) desde el plan de cuentas.",
+            },
+            {
+              label: "Guardar la configuración",
+              description:
+                "Haz clic en Aceptar para registrar el enlace. El sistema aplicará esta relación en los módulos de ingreso, facturación y pagos.",
+            },
+          ],
+        },
+        {
+          id: 8,
+          aNombre: "Enlace Cliente con Cuenta Contable",
+          aResumen: `Este módulo permite vincular cada cliente registrado en el sistema con una cuenta contable específica, independientemente del almacén. Sirve para:
+
+Registrar correctamente el impacto contable de las salidas, entregas o ventas realizadas a cada cliente.
+
+Evitar errores en la contabilización por falta de vínculo contable directo.
+
+Permitir reportes financieros por cliente y cuenta contable asociada.
+
+Automatizar la generación de asientos contables en procesos de salida, facturación y cobranza.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Enlace Cliente con Cuenta Contable",
+              description:
+                "Desde el menú Enlaces Contables sin Almacén, selecciona la opción Cliente con Cuenta Contable.",
+            },
+            {
+              label: "Seleccionar cliente",
+              description:
+                "Elige el cliente registrado que deseas vincular con una cuenta contable.",
+            },
+            {
+              label: "Asignar cuenta contable",
+              description:
+                "Selecciona la cuenta contable correspondiente (ej. 1301 – Cuentas por Cobrar a Clientes) desde el plan de cuentas.",
+            },
+            {
+              label: "Guardar la configuración",
+              description:
+                "Haz clic en Aceptar para registrar el enlace. El sistema aplicará esta relación en los módulos de salida, facturación y cobranza.",
+            },
+          ],
+        },
+        {
+          id: 9,
+          aNombre: "Enlace Concepto de Gasto con Cuenta Contable",
+          aResumen: `Este módulo permite vincular cada concepto de gasto registrado en el sistema con una cuenta contable específica, independientemente del almacén. Sirve para:
+
+Registrar correctamente el impacto contable de gastos operativos, administrativos o logísticos.
+
+Evitar errores en la contabilización por falta de vínculo contable directo.
+
+Permitir reportes financieros por concepto de gasto y cuenta contable asociada.
+
+Automatizar la generación de asientos contables en procesos de ingreso, ajuste o salida.`,
+          pasos: [
+            {
+              label:
+                "Acceder al módulo Enlace Concepto de Gasto con Cuenta Contable",
+              description:
+                "Desde el menú Enlaces Contables sin Almacén, selecciona la opción Concepto de Gasto con Cuenta Contable.",
+            },
+            {
+              label: "Seleccionar concepto de gasto",
+              description:
+                "Elige el concepto registrado previamente (ej. mantenimiento, transporte, embalaje) que deseas vincular.",
+            },
+            {
+              label: "Asignar cuenta contable",
+              description:
+                "Selecciona la cuenta contable correspondiente (ej. 5401 – Gastos Operativos) desde el plan de cuentas.",
+            },
+            {
+              label: "Guardar la configuración",
+              description:
+                "Haz clic en Aceptar para registrar el enlace. El sistema aplicará esta relación en los módulos de movimiento y valorización contable.",
+            },
+          ],
+        },
+        {
+          id: 10,
+          aNombre: "Enlace Impuesto con Cuenta Contable",
+          aResumen: `Este módulo permite vincular cada tipo de impuesto registrado en el sistema con una cuenta contable específica, sin depender de un almacén. Sirve para:
+
+Registrar correctamente el impacto contable de impuestos aplicados en compras, ventas o ajustes.
+
+Evitar errores en la contabilización por falta de vínculo contable directo.
+
+Permitir reportes financieros por tipo de impuesto y cuenta contable asociada.
+
+Automatizar la generación de asientos contables en procesos de ingreso, salida y facturación.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Enlace Impuesto con Cuenta Contable",
+              description:
+                "Desde el menú Enlaces Contables sin Almacén, selecciona la opción Impuesto con Cuenta Contable.",
+            },
+            {
+              label: "Seleccionar tipo de impuesto",
+              description:
+                "Elige el impuesto registrado previamente (ej. IVA, impuesto específico, retención) que deseas vincular.",
+            },
+            {
+              label: "Asignar cuenta contable",
+              description:
+                "Selecciona la cuenta contable correspondiente (ej. 2103 – Impuestos por Pagar, 5105 – Impuestos sobre Compras) desde el plan de cuentas.",
+            },
+            {
+              label: "Guardar la configuración",
+              description:
+                "Haz clic en Aceptar para registrar el enlace. El sistema aplicará esta relación en los módulos de ingreso, salida y facturación.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 4,
+      sNombre: "Inventario",
+      acciones: [],
+    },
+    {
+      id: 5,
+      sNombre: "Despiece",
+      acciones: [],
+    },
+    {
+      id: 6,
+      sNombre: "Escandallos",
+      acciones: [],
+    },
+    {
+      id: 7,
+      sNombre: "Estadísticas",
+      acciones: [],
+    },
+    {
+      id: 8,
+      sNombre: "Históricos",
+      acciones: [],
+    },
+    {
+      id: 9,
+      sNombre: "Consumo",
+      acciones: [],
     },
   ],
 };

@@ -15,15 +15,23 @@ import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
 import { ModuloContext } from "@/app/lib/contexts/ModulosContext";
 
 export default function Dashboard(params) {
-  const { modulo, setZunacc, setZunhr, setZunaft, setZunst } =
+  const { modulo, setZunacc, setZunhr, setZunaft, setZunst, devModule } =
     useContext(ModuloContext);
+  //Para desarrollo
+  const [dev, setDev] = useState(false);
   const [acc, setAcc] = useState(true);
   const [hr, setHr] = useState(false);
   const [aft, setAft] = useState(false);
   const [st, setSt] = useState(false);
 
+  //Menejo de si esta marcado un modulo en desarrollo
+  const handleMarkupDev = () => {
+    setDev(false);
+  };
+
   //Manejo de si esta marcado o no para Acc
   const handleMarkupAcc = () => {
+    setDev(false);
     setAcc(true);
     setHr(false);
     setAft(false);
@@ -31,6 +39,7 @@ export default function Dashboard(params) {
   };
   //Manejo de si esta marcado o no para Hr
   const handleMarkupHr = () => {
+    setDev(false);
     setHr(true);
     setAcc(false);
     setAft(false);
@@ -44,6 +53,7 @@ export default function Dashboard(params) {
     setSt(false);
   };
   const handleMarkupSt = () => {
+    setDev(false);
     setSt(true);
     setAft(false);
     setHr(false);
@@ -97,7 +107,16 @@ export default function Dashboard(params) {
               toMark={handleMarkupAcc}
               icon={<CurrencyExchangeOutlinedIcon />}
             />
-            <SideBtnItem title={"ZUNpms"} icon={<ScienceOutlined />} />
+
+            {/* In Dev */}
+            <SideBtnItem
+              title={"ZUNpms"}
+              icon={<ScienceOutlined />}
+              toMark={handleMarkupDev}
+              handleModulo={devModule}
+              marked={dev}
+            />
+
             <SideBtnItem
               marked={st}
               toMark={handleMarkupSt}
@@ -112,8 +131,25 @@ export default function Dashboard(params) {
               handleModulo={setZunhr}
               icon={<Diversity3OutlinedIcon />}
             />
-            <SideBtnItem title={"ZUNpr"} icon={<ScienceOutlined />} />
-            <SideBtnItem title={"ZUNcc"} icon={<ScienceOutlined />} />
+
+            {/* In Dev */}
+            <SideBtnItem
+              title={"ZUNpr"}
+              icon={<ScienceOutlined />}
+              toMark={handleMarkupDev}
+              handleModulo={devModule}
+              marked={dev}
+            />
+
+            {/* In Dev */}
+            <SideBtnItem
+              title={"ZUNcc"}
+              icon={<ScienceOutlined />}
+              toMark={handleMarkupDev}
+              handleModulo={devModule}
+              marked={dev}
+            />
+
             <SideBtnItem
               title={"ZUNaft"}
               marked={aft}
@@ -121,7 +157,15 @@ export default function Dashboard(params) {
               toMark={handleMarkupAft}
               icon={<ChairOutlinedIcon />}
             />
-            <SideBtnItem title={"ZUNut"} icon={<ScienceOutlined />} />
+
+            {/* In Dev */}
+            <SideBtnItem
+              title={"ZUNut"}
+              icon={<ScienceOutlined />}
+              toMark={handleMarkupDev}
+              handleModulo={devModule}
+              marked={dev}
+            />
 
             <Box>
               <DefaultButton text={"Frecuentes"} />

@@ -12,6 +12,13 @@ export const ModuloContext = createContext();
 export const ModuloProvider = ({ children }) => {
   const [modulo, setModulo] = useState(zunacc);
 
+  //Funcion para cuando el modulo esta en desarrollo
+  const devModule = () => {
+    window.alert(
+      "Ups! Módulo en desarrollo, no es posible acceder a el en estos momentos."
+    );
+  };
+
   //Funcion que activa el modulo zunacc
   const setZunacc = () => {
     setModulo(zunacc);
@@ -35,6 +42,7 @@ export const ModuloProvider = ({ children }) => {
     setZunhr,
     setZunaft,
     setZunst,
+    devModule,
   };
   return (
     <ModuloContext.Provider value={values}>{children}</ModuloContext.Provider>

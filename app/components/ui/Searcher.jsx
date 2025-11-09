@@ -8,7 +8,15 @@ export const Searcher = ({ collection, searchFunction, resetFunction }) => {
   const [item, setItem] = useState("");
 
   return (
-    <Box sx={{ display: "flex", gap: "10px", padding: "10px", height: "56px" }}>
+    <Box
+      sx={{
+        display: "flex",
+        gap: "10px",
+        padding: "10px",
+        height: "56px",
+        width: "500px",
+      }}
+    >
       <Input
         sx={{ width: "100%" }}
         onChange={(e) => setItem(e.target.value)}
@@ -33,13 +41,13 @@ export const Searcher = ({ collection, searchFunction, resetFunction }) => {
         <SearchOutlined />
       </Button>
       <Button
-        sx={{ border: "1px,solid,#e95354", color: "#e95354" }}
+        sx={{ border: "1px,solid,#e95354", color: "#e95354", padding: "10px" }}
         onClick={() => {
           resetFunction();
           setItem("");
         }}
       >
-        Cancelar
+        reset
       </Button>
     </Box>
   );
