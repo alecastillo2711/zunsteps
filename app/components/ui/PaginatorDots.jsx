@@ -7,7 +7,7 @@ import ArrowBackIosNewOutlinedIcon from "@mui/icons-material/ArrowBackIosNewOutl
 
 export const PaginatorDots = ({ handlePaging, dots, showNext }) => {
   return (
-    <Box sx={{ marginLeft: "550px", marginTop: "10px" }}>
+    <Box sx={{ marginLeft: "850px", marginTop: "10px" }}>
       <Tooltip title="Siguientes">
         {showNext ? (
           <IconButton onClick={handlePaging}>

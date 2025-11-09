@@ -1,7 +1,9 @@
 export const zunaft = {
   mNombre: "ZUNAft Activos Fijos",
   mImage: "/acc",
-  mResumen: "Resumen",
+  mResumen: `ZUNaft es una herramienta especializada para la gestión integral de activos fijos tangibles (AFT)
+   dentro de instituciones públicas. Su propósito principal es garantizar que cada activo —desde computadoras
+    hasta vehículos— esté correctamente registrado, valorado, trazado y controlado tanto técnica como contablemente.`,
   mSecciones: [
     {
       id: 2,
@@ -2443,6 +2445,297 @@ Evitar inconsistencias en procesos de control técnico, asignación y mantenimie
               label: "Imprimir comprobante de modificación",
               description:
                 "Haz clic en Imprimir para generar el comprobante contable de la operación de actualización de datos de transporte.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 10,
+      sNombre: "Ops.Contables",
+      acciones: [
+        {
+          id: 11,
+          aNombre: "Comprobantes Contables No Posteados",
+          aResumen: `Este módulo permite revisar, validar y postear comprobantes contables que han sido generados por operaciones en el sistema pero aún no han sido registrados oficialmente en la contabilidad. Sirve para:
+
+Evitar que operaciones queden pendientes de registro contable por omisión o error.
+
+Validar comprobantes antes de su integración definitiva en los libros contables.
+
+Postear manualmente comprobantes que requieren revisión previa o autorización.
+
+Mantener la trazabilidad contable y evitar inconsistencias entre operaciones y registros financieros.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Comprobantes No Posteados",
+              description:
+                "Desde el menú Operaciones Contables, selecciona la opción Comprobantes Contables No Posteados para visualizar los comprobantes pendientes.",
+            },
+            {
+              label: "Filtrar y revisar comprobantes pendientes",
+              description:
+                "Aplica filtros por fecha, tipo de operación, usuario o estado. Revisa cada comprobante para verificar su contenido contable.",
+            },
+            {
+              label: "Seleccionar comprobantes a postear",
+              description:
+                "Marca los comprobantes que están listos para ser registrados oficialmente. Puedes seleccionar uno o varios.",
+            },
+            {
+              label: "Confirmar y ejecutar el posteo",
+              description:
+                "Haz clic en Postear para registrar los comprobantes seleccionados en la contabilidad. El sistema actualizará su estado y los integrará en los reportes contables.",
+            },
+            {
+              label: "Imprimir o exportar comprobantes posteados",
+              description:
+                "Opcionalmente, puedes imprimir o exportar los comprobantes ya posteados para respaldo documental o revisión externa.",
+            },
+          ],
+        },
+        {
+          id: 12,
+          aNombre: "Reversión de Operaciones Contables",
+          aResumen: `Este módulo permite anular operaciones contables previamente registradas, generando un comprobante inverso que revierte su efecto. Sirve para:
+
+Corregir errores en operaciones contables sin necesidad de intervención técnica.
+
+Restablecer el estado contable del medio antes de la operación revertida.
+
+Evitar duplicidades, inconsistencias y distorsiones en los reportes financieros.
+
+Mantener trazabilidad y respaldo documental de cada reversión realizada.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Reversión de Operaciones",
+              description:
+                "Desde el menú Operaciones Contables, selecciona la opción Reversión de Operaciones Contables.",
+            },
+            {
+              label: "Buscar la operación a revertir",
+              description:
+                "Filtra por tipo de operación, fecha, usuario o número de comprobante. Selecciona la operación que deseas anular.",
+            },
+            {
+              label: "Confirmar la reversión",
+              description:
+                "Haz clic en Revertir. El sistema generará un comprobante inverso que anula el efecto contable de la operación original.",
+            },
+            {
+              label: "Verificar el estado del medio",
+              description:
+                "Confirma que el activo ha sido restaurado a su estado previo. Revisa los datos contables y técnicos.",
+            },
+            {
+              label: "Imprimir comprobante de reversión",
+              description:
+                "Haz clic en Imprimir para generar el comprobante contable de la reversión.",
+            },
+          ],
+        },
+        {
+          id: 14,
+          aNombre: "Depreciación Mensual",
+          aResumen: `Este módulo permite ejecutar el cálculo automático de la depreciación contable de todos los activos fijos tangibles (AFT) registrados en el sistema, correspondiente al período mensual actual. Sirve para:
+
+Registrar el gasto contable por depreciación de forma periódica y sistemática.
+
+Actualizar el valor depreciado acumulado de cada medio según su vida útil y fecha de adquisición.
+
+Generar los comprobantes contables que respaldan el cálculo mensual.
+
+Evitar omisiones en el cierre contable y asegurar la consistencia financiera del inventario.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Depreciación Mensual",
+              description:
+                "Desde el menú Operaciones Contables, selecciona la opción Depreciación Mensual para iniciar el cálculo automático.",
+            },
+            {
+              label: "Seleccionar el período contable",
+              description:
+                "Indica el mes y año para el cual deseas ejecutar la depreciación. Verifica que no haya cálculos previos duplicados.",
+            },
+            {
+              label: "Ejecutar el cálculo de depreciación",
+              description:
+                "Haz clic en Calcular. El sistema procesará todos los medios elegibles y calculará su depreciación correspondiente.",
+            },
+            {
+              label: "Revisar y validar los resultados",
+              description:
+                "Verifica los valores calculados por medio, incluyendo importe depreciado, vida útil restante y estado contable.",
+            },
+            {
+              label: "Generar comprobantes contables",
+              description:
+                "Haz clic en Generar Comprobantes para registrar oficialmente la depreciación mensual en la contabilidad.",
+            },
+            {
+              label: "Imprimir o exportar comprobantes",
+              description:
+                "Opcionalmente, puedes imprimir o exportar los comprobantes generados para respaldo documental o revisión externa.",
+            },
+          ],
+        },
+        {
+          id: 15,
+          aNombre: "Cierre de Mes",
+          aResumen: `Este módulo permite consolidar todas las operaciones contables realizadas durante el período mensual actual, bloqueando nuevas modificaciones y asegurando la integridad de los datos. Sirve para:
+
+Finalizar oficialmente el período contable, evitando ajustes posteriores sin autorización.
+
+Verificar que todas las operaciones estén posteadas y que no existan comprobantes pendientes.
+
+Generar los reportes contables mensuales y respaldar el estado del inventario patrimonial.
+
+Facilitar auditorías, conciliaciones y continuidad contable entre períodos.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Cierre de Mes",
+              description:
+                "Desde el menú Operaciones Contables, selecciona la opción Cierre de Mes para iniciar el proceso de consolidación.",
+            },
+            {
+              label: "Seleccionar el período a cerrar",
+              description:
+                "Indica el mes y año que deseas cerrar. Verifica que no haya comprobantes no posteados ni operaciones pendientes.",
+            },
+            {
+              label: "Ejecutar validaciones previas",
+              description:
+                "El sistema revisará que todos los comprobantes estén posteados y que no existan inconsistencias contables.",
+            },
+            {
+              label: "Confirmar el cierre contable",
+              description:
+                "Haz clic en Cerrar Mes para consolidar el período. El sistema bloqueará nuevas operaciones en ese mes y generará los reportes correspondientes.",
+            },
+            {
+              label: "Imprimir reportes de cierre",
+              description:
+                "Opcionalmente, puedes imprimir o exportar los reportes contables del mes cerrado para respaldo documental.",
+            },
+          ],
+        },
+        {
+          id: 16,
+          aNombre: "Transferir al Mayor General",
+          aResumen: `Este módulo permite enviar los comprobantes contables generados en el sistema de activos fijos hacia el sistema contable principal (mayor general), consolidando la información financiera. Sirve para:
+
+Registrar oficialmente las operaciones patrimoniales en el sistema contable institucional.
+
+Evitar duplicidades o pérdidas de información entre sistemas.
+
+Asegurar que los movimientos contables de activos estén reflejados en los libros mayores.
+
+Facilitar conciliaciones contables, auditorías y reportes financieros integrados.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Transferir al Mayor General",
+              description:
+                "Desde el menú Operaciones Contables, selecciona la opción Transferir al Mayor General para iniciar el proceso.",
+            },
+            {
+              label: "Seleccionar el período contable",
+              description:
+                "Indica el mes y año de los comprobantes que deseas transferir. Verifica que estén posteados y sin errores.",
+            },
+            {
+              label: "Ejecutar la transferencia",
+              description:
+                "Haz clic en Transferir. El sistema enviará los comprobantes al sistema contable principal, marcándolos como transferidos.",
+            },
+            {
+              label: "Verificar estado de transferencia",
+              description:
+                "Confirma que los comprobantes aparecen como transferidos y que no hubo errores en el proceso.",
+            },
+            {
+              label: "Imprimir reporte de transferencia",
+              description:
+                "Opcionalmente, puedes imprimir o exportar el reporte de comprobantes transferidos para respaldo contable.",
+            },
+          ],
+        },
+        {
+          id: 17,
+          aNombre: "Transferencia Directa al ZUNacc",
+          aResumen: `Este módulo permite enviar comprobantes contables desde el sistema de activos fijos directamente al sistema contable ZUNacc, sin necesidad de posteo intermedio. Sirve para:
+
+Agilizar la integración contable entre módulos patrimoniales y financieros.
+
+Evitar omisiones o duplicidades al eliminar pasos manuales de posteo.
+
+Asegurar que las operaciones patrimoniales impacten de inmediato en la contabilidad institucional.
+
+Facilitar el cierre contable mensual y la conciliación entre sistemas.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Transferencia Directa al ZUNacc",
+              description:
+                "Desde el menú Operaciones Contables, selecciona la opción Transferencia Directa al ZUNacc.",
+            },
+            {
+              label: "Seleccionar el período contable",
+              description:
+                "Indica el mes y año de los comprobantes que deseas transferir directamente. Verifica que estén listos para envío.",
+            },
+            {
+              label: "Ejecutar la transferencia directa",
+              description:
+                "Haz clic en Transferir. El sistema enviará los comprobantes al ZUNacc sin requerir posteo previo.",
+            },
+            {
+              label: "Verificar estado de transferencia",
+              description:
+                "Confirma que los comprobantes aparecen como transferidos en ambos sistemas. Revisa si hubo errores o rechazos.",
+            },
+            {
+              label: "Imprimir reporte de transferencia",
+              description:
+                "Opcionalmente, puedes imprimir o exportar el reporte de comprobantes transferidos para respaldo contable.",
+            },
+          ],
+        },
+        {
+          id: 18,
+          aNombre: "Transferir ETES",
+          aResumen: `Este módulo permite enviar los comprobantes contables generados por operaciones patrimoniales hacia el sistema ETES (Estado de Ejecución del Gasto), asegurando que los movimientos de activos se reflejen en la ejecución presupuestaria. Sirve para:
+
+Integrar los movimientos patrimoniales en el control presupuestario institucional.
+
+Evitar omisiones entre el sistema contable y el sistema de ejecución del gasto.
+
+Facilitar conciliaciones entre contabilidad patrimonial y presupuestaria.
+
+Asegurar que los activos impacten correctamente en los reportes de ejecución financiera.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Transferir ETES",
+              description:
+                "Desde el menú Operaciones Contables, selecciona la opción Transferir ETES para iniciar el proceso.",
+            },
+            {
+              label: "Seleccionar el período contable",
+              description:
+                "Indica el mes y año de los comprobantes que deseas transferir al sistema ETES. Verifica que estén posteados.",
+            },
+            {
+              label: "Ejecutar la transferencia",
+              description:
+                "Haz clic en Transferir. El sistema enviará los comprobantes al módulo ETES, marcándolos como transferidos.",
+            },
+            {
+              label: "Verificar estado de transferencia",
+              description:
+                "Confirma que los comprobantes aparecen como transferidos en el sistema ETES. Revisa si hubo errores o rechazos.",
+            },
+            {
+              label: "Imprimir reporte de transferencia",
+              description:
+                "Opcionalmente, puedes imprimir o exportar el reporte de comprobantes transferidos para respaldo presupuestario.",
             },
           ],
         },

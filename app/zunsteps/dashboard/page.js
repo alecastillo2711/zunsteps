@@ -9,31 +9,43 @@ import React, { useContext, useState } from "react";
 import CurrencyExchangeOutlinedIcon from "@mui/icons-material/CurrencyExchangeOutlined";
 import Diversity3OutlinedIcon from "@mui/icons-material/Diversity3Outlined";
 import ChairOutlinedIcon from "@mui/icons-material/ChairOutlined";
+import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
 
 /*Modulos */
 import { ModuloContext } from "@/app/lib/contexts/ModulosContext";
 
 export default function Dashboard(params) {
-  const { modulo, setZunacc, setZunhr, setZunaft } = useContext(ModuloContext);
+  const { modulo, setZunacc, setZunhr, setZunaft, setZunst } =
+    useContext(ModuloContext);
   const [acc, setAcc] = useState(true);
   const [hr, setHr] = useState(false);
   const [aft, setAft] = useState(false);
+  const [st, setSt] = useState(false);
 
   //Manejo de si esta marcado o no para Acc
   const handleMarkupAcc = () => {
     setAcc(true);
     setHr(false);
     setAft(false);
+    setSt(false);
   };
   //Manejo de si esta marcado o no para Hr
   const handleMarkupHr = () => {
     setHr(true);
     setAcc(false);
     setAft(false);
+    setSt(false);
   };
   //Manejo de si esta marcado o no para AFT
   const handleMarkupAft = () => {
     setAft(true);
+    setHr(false);
+    setAcc(false);
+    setSt(false);
+  };
+  const handleMarkupSt = () => {
+    setSt(true);
+    setAft(false);
     setHr(false);
     setAcc(false);
   };
@@ -86,7 +98,13 @@ export default function Dashboard(params) {
               icon={<CurrencyExchangeOutlinedIcon />}
             />
             <SideBtnItem title={"ZUNpms"} icon={<ScienceOutlined />} />
-            <SideBtnItem title={"ZUNst"} icon={<ScienceOutlined />} />
+            <SideBtnItem
+              marked={st}
+              toMark={handleMarkupSt}
+              handleModulo={setZunst}
+              title={"ZUNst"}
+              icon={<Inventory2OutlinedIcon />}
+            />
             <SideBtnItem
               title={"ZUNhr"}
               marked={hr}

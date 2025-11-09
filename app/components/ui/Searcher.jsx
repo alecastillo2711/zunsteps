@@ -33,12 +33,13 @@ export const Searcher = ({ collection, searchFunction, resetFunction }) => {
         <SearchOutlined />
       </Button>
       <Button
+        sx={{ border: "1px,solid,#e95354", color: "#e95354" }}
         onClick={() => {
           resetFunction();
           setItem("");
         }}
       >
-        Reset
+        Cancelar
       </Button>
     </Box>
   );
