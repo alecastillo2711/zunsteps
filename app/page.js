@@ -30,8 +30,7 @@ export default function Home() {
           width: "80%",
           marginTop: "20px",
           marginBottom: "10px",
-        }}
-      >
+        }}>
         <Typography color="primary.text">
           La herramienta que facilita el trabajo con la
         </Typography>
@@ -49,12 +48,11 @@ export default function Home() {
           gap: "15px",
           marginTop: "10px",
           color: "primary.main",
-        }}
-      >
+        }}>
         <Link href={"facebook"}>
           <FacebookOutlined />
         </Link>
-        <Link href={"github"}>
+        <Link href={"https://github.com/carlosjbm/"}>
           <GitHub />
         </Link>
         <Link href={"twitter"}>
@@ -82,8 +80,7 @@ export default function Home() {
           flexDirection: "column",
           alignItems: "center",
           marginTop: "130px",
-        }}
-      >
+        }}>
         <Typography color="primary.text">
           Powered by Carlinhos. v1.0.0
         </Typography>
@@ -93,8 +90,7 @@ export default function Home() {
             alignItems: "center",
             justifyContent: "center",
             color: "primary.main",
-          }}
-        >
+          }}>
           <span>
             <WhatsApp />
           </span>
