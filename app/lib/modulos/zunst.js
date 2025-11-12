@@ -1325,8 +1325,605 @@ Automatizar la generación de asientos contables en procesos de ingreso, salida 
     },
     {
       id: 4,
-      sNombre: "Inventario",
-      acciones: [],
+      sNombre: "Compras",
+      acciones: [
+        {
+          id: 1,
+          aNombre: "Ofertas a Proveedores",
+          aResumen: `Este módulo permite gestionar el ciclo completo de ofertas comerciales recibidas de proveedores, desde la solicitud hasta la evaluación. Sirve para:
+
+Solicitar cotizaciones a múltiples proveedores para productos específicos.
+
+Registrar condiciones comerciales ofrecidas (precio, plazo, forma de pago, validez).
+
+Comparar ofertas recibidas y seleccionar la más conveniente.
+
+Generar órdenes de compra directamente desde la oferta seleccionada.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Ofertas a Proveedores",
+              description:
+                "Desde el menú Compras, selecciona la opción Ofertas a Proveedores.",
+            },
+            {
+              label: "Crear solicitud de oferta",
+              description:
+                "Define los productos requeridos, cantidades, condiciones deseadas y proveedores a consultar.",
+            },
+            {
+              label: "Enviar solicitud a proveedores",
+              description:
+                "El sistema permite imprimir o enviar electrónicamente la solicitud a los proveedores seleccionados.",
+            },
+            {
+              label: "Registrar ofertas recibidas",
+              description:
+                "Por cada proveedor, ingresa los precios, condiciones, fechas de validez y observaciones.",
+            },
+            {
+              label: "Comparar ofertas",
+              description:
+                "Utiliza la vista comparativa para analizar precios, plazos y condiciones entre proveedores.",
+            },
+            {
+              label: "Seleccionar oferta ganadora",
+              description:
+                "Marca la oferta seleccionada. El sistema permite generar directamente la orden de compra desde esta selección.",
+            },
+            {
+              label: "Guardar y cerrar proceso",
+              description:
+                "Confirma la selección y guarda el historial de ofertas para futuras auditorías o análisis.",
+            },
+          ],
+        },
+        {
+          id: 2,
+          aNombre: "Consulta de Ofertas",
+          aResumen: `Este módulo permite revisar el historial de ofertas recibidas por proveedor, producto o solicitud. Sirve para:
+
+Visualizar condiciones comerciales ofrecidas en procesos anteriores.
+
+Comparar propuestas históricas por proveedor, producto o fecha.
+
+Auditar decisiones de compra y justificar selecciones.
+
+Facilitar análisis de precios y condiciones en futuras negociaciones.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Consulta de Ofertas",
+              description:
+                "Desde el menú Compras, selecciona la opción Consulta de Ofertas.",
+            },
+            {
+              label: "Filtrar por criterio",
+              description:
+                "Selecciona filtros como proveedor, producto, fecha o estado de la oferta.",
+            },
+            {
+              label: "Visualizar detalle de la oferta",
+              description:
+                "Consulta precios, condiciones, validez y observaciones registradas en cada propuesta.",
+            },
+            {
+              label: "Exportar o imprimir",
+              description:
+                "Opcionalmente, puedes generar reportes para análisis o auditoría.",
+            },
+          ],
+        },
+        {
+          id: 3,
+          aNombre: "Cierre de Oferta",
+          aResumen: `Este módulo permite cerrar formalmente una oferta comercial, dejando constancia de su resultado. Sirve para:
+
+Finalizar el ciclo de evaluación y selección de propuestas.
+
+Evitar modificaciones posteriores en ofertas ya procesadas.
+
+Registrar el motivo de cierre (selección, rechazo, expiración).
+
+Preservar trazabilidad y control documental en el proceso de compras.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Cierre de Oferta",
+              description:
+                "Desde el menú Compras, selecciona la opción Cierre de Oferta.",
+            },
+            {
+              label: "Seleccionar oferta a cerrar",
+              description:
+                "Busca la oferta activa que deseas cerrar, por número o proveedor.",
+            },
+            {
+              label: "Registrar motivo de cierre",
+              description:
+                "Indica si la oferta fue seleccionada, rechazada o vencida. Puedes agregar observaciones.",
+            },
+            {
+              label: "Confirmar cierre",
+              description:
+                "Haz clic en Aceptar. El sistema bloqueará la edición y dejará constancia del estado final.",
+            },
+          ],
+        },
+        {
+          id: 4,
+          aNombre: "Órdenes de Compra",
+          aResumen: `Este módulo permite generar, registrar y gestionar órdenes de compra hacia proveedores, formalizando el compromiso de adquisición. Sirve para:
+
+Formalizar la compra de productos o servicios con condiciones previamente negociadas.
+
+Controlar cantidades, precios, fechas de entrega y condiciones comerciales.
+
+Evitar errores en la recepción y facturación por falta de referencia contractual.
+
+Permitir trazabilidad completa desde la oferta hasta la recepción y contabilización.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Órdenes de Compra",
+              description:
+                "Desde el menú Compras, selecciona la opción Órdenes de Compra.",
+            },
+            {
+              label: "Crear nueva orden",
+              description:
+                "Selecciona el proveedor, productos, cantidades, precios y condiciones. Puedes importar desde una oferta seleccionada.",
+            },
+            {
+              label: "Definir condiciones comerciales",
+              description:
+                "Establece forma de pago, fecha de entrega, validez de precios, condiciones logísticas y observaciones.",
+            },
+            {
+              label: "Asignar almacén de destino",
+              description:
+                "Indica el almacén donde se recepcionarán los productos. Esto activa validaciones posteriores.",
+            },
+            {
+              label: "Confirmar y emitir orden",
+              description:
+                "Haz clic en Aceptar. El sistema genera el documento oficial y lo vincula con el proveedor y el flujo de recepción.",
+            },
+            {
+              label: "Consultar y modificar órdenes",
+              description:
+                "Puedes revisar el estado de cada orden (pendiente, parcial, cerrada) y realizar ajustes si aún no ha sido recepcionada.",
+            },
+          ],
+        },
+        {
+          id: 5,
+          aNombre: "Consulta de Órdenes de Compra",
+          aResumen: `Este módulo permite revisar el historial de órdenes de compra emitidas, filtrando por proveedor, producto, estado o fecha. Sirve para:
+
+Visualizar el estado actual de cada orden (pendiente, parcial, cerrada).
+
+Auditar condiciones comerciales pactadas y entregas realizadas.
+
+Facilitar el seguimiento de compras por proveedor, producto o almacén.
+
+Exportar reportes para análisis financiero o logístico.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Consulta de Órdenes de Compra",
+              description:
+                "Desde el menú Compras, selecciona la opción Consulta de Órdenes de Compra.",
+            },
+            {
+              label: "Aplicar filtros de búsqueda",
+              description:
+                "Selecciona criterios como proveedor, producto, número de orden, estado o rango de fechas.",
+            },
+            {
+              label: "Visualizar detalle de la orden",
+              description:
+                "Consulta productos, cantidades, precios, condiciones comerciales y entregas realizadas.",
+            },
+            {
+              label: "Exportar o imprimir",
+              description:
+                "Opcionalmente, puedes generar reportes para análisis o auditoría.",
+            },
+          ],
+        },
+        {
+          id: 6,
+          aNombre: "Cierre de Órdenes de Compra",
+          aResumen: `Este módulo permite cerrar formalmente una orden de compra, dejando constancia de su estado final. Sirve para:
+
+Finalizar el ciclo de compra y evitar modificaciones posteriores.
+
+Registrar el motivo de cierre (entrega completa, cancelación, expiración).
+
+Preservar trazabilidad y control documental en el proceso de compras.
+
+Activar validaciones contables y logísticas posteriores al cierre.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Cierre de Órdenes de Compra",
+              description:
+                "Desde el menú Compras, selecciona la opción Cierre de Órdenes de Compra.",
+            },
+            {
+              label: "Seleccionar orden a cerrar",
+              description:
+                "Busca la orden activa que deseas cerrar, por número o proveedor.",
+            },
+            {
+              label: "Registrar motivo de cierre",
+              description:
+                "Indica si la orden fue completada, cancelada o vencida. Puedes agregar observaciones.",
+            },
+            {
+              label: "Confirmar cierre",
+              description:
+                "Haz clic en Aceptar. El sistema bloqueará la edición y dejará constancia del estado final.",
+            },
+          ],
+        },
+        {
+          id: 7,
+          aNombre: "Generación de Órdenes de Compra por Stocks",
+          aResumen: `Este módulo permite generar automáticamente órdenes de compra en función de los niveles de stock mínimos, máximos y puntos de reposición definidos por producto y almacén. Sirve para:
+
+Evitar quiebres de stock mediante reposición oportuna.
+
+Reducir el exceso de inventario al respetar límites máximos.
+
+Agilizar el proceso de compras sin intervención manual.
+
+Generar órdenes de compra listas para revisión o emisión.`,
+          pasos: [
+            {
+              label:
+                "Acceder al módulo Generación de Órdenes de Compra por Stocks",
+              description:
+                "Desde el menú Compras, selecciona la opción Generación de Órdenes por Stocks.",
+            },
+            {
+              label: "Seleccionar almacén o grupo de almacenes",
+              description:
+                "Define el ámbito de análisis: un almacén específico o un conjunto de almacenes.",
+            },
+            {
+              label: "Ejecutar análisis de stock",
+              description:
+                "El sistema compara el stock actual con los niveles mínimos y puntos de reposición definidos para cada producto.",
+            },
+            {
+              label: "Revisar sugerencias de compra",
+              description:
+                "Se muestra una lista de productos a reponer, con cantidades sugeridas y proveedor habitual si está vinculado.",
+            },
+            {
+              label: "Generar órdenes de compra",
+              description:
+                "Puedes generar órdenes automáticamente por proveedor, agrupando productos según reglas definidas.",
+            },
+            {
+              label: "Confirmar y emitir órdenes",
+              description:
+                "Revisa las órdenes generadas, ajusta si es necesario y haz clic en Aceptar para emitirlas formalmente.",
+            },
+          ],
+        },
+        {
+          id: 8,
+          aNombre: "Entrada de Mercancía",
+          aResumen: `Este módulo permite registrar la recepción física de productos comprados, vinculándolos con órdenes de compra y actualizando el stock. Sirve para:
+
+Confirmar la llegada de productos al almacén.
+
+Actualizar el inventario y activar la valorización contable.
+
+Vincular la entrada con la orden de compra y el proveedor.
+
+Registrar observaciones, diferencias o rechazos parciales.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Entrada de Mercancía",
+              description:
+                "Desde el menú Compras, selecciona la opción Entrada de Mercancía.",
+            },
+            {
+              label: "Seleccionar orden de compra",
+              description:
+                "Busca la orden correspondiente. El sistema carga los productos y cantidades esperadas.",
+            },
+            {
+              label: "Registrar cantidades recibidas",
+              description:
+                "Ingresa las cantidades efectivamente recibidas. Puedes registrar diferencias o rechazos.",
+            },
+            {
+              label: "Asignar ubicación en almacén",
+              description:
+                "Define el almacén y sección donde se almacenarán los productos.",
+            },
+            {
+              label: "Confirmar entrada",
+              description:
+                "Haz clic en Aceptar. El sistema actualiza el stock, genera el asiento contable y vincula la entrada con la orden.",
+            },
+          ],
+        },
+        {
+          id: 9,
+          aNombre: "Reversión de Entrada",
+          aResumen: `Este módulo permite anular una entrada de mercancía previamente registrada, corrigiendo errores de recepción o duplicación. Sirve para:
+
+Eliminar entradas mal registradas sin afectar el historial contable.
+
+Reestablecer el stock y liberar la orden de compra para nueva recepción.
+
+Evitar errores acumulativos en inventario y contabilidad.
+
+Preservar trazabilidad mediante registro de motivo y usuario responsable.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Reversión de Entrada",
+              description:
+                "Desde el menú Compras, selecciona la opción Reversión de Entrada.",
+            },
+            {
+              label: "Seleccionar entrada a revertir",
+              description:
+                "Busca la entrada por número, proveedor o fecha. Verifica que no esté cerrada contablemente.",
+            },
+            {
+              label: "Registrar motivo de reversión",
+              description:
+                "Indica el motivo (error de cantidad, producto incorrecto, duplicación) y agrega observaciones.",
+            },
+            {
+              label: "Confirmar reversión",
+              description:
+                "Haz clic en Aceptar. El sistema elimina el movimiento, ajusta el stock y deja constancia del cambio.",
+            },
+          ],
+        },
+        {
+          id: 11,
+          aNombre: "Solicitud de Compra",
+          aResumen: `Este módulo permite registrar solicitudes internas de compra, iniciando el flujo formal de adquisición. Sirve para:
+
+Documentar necesidades de productos o servicios por parte de usuarios o áreas.
+
+Activar el proceso de evaluación, cotización y aprobación.
+
+Evitar compras no autorizadas o fuera de presupuesto.
+
+Permitir trazabilidad desde la solicitud hasta la recepción y contabilización.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Solicitud de Compra",
+              description:
+                "Desde el menú Compras, selecciona la opción Solicitud de Compra.",
+            },
+            {
+              label: "Crear nueva solicitud",
+              description:
+                "Indica el área solicitante, fecha, prioridad y observaciones generales.",
+            },
+            {
+              label: "Agregar productos o servicios requeridos",
+              description:
+                "Selecciona productos desde el catálogo o ingresa servicios manualmente. Define cantidades y unidades.",
+            },
+            {
+              label: "Asignar almacén de destino",
+              description:
+                "Indica el almacén donde se recepcionarán los productos una vez adquiridos.",
+            },
+            {
+              label: "Guardar y enviar solicitud",
+              description:
+                "Haz clic en Aceptar. La solicitud queda registrada y puede ser consultada, modificada o utilizada para generar ofertas u órdenes.",
+            },
+          ],
+        },
+        {
+          id: 12,
+          aNombre: "Reversión de Compras",
+          aResumen: `Este módulo permite revertir una compra registrada, eliminando sus efectos en inventario y contabilidad. Sirve para:
+
+Corregir errores en la entrada de productos, facturación o condiciones comerciales.
+
+Evitar acumulación de stock incorrecto o duplicación de asientos contables.
+
+Liberar órdenes de compra para nueva recepción o ajuste.
+
+Preservar trazabilidad mediante registro de motivo, usuario y fecha de reversión.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Reversión de Compras",
+              description:
+                "Desde el menú Compras, selecciona la opción Reversión de Compras.",
+            },
+            {
+              label: "Seleccionar compra a revertir",
+              description:
+                "Busca la compra por número de orden, proveedor o fecha. Verifica que no esté cerrada contablemente.",
+            },
+            {
+              label: "Verificar documentos vinculados",
+              description:
+                "Confirma si la compra tiene entrada de mercancía, factura o asiento contable asociado. El sistema advierte si hay vínculos activos.",
+            },
+            {
+              label: "Registrar motivo de reversión",
+              description:
+                "Indica el motivo (error de producto, cantidad, precio, duplicación) y agrega observaciones.",
+            },
+            {
+              label: "Confirmar reversión",
+              description:
+                "Haz clic en Aceptar. El sistema elimina la compra, ajusta el stock, revierte los asientos contables y deja constancia del cambio.",
+            },
+          ],
+        },
+        {
+          id: 13,
+          aNombre: "Entrada del Informe de Recepción",
+          aResumen: `Este módulo permite registrar el informe oficial de recepción de productos, validando cantidades, condiciones y observaciones. Sirve para:
+
+Documentar la conformidad o disconformidad de la recepción física.
+
+Registrar diferencias entre lo solicitado, lo facturado y lo recibido.
+
+Activar procesos de devolución, ajuste o reclamo si corresponde.
+
+Generar trazabilidad documental para auditoría y contabilidad.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Informe de Recepción",
+              description:
+                "Desde el menú Compras, selecciona la opción Informe de Recepción.",
+            },
+            {
+              label: "Seleccionar orden de compra o entrada vinculada",
+              description:
+                "Busca la orden o entrada de mercancía que deseas validar mediante informe.",
+            },
+            {
+              label: "Registrar cantidades recibidas y observaciones",
+              description:
+                "Confirma cantidades, condiciones del producto, embalaje y cualquier diferencia detectada.",
+            },
+            {
+              label: "Indicar conformidad o disconformidad",
+              description:
+                "Marca si la recepción fue conforme o no. En caso de disconformidad, puedes activar procesos de devolución o reclamo.",
+            },
+            {
+              label: "Guardar y emitir informe",
+              description:
+                "Haz clic en Aceptar. El sistema genera el documento de recepción, lo vincula con la orden y lo deja disponible para contabilidad y auditoría.",
+            },
+          ],
+        },
+        {
+          id: 14,
+          aNombre: "Anulación de Compras",
+          aResumen: `Este módulo permite anular una compra registrada antes de que se haya recepcionado o facturado, eliminando su impacto operativo. Sirve para:
+
+Cancelar órdenes de compra por error, duplicación o cambio de decisión.
+
+Evitar que la orden genere movimientos de entrada o asientos contables.
+
+Preservar trazabilidad mediante registro de motivo y usuario responsable.
+
+Liberar productos y presupuestos para nuevas solicitudes o compras.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Anulación de Compras",
+              description:
+                "Desde el menú Compras, selecciona la opción Anulación de Compras.",
+            },
+            {
+              label: "Seleccionar orden de compra a anular",
+              description:
+                "Busca la orden por número, proveedor o fecha. Verifica que no tenga entrada ni factura vinculada.",
+            },
+            {
+              label: "Registrar motivo de anulación",
+              description:
+                "Indica el motivo (error, duplicación, cancelación por proveedor) y agrega observaciones si corresponde.",
+            },
+            {
+              label: "Confirmar anulación",
+              description:
+                "Haz clic en Aceptar. El sistema elimina la orden, libera los productos y deja constancia del cambio.",
+            },
+          ],
+        },
+        {
+          id: 15,
+          aNombre: "Actualización de Compras",
+          aResumen: `Este módulo permite modificar datos de una compra registrada, como cantidades, precios, condiciones o productos, siempre que no esté cerrada contablemente. Sirve para:
+
+Corregir errores detectados antes de la recepción o facturación.
+
+Actualizar condiciones pactadas con el proveedor (precio, forma de pago, fechas).
+
+Evitar anulaciones innecesarias manteniendo la trazabilidad del proceso.
+
+Preservar control documental mediante registro de usuario y motivo de cambio.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Actualización de Compras",
+              description:
+                "Desde el menú Compras, selecciona la opción Actualización de Compras.",
+            },
+            {
+              label: "Seleccionar compra a actualizar",
+              description:
+                "Busca la orden por número, proveedor o fecha. Verifica que no esté cerrada ni recepcionada completamente.",
+            },
+            {
+              label: "Modificar datos necesarios",
+              description:
+                "Puedes ajustar productos, cantidades, precios, condiciones comerciales, fechas o almacén de destino.",
+            },
+            {
+              label: "Registrar motivo de actualización",
+              description:
+                "Indica el motivo del cambio (error, renegociación, ajuste operativo) y agrega observaciones.",
+            },
+            {
+              label: "Confirmar actualización",
+              description:
+                "Haz clic en Aceptar. El sistema guarda los cambios, actualiza los vínculos y deja constancia del usuario y fecha.",
+            },
+          ],
+        },
+        {
+          id: 2,
+          aNombre: "Actualización de Stocks",
+          aResumen: `Este módulo permite modificar directamente los niveles de stock de productos en un almacén, sin generar movimientos operativos. Sirve para:
+
+Corregir diferencias detectadas en inventario físico versus sistema.
+
+Regularizar cantidades por errores de digitación o procesos externos.
+
+Evitar quiebres o excesos de stock por inconsistencias operativas.
+
+Preservar trazabilidad mediante registro de motivo, usuario y fecha.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Actualización de Stocks",
+              description:
+                "Desde el menú Movimientos Operativos, selecciona la opción Actualización de Stocks.",
+            },
+            {
+              label: "Seleccionar producto y almacén",
+              description:
+                "Busca el producto por código o descripción y selecciona el almacén donde se encuentra.",
+            },
+            {
+              label: "Visualizar stock actual",
+              description:
+                "El sistema muestra la cantidad registrada actualmente en el sistema para ese producto y almacén.",
+            },
+            {
+              label: "Ingresar nueva cantidad",
+              description:
+                "Define la cantidad corregida que debe quedar registrada. El sistema calculará la diferencia.",
+            },
+            {
+              label: "Registrar motivo de actualización",
+              description:
+                "Indica el motivo (error, ajuste físico, regularización) y agrega observaciones si corresponde.",
+            },
+            {
+              label: "Confirmar actualización",
+              description:
+                "Haz clic en Aceptar. El sistema ajusta el stock y deja constancia del cambio en el historial de movimientos.",
+            },
+          ],
+        },
+      ],
     },
     {
       id: 5,
@@ -1350,8 +1947,49 @@ Automatizar la generación de asientos contables en procesos de ingreso, salida 
     },
     {
       id: 9,
-      sNombre: "Consumo",
-      acciones: [],
+      sNombre: "Otros",
+      acciones: [
+        {
+          id: 1,
+          aNombre: "Cambio de Código de Producto",
+          aResumen: `Este módulo permite reemplazar el código de un producto por otro, manteniendo su historial de movimientos, ubicación y valorización. Sirve para:
+
+Actualizar códigos obsoletos o mal asignados sin perder trazabilidad.
+
+Unificar productos duplicados bajo un solo código operativo.
+
+Evitar errores en reportes, ajustes y contabilización por códigos inconsistentes.
+
+Preservar la relación con almacenes, secciones, cuentas contables y nomencladores.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Cambio de Código de Producto",
+              description:
+                "Desde el menú Movimientos Operativos, selecciona la opción Cambio de Código de Producto.",
+            },
+            {
+              label: "Seleccionar código origen",
+              description:
+                "Busca y selecciona el código actual del producto que deseas reemplazar.",
+            },
+            {
+              label: "Seleccionar código destino",
+              description:
+                "Busca y selecciona el nuevo código que reemplazará al anterior. Debe estar previamente registrado.",
+            },
+            {
+              label: "Confirmar el reemplazo",
+              description:
+                "Verifica que el nuevo código tenga las mismas características operativas (unidad, tipo, subfamilia).",
+            },
+            {
+              label: "Ejecutar el cambio",
+              description:
+                "Haz clic en Aceptar. El sistema migrará todos los movimientos, ubicaciones y enlaces al nuevo código.",
+            },
+          ],
+        },
+      ],
     },
   ],
 };
