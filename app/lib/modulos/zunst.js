@@ -1927,8 +1927,758 @@ Preservar trazabilidad mediante registro de motivo, usuario y fecha.`,
     },
     {
       id: 5,
-      sNombre: "Despiece",
-      acciones: [],
+      sNombre: "Transferencias",
+      acciones: [
+        {
+          id: 16,
+          aNombre: "Plantilla de Pedidos",
+          aResumen: `Este módulo permite crear y gestionar plantillas de pedidos frecuentes a proveedores, agilizando el proceso de compras recurrentes. Sirve para:
+
+Definir listas de productos que se solicitan periódicamente.
+
+Establecer condiciones comerciales estándar (proveedor, forma de pago, plazos).
+
+Evitar errores y ahorrar tiempo en la generación de pedidos.
+
+Permitir trazabilidad y control sobre pedidos recurrentes.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Plantilla de Pedidos",
+              description:
+                "Desde el menú Compras, selecciona la opción Plantilla de Pedidos.",
+            },
+            {
+              label: "Crear nueva plantilla",
+              description:
+                "Define el nombre de la plantilla, proveedor asociado y condiciones comerciales generales.",
+            },
+            {
+              label: "Agregar productos",
+              description:
+                "Selecciona los productos desde el catálogo, indicando cantidades habituales y unidades de medida.",
+            },
+            {
+              label: "Guardar plantilla",
+              description:
+                "Haz clic en Aceptar. La plantilla queda registrada y disponible para futuras órdenes.",
+            },
+            {
+              label: "Generar pedido desde plantilla",
+              description:
+                "Selecciona la plantilla y el sistema genera automáticamente el pedido con los productos y condiciones definidas.",
+            },
+            {
+              label: "Modificar o actualizar plantilla",
+              description:
+                "Puedes ajustar productos, cantidades o condiciones en cualquier momento para mantenerla vigente.",
+            },
+          ],
+        },
+        {
+          id: 17,
+          aNombre: "Generación Automática de Pedidos por Stocks",
+          aResumen: `Este módulo permite generar pedidos de manera automática según los niveles de stock mínimos, máximos y puntos de reposición configurados para cada producto. Sirve para:
+
+Evitar quiebres de stock mediante reposición automática.
+
+Reducir exceso de inventario respetando límites máximos.
+
+Agilizar el proceso de compras sin intervención manual.
+
+Generar pedidos listos para revisión y emisión.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Generación Automática de Pedidos",
+              description:
+                "Desde el menú Compras, selecciona la opción Generación Automática de Pedidos por Stocks.",
+            },
+            {
+              label: "Seleccionar almacén o grupo de almacenes",
+              description:
+                "Define el ámbito de análisis: un almacén específico o varios en conjunto.",
+            },
+            {
+              label: "Ejecutar análisis de stock",
+              description:
+                "El sistema compara el stock actual con los niveles mínimos y puntos de reposición definidos para cada producto.",
+            },
+            {
+              label: "Revisar sugerencias de pedidos",
+              description:
+                "Se muestra una lista de productos a reponer, con cantidades sugeridas y proveedor habitual si está vinculado.",
+            },
+            {
+              label: "Generar pedidos automáticamente",
+              description:
+                "El sistema crea pedidos agrupados por proveedor, listos para revisión o emisión.",
+            },
+            {
+              label: "Confirmar y emitir pedidos",
+              description:
+                "Revisa los pedidos generados, ajusta si es necesario y haz clic en Aceptar para emitirlos formalmente.",
+            },
+          ],
+        },
+        {
+          id: 3,
+          aNombre: "Pedidos a un Almacén Dado",
+          aResumen: `Este módulo permite generar solicitudes de productos hacia un almacén específico, iniciando el flujo de traslado interno. Sirve para:
+
+Formalizar pedidos internos de productos entre almacenes o áreas.
+
+Controlar cantidades solicitadas y disponibles en el almacén origen.
+
+Evitar quiebres de stock en áreas de consumo mediante reposición interna.
+
+Mantener trazabilidad desde el pedido hasta la entrega y contabilización.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Pedidos a un Almacén Dado",
+              description:
+                "Desde el menú Movimientos Operativos, selecciona la opción Pedidos a un Almacén Dado.",
+            },
+            {
+              label: "Seleccionar almacén origen",
+              description:
+                "Indica el almacén desde el cual se solicitarán los productos.",
+            },
+            {
+              label: "Definir almacén destino o área solicitante",
+              description:
+                "Selecciona el almacén o área interna que recibirá los productos.",
+            },
+            {
+              label: "Agregar productos al pedido",
+              description:
+                "Busca los productos en el catálogo, define cantidades y unidades requeridas.",
+            },
+            {
+              label: "Verificar disponibilidad",
+              description:
+                "El sistema valida si el almacén origen tiene stock suficiente para cubrir el pedido.",
+            },
+            {
+              label: "Guardar y emitir pedido",
+              description:
+                "Haz clic en Aceptar. El sistema registra el pedido y lo vincula con el flujo de traslado interno.",
+            },
+          ],
+        },
+        {
+          id: 4,
+          aNombre: "Consulta de Pedidos a un Almacén Dado",
+          aResumen: `Este módulo permite revisar el historial de pedidos internos realizados a un almacén específico. Sirve para:
+
+Visualizar pedidos pendientes, atendidos o cerrados.
+
+Auditar solicitudes internas y verificar cumplimiento.
+
+Facilitar seguimiento de abastecimiento entre almacenes o áreas.
+
+Exportar reportes para análisis logístico o administrativo.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Consulta de Pedidos",
+              description:
+                "Desde el menú Movimientos Operativos, selecciona la opción Consulta de Pedidos a un Almacén Dado.",
+            },
+            {
+              label: "Aplicar filtros de búsqueda",
+              description:
+                "Selecciona criterios como almacén origen, almacén destino, producto, estado o rango de fechas.",
+            },
+            {
+              label: "Visualizar detalle del pedido",
+              description:
+                "Consulta productos, cantidades solicitadas, estado de atención y observaciones registradas.",
+            },
+            {
+              label: "Exportar o imprimir",
+              description:
+                "Opcionalmente, genera reportes para análisis o auditoría.",
+            },
+          ],
+        },
+        {
+          id: 5,
+          aNombre: "Cierre de Pedidos a un Almacén Dado",
+          aResumen: `Este módulo permite cerrar formalmente un pedido interno, dejando constancia de su estado final. Sirve para:
+
+Finalizar el ciclo de solicitud y evitar modificaciones posteriores.
+
+Registrar el motivo de cierre (atendido, cancelado, vencido).
+
+Preservar trazabilidad y control documental en el proceso interno.
+
+Activar validaciones logísticas posteriores al cierre.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Cierre de Pedidos",
+              description:
+                "Desde el menú Movimientos Operativos, selecciona la opción Cierre de Pedidos a un Almacén Dado.",
+            },
+            {
+              label: "Seleccionar pedido a cerrar",
+              description:
+                "Busca el pedido activo que deseas cerrar, por número, almacén o fecha.",
+            },
+            {
+              label: "Registrar motivo de cierre",
+              description:
+                "Indica si el pedido fue atendido, cancelado o vencido. Puedes agregar observaciones.",
+            },
+            {
+              label: "Confirmar cierre",
+              description:
+                "Haz clic en Aceptar. El sistema bloquea la edición y deja constancia del estado final.",
+            },
+          ],
+        },
+        {
+          id: 6,
+          aNombre: "Entrada de Transferencias",
+          aResumen: `Este módulo permite registrar la recepción de productos trasladados desde otro almacén, actualizando el stock en el almacén destino. Sirve para:
+
+Confirmar la llegada de productos transferidos.
+
+Actualizar inventario en el almacén receptor.
+
+Mantener trazabilidad entre almacén origen y destino.
+
+Registrar observaciones o diferencias en la recepción.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Entrada de Transferencias",
+              description:
+                "Desde el menú Movimientos Operativos, selecciona la opción Entrada de Transferencias.",
+            },
+            {
+              label: "Seleccionar transferencia pendiente",
+              description:
+                "Busca la transferencia registrada desde el almacén origen que está pendiente de recepción.",
+            },
+            {
+              label: "Registrar cantidades recibidas",
+              description:
+                "Confirma las cantidades efectivamente recibidas. Puedes registrar diferencias o rechazos.",
+            },
+            {
+              label: "Asignar ubicación en almacén destino",
+              description:
+                "Define la sección o ubicación donde se almacenarán los productos recibidos.",
+            },
+            {
+              label: "Confirmar entrada",
+              description:
+                "Haz clic en Aceptar. El sistema actualiza el stock en el almacén destino y deja constancia del movimiento.",
+            },
+          ],
+        },
+        {
+          id: 7,
+          aNombre: "Reversión de Transferencias",
+          aResumen: `Este módulo permite anular una transferencia registrada, corrigiendo errores de envío o recepción. Sirve para:
+
+Eliminar movimientos mal registrados entre almacenes.
+
+Reestablecer stock en origen y destino.
+
+Evitar errores acumulativos en inventario.
+
+Preservar trazabilidad mediante registro de motivo y usuario responsable.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Reversión de Transferencias",
+              description:
+                "Desde el menú Movimientos Operativos, selecciona la opción Reversión de Transferencias.",
+            },
+            {
+              label: "Seleccionar transferencia a revertir",
+              description:
+                "Busca la transferencia por número, almacén origen/destino o fecha. Verifica que no esté cerrada.",
+            },
+            {
+              label: "Registrar motivo de reversión",
+              description:
+                "Indica el motivo (error de cantidad, producto incorrecto, duplicación) y agrega observaciones.",
+            },
+            {
+              label: "Confirmar reversión",
+              description:
+                "Haz clic en Aceptar. El sistema elimina el movimiento, ajusta el stock en ambos almacenes y deja constancia del cambio.",
+            },
+          ],
+        },
+        {
+          id: 20,
+          aNombre: "Registro de Movimientos",
+          aResumen: `Este módulo permite registrar cualquier tipo de movimiento de inventario (entrada, salida, ajuste, transferencia). Sirve para:
+
+Mantener trazabilidad de cambios en stock.
+
+Controlar diferencias entre inventario físico y sistema.
+
+Formalizar operaciones internas con motivo y usuario responsable.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Registro de Movimientos",
+              description:
+                "Desde el menú Movimientos, selecciona la opción Registro de Movimientos.",
+            },
+            {
+              label: "Seleccionar tipo de movimiento",
+              description:
+                "Define si es entrada, salida, ajuste o transferencia.",
+            },
+            {
+              label: "Indicar almacén origen/destino",
+              description:
+                "Selecciona el almacén involucrado en el movimiento.",
+            },
+            {
+              label: "Agregar productos",
+              description:
+                "Busca productos en el catálogo, define cantidades y unidades.",
+            },
+            {
+              label: "Registrar motivo",
+              description:
+                "Indica el motivo del movimiento (compra, devolución, ajuste, traslado).",
+            },
+            {
+              label: "Confirmar registro",
+              description:
+                "Haz clic en Aceptar. El sistema actualiza stock y deja constancia del movimiento.",
+            },
+          ],
+        },
+        {
+          id: 21,
+          aNombre: "Consulta de Movimientos",
+          aResumen: `Este módulo permite revisar el historial de movimientos registrados en el sistema. Sirve para:
+
+Auditar entradas, salidas, ajustes y transferencias.
+
+Filtrar movimientos por producto, almacén, usuario o fecha.
+
+Exportar reportes para análisis logístico o contable.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Consulta de Movimientos",
+              description:
+                "Desde el menú Movimientos, selecciona la opción Consulta de Movimientos.",
+            },
+            {
+              label: "Aplicar filtros de búsqueda",
+              description:
+                "Selecciona criterios como tipo de movimiento, producto, almacén, usuario o rango de fechas.",
+            },
+            {
+              label: "Visualizar detalle",
+              description:
+                "Consulta productos, cantidades, motivo y usuario responsable.",
+            },
+            {
+              label: "Exportar o imprimir",
+              description:
+                "Opcionalmente, genera reportes para análisis o auditoría.",
+            },
+          ],
+        },
+        {
+          id: 22,
+          aNombre: "Cierre de Movimientos",
+          aResumen: `Este módulo permite cerrar formalmente un movimiento registrado, bloqueando su edición y dejando constancia del estado final. Sirve para:
+
+Finalizar operaciones y evitar modificaciones posteriores.
+
+Registrar motivo de cierre (ejecutado, cancelado, corregido).
+
+Mantener trazabilidad y control documental.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Cierre de Movimientos",
+              description:
+                "Desde el menú Movimientos, selecciona la opción Cierre de Movimientos.",
+            },
+            {
+              label: "Seleccionar movimiento a cerrar",
+              description:
+                "Busca el movimiento activo por número, almacén o fecha.",
+            },
+            {
+              label: "Registrar motivo de cierre",
+              description:
+                "Indica si el movimiento fue ejecutado, cancelado o corregido.",
+            },
+            {
+              label: "Confirmar cierre",
+              description:
+                "Haz clic en Aceptar. El sistema bloquea la edición y deja constancia del estado final.",
+            },
+          ],
+        },
+        {
+          id: 23,
+          aNombre: "Reversión de Movimientos",
+          aResumen: `Este módulo permite revertir un movimiento de inventario registrado, eliminando sus efectos en stock y contabilidad. Sirve para:
+
+Corregir errores en entradas, salidas, ajustes o transferencias.
+
+Evitar acumulación de diferencias en inventario por registros incorrectos.
+
+Reestablecer el stock a su estado previo al movimiento.
+
+Preservar trazabilidad mediante registro de motivo, usuario y fecha.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Reversión de Movimientos",
+              description:
+                "Desde el menú Movimientos, selecciona la opción Reversión de Movimientos.",
+            },
+            {
+              label: "Seleccionar movimiento a revertir",
+              description:
+                "Busca el movimiento por número, tipo, producto, almacén o fecha. Verifica que no esté cerrado contablemente.",
+            },
+            {
+              label: "Verificar documentos vinculados",
+              description:
+                "Confirma si el movimiento tiene relación con pedidos, transferencias o facturas. El sistema advierte si hay vínculos activos.",
+            },
+            {
+              label: "Registrar motivo de reversión",
+              description:
+                "Indica el motivo (error de cantidad, producto incorrecto, duplicación, ajuste inválido) y agrega observaciones.",
+            },
+            {
+              label: "Confirmar reversión",
+              description:
+                "Haz clic en Aceptar. El sistema elimina el movimiento, ajusta el stock y deja constancia del cambio en el historial.",
+            },
+          ],
+        },
+        {
+          id: 24,
+          aNombre: "Gasto",
+          aResumen: `Este módulo permite registrar salidas de inventario por consumo interno, sin relación con ventas o transferencias. Sirve para:
+
+Controlar consumos internos de materiales, insumos o productos.
+
+Mantener trazabilidad de salidas no comerciales.
+
+Evitar diferencias en inventario por uso interno no documentado.
+
+Generar reportes de gastos por área, proyecto o usuario.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Gasto",
+              description:
+                "Desde el menú Movimientos Operativos, selecciona la opción Gasto.",
+            },
+            {
+              label: "Seleccionar almacén origen",
+              description:
+                "Indica el almacén desde el cual se retirarán los productos para consumo interno.",
+            },
+            {
+              label: "Agregar productos al gasto",
+              description:
+                "Busca los productos en el catálogo, define cantidades y unidades consumidas.",
+            },
+            {
+              label: "Registrar área o proyecto",
+              description:
+                "Indica el área interna, departamento o proyecto que utilizará los productos.",
+            },
+            {
+              label: "Registrar motivo del gasto",
+              description:
+                "Especifica el motivo (uso interno, mantenimiento, prueba, evento) y agrega observaciones.",
+            },
+            {
+              label: "Confirmar gasto",
+              description:
+                "Haz clic en Aceptar. El sistema descuenta las cantidades del stock y deja constancia del movimiento.",
+            },
+          ],
+        },
+        {
+          id: 25,
+          aNombre: "Reversión de Gastos",
+          aResumen: `Este módulo permite revertir un gasto registrado, eliminando sus efectos en inventario y contabilidad interna. Sirve para:
+
+Corregir errores en consumos internos de productos.
+
+Reestablecer stock en el almacén origen.
+
+Evitar diferencias en inventario por registros incorrectos.
+
+Preservar trazabilidad mediante registro de motivo, usuario y fecha.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Reversión de Gastos",
+              description:
+                "Desde el menú Movimientos Operativos, selecciona la opción Reversión de Gastos.",
+            },
+            {
+              label: "Seleccionar gasto a revertir",
+              description:
+                "Busca el gasto por número, producto, área solicitante o fecha. Verifica que no esté cerrado contablemente.",
+            },
+            {
+              label: "Verificar documentos vinculados",
+              description:
+                "Confirma si el gasto tiene relación con proyectos, áreas o reportes. El sistema advierte si hay vínculos activos.",
+            },
+            {
+              label: "Registrar motivo de reversión",
+              description:
+                "Indica el motivo (error de cantidad, producto incorrecto, duplicación) y agrega observaciones.",
+            },
+            {
+              label: "Confirmar reversión",
+              description:
+                "Haz clic en Aceptar. El sistema elimina el gasto, ajusta el stock y deja constancia del cambio en el historial.",
+            },
+          ],
+        },
+        {
+          id: 26,
+          aNombre: "Venta",
+          aResumen: `Este módulo permite registrar salidas de inventario por ventas realizadas a clientes, vinculando productos, cantidades y condiciones comerciales. Sirve para:
+
+Formalizar la salida de productos del almacén hacia clientes.
+
+Mantener trazabilidad entre inventario, facturación y contabilidad.
+
+Evitar diferencias en stock por ventas no documentadas.
+
+Generar reportes de ventas por cliente, producto o período.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Venta",
+              description:
+                "Desde el menú Movimientos Operativos, selecciona la opción Venta.",
+            },
+            {
+              label: "Seleccionar cliente",
+              description:
+                "Indica el cliente al cual se le realizará la venta. Puedes buscarlo por nombre, código o NIT.",
+            },
+            {
+              label: "Agregar productos a la venta",
+              description:
+                "Busca los productos en el catálogo, define cantidades, precios y condiciones comerciales.",
+            },
+            {
+              label: "Registrar condiciones de la operación",
+              description:
+                "Indica forma de pago, fecha de entrega y observaciones si corresponde.",
+            },
+            {
+              label: "Confirmar venta",
+              description:
+                "Haz clic en Aceptar. El sistema descuenta las cantidades del stock, vincula la operación con facturación y deja constancia del movimiento.",
+            },
+          ],
+        },
+        {
+          id: 27,
+          aNombre: "Reversión de Ventas",
+          aResumen: `Este módulo permite revertir una venta registrada, eliminando sus efectos en inventario y contabilidad. Sirve para:
+
+Corregir errores en la salida de productos por ventas.
+
+Reestablecer stock en el almacén origen.
+
+Evitar diferencias en inventario y facturación por registros incorrectos.
+
+Preservar trazabilidad mediante registro de motivo, usuario y fecha.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Reversión de Ventas",
+              description:
+                "Desde el menú Movimientos Operativos, selecciona la opción Reversión de Ventas.",
+            },
+            {
+              label: "Seleccionar venta a revertir",
+              description:
+                "Busca la venta por número, cliente, producto o fecha. Verifica que no esté cerrada contablemente.",
+            },
+            {
+              label: "Verificar documentos vinculados",
+              description:
+                "Confirma si la venta tiene factura, asiento contable o entrega asociada. El sistema advierte si hay vínculos activos.",
+            },
+            {
+              label: "Registrar motivo de reversión",
+              description:
+                "Indica el motivo (error de cantidad, producto incorrecto, duplicación, cancelación) y agrega observaciones.",
+            },
+            {
+              label: "Confirmar reversión",
+              description:
+                "Haz clic en Aceptar. El sistema elimina la venta, ajusta el stock y deja constancia del cambio en el historial.",
+            },
+          ],
+        },
+        {
+          id: 28,
+          aNombre: "Anulación de Movimientos",
+          aResumen: `Este módulo permite anular un movimiento registrado antes de su cierre contable, eliminando sus efectos en inventario. Sirve para:
+
+Cancelar movimientos creados por error o duplicación.
+
+Evitar que ajustes, entradas o salidas incorrectas afecten el stock.
+
+Liberar registros para nueva operación correcta.
+
+Preservar trazabilidad mediante registro de motivo y usuario responsable.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Anulación de Movimientos",
+              description:
+                "Desde el menú Movimientos Operativos, selecciona la opción Anulación de Movimientos.",
+            },
+            {
+              label: "Seleccionar movimiento a anular",
+              description:
+                "Busca el movimiento por número, tipo, producto o fecha. Verifica que no esté cerrado.",
+            },
+            {
+              label: "Registrar motivo de anulación",
+              description:
+                "Indica el motivo (error, duplicación, cancelación) y agrega observaciones.",
+            },
+            {
+              label: "Confirmar anulación",
+              description:
+                "Haz clic en Aceptar. El sistema elimina el movimiento y deja constancia del cambio en el historial.",
+            },
+          ],
+        },
+        {
+          id: 29,
+          aNombre: "Reversión entre Secciones",
+          aResumen: `Este módulo permite revertir movimientos internos entre secciones de un mismo almacén, corrigiendo errores de ubicación o asignación. Sirve para:
+
+Corregir traslados internos mal registrados.
+
+Reestablecer stock en la sección origen y destino.
+
+Evitar diferencias en inventario por errores de ubicación.
+
+Mantener trazabilidad mediante registro de motivo, usuario y fecha.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Reversión entre Secciones",
+              description:
+                "Desde el menú Movimientos Operativos, selecciona la opción Reversión entre Secciones.",
+            },
+            {
+              label: "Seleccionar movimiento interno a revertir",
+              description:
+                "Busca el traslado entre secciones por número, producto o fecha.",
+            },
+            {
+              label: "Verificar disponibilidad",
+              description:
+                "Confirma que el stock en la sección destino no haya sido ya utilizado o comprometido.",
+            },
+            {
+              label: "Registrar motivo de reversión",
+              description:
+                "Indica el motivo (error de ubicación, duplicación, asignación incorrecta) y agrega observaciones.",
+            },
+            {
+              label: "Confirmar reversión",
+              description:
+                "Haz clic en Aceptar. El sistema ajusta el stock en ambas secciones y deja constancia del cambio.",
+            },
+          ],
+        },
+        {
+          id: 30,
+          aNombre: "Actualización de Movimientos",
+          aResumen: `Este módulo permite modificar datos de un movimiento de inventario registrado (entrada, salida, ajuste o transferencia), siempre que no esté cerrado contablemente. Sirve para:
+
+Corregir errores detectados en cantidades, productos o almacenes.
+
+Actualizar condiciones operativas antes del cierre definitivo.
+
+Evitar anulaciones innecesarias manteniendo la trazabilidad del proceso.
+
+Preservar control documental mediante registro de usuario y motivo de cambio.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Actualización de Movimientos",
+              description:
+                "Desde el menú Movimientos Operativos, selecciona la opción Actualización de Movimientos.",
+            },
+            {
+              label: "Seleccionar movimiento a actualizar",
+              description:
+                "Busca el movimiento por número, tipo, producto, almacén o fecha. Verifica que no esté cerrado.",
+            },
+            {
+              label: "Modificar datos necesarios",
+              description:
+                "Puedes ajustar productos, cantidades, almacén origen/destino, motivo o condiciones asociadas.",
+            },
+            {
+              label: "Registrar motivo de actualización",
+              description:
+                "Indica el motivo del cambio (error, ajuste operativo, corrección) y agrega observaciones.",
+            },
+            {
+              label: "Confirmar actualización",
+              description:
+                "Haz clic en Aceptar. El sistema guarda los cambios, actualiza el stock y deja constancia del usuario y fecha.",
+            },
+          ],
+        },
+        {
+          id: 31,
+          aNombre: "Listado de Operaciones Pendientes",
+          aResumen: `Este módulo permite consultar todas las operaciones de inventario que están abiertas o pendientes de cierre. Sirve para:
+
+Centralizar en un solo listado las operaciones aún no ejecutadas.
+
+Facilitar seguimiento de entradas, salidas, transferencias, gastos y ventas pendientes.
+
+Evitar olvidos o acumulación de movimientos sin cierre.
+
+Generar reportes para planificación logística y auditoría.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Listado de Operaciones Pendientes",
+              description:
+                "Desde el menú Movimientos Operativos, selecciona la opción Listado de Operaciones Pendientes.",
+            },
+            {
+              label: "Aplicar filtros de búsqueda",
+              description:
+                "Selecciona criterios como tipo de operación (entrada, salida, transferencia, gasto, venta), almacén, usuario o rango de fechas.",
+            },
+            {
+              label: "Visualizar listado",
+              description:
+                "El sistema muestra todas las operaciones abiertas, con detalle de productos, cantidades y estado.",
+            },
+            {
+              label: "Revisar estado de cada operación",
+              description:
+                "Identifica si la operación está pendiente de confirmación, ejecución o cierre.",
+            },
+            {
+              label: "Exportar o imprimir",
+              description:
+                "Opcionalmente, genera reportes para análisis logístico, auditoría o planificación.",
+            },
+          ],
+        },
+      ],
     },
     {
       id: 6,
