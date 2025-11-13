@@ -2682,13 +2682,722 @@ Generar reportes para planificación logística y auditoría.`,
     },
     {
       id: 6,
-      sNombre: "Escandallos",
-      acciones: [],
+      sNombre: "Inventario",
+      acciones: [
+        {
+          id: 32,
+          aNombre: "Listado para Toma",
+          aResumen: `Este módulo permite generar listados de productos y ubicaciones que serán verificados en una toma de inventario. Sirve para:
+
+Preparar la información necesaria antes de realizar el conteo físico.
+
+Definir qué productos, secciones o almacenes serán incluidos en la toma.
+
+Facilitar la organización del personal encargado del conteo.
+
+Mantener trazabilidad entre inventario físico y sistema.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Listado para Toma",
+              description:
+                "Desde el menú Movimientos Operativos, selecciona la opción Listado para Toma.",
+            },
+            {
+              label: "Seleccionar almacén o sección",
+              description:
+                "Define el ámbito de la toma: almacén completo, sección específica o grupo de productos.",
+            },
+            {
+              label: "Aplicar filtros de productos",
+              description:
+                "Puedes filtrar por categoría, familia, estado o rango de códigos para delimitar el listado.",
+            },
+            {
+              label: "Generar listado preliminar",
+              description:
+                "El sistema muestra los productos seleccionados con sus datos actuales de stock, ubicación y código.",
+            },
+            {
+              label: "Imprimir o exportar listado",
+              description:
+                "Genera el documento que servirá como guía para el conteo físico en la toma de inventario.",
+            },
+            {
+              label: "Asignar responsables",
+              description:
+                "Opcionalmente, registra qué usuario o equipo se encargará de cada sección del listado.",
+            },
+          ],
+        },
+        {
+          id: 33,
+          aNombre: "Entrada",
+          aResumen: `Este módulo permite registrar entradas de productos al inventario, provenientes de compras, devoluciones, transferencias o ajustes. Sirve para:
+
+Actualizar el stock en el almacén receptor.
+
+Mantener trazabilidad de productos ingresados con motivo y documento asociado.
+
+Evitar diferencias entre inventario físico y sistema.
+
+Generar reportes de entradas por proveedor, producto o período.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Entrada",
+              description:
+                "Desde el menú Movimientos Operativos, selecciona la opción Entrada.",
+            },
+            {
+              label: "Seleccionar almacén destino",
+              description:
+                "Indica el almacén en el cual se registrará la entrada de productos.",
+            },
+            {
+              label: "Definir tipo de entrada",
+              description:
+                "Selecciona si la entrada proviene de una compra, devolución, transferencia o ajuste.",
+            },
+            {
+              label: "Agregar productos",
+              description:
+                "Busca los productos en el catálogo, define cantidades, unidades y precios si corresponde.",
+            },
+            {
+              label: "Registrar documento asociado",
+              description:
+                "Indica el número de factura, nota de crédito, transferencia o documento que respalda la entrada.",
+            },
+            {
+              label: "Confirmar entrada",
+              description:
+                "Haz clic en Aceptar. El sistema actualiza el stock en el almacén destino y deja constancia del movimiento.",
+            },
+          ],
+        },
+        {
+          id: 34,
+          aNombre: "Listado de Inventario Pendiente a Actualizar",
+          aResumen: `Este módulo permite consultar todos los productos y registros de inventario que están pendientes de actualización, ya sea por toma de inventario, ajustes o movimientos no cerrados. Sirve para:
+
+Detectar diferencias entre inventario físico y sistema.
+
+Centralizar en un listado los productos que requieren actualización.
+
+Evitar inconsistencias en stock por registros incompletos.
+
+Facilitar la planificación de ajustes y cierres.`,
+          pasos: [
+            {
+              label:
+                "Acceder al módulo Listado de Inventario Pendiente a Actualizar",
+              description:
+                "Desde el menú Movimientos Operativos, selecciona la opción Listado de Inventario Pendiente a Actualizar.",
+            },
+            {
+              label: "Seleccionar almacén o sección",
+              description:
+                "Define el ámbito de análisis: almacén completo, sección específica o grupo de productos.",
+            },
+            {
+              label: "Aplicar filtros de búsqueda",
+              description:
+                "Puedes filtrar por categoría, familia, estado o rango de fechas para delimitar el listado.",
+            },
+            {
+              label: "Visualizar listado",
+              description:
+                "El sistema muestra los productos pendientes de actualización, con detalle de stock actual, stock físico y diferencias detectadas.",
+            },
+            {
+              label: "Exportar o imprimir",
+              description:
+                "Genera un reporte para análisis logístico o auditoría, que servirá de base para la actualización.",
+            },
+            {
+              label: "Asignar responsables",
+              description:
+                "Opcionalmente, registra qué usuario o equipo se encargará de realizar la actualización correspondiente.",
+            },
+          ],
+        },
+        {
+          id: 35,
+          aNombre: "Anulación",
+          aResumen: `Este módulo permite anular operaciones de inventario registradas (entradas, salidas, transferencias, gastos o ventas) antes de su cierre definitivo. Sirve para:
+
+Cancelar movimientos creados por error o duplicación.
+
+Evitar que registros incorrectos afecten el stock y la contabilidad.
+
+Mantener la trazabilidad mediante registro de motivo y usuario responsable.
+
+Facilitar la corrección sin necesidad de reversión completa.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Anulación",
+              description:
+                "Desde el menú Movimientos Operativos, selecciona la opción Anulación.",
+            },
+            {
+              label: "Seleccionar operación a anular",
+              description:
+                "Busca la operación por número, tipo, producto, almacén o fecha. Verifica que no esté cerrada.",
+            },
+            {
+              label: "Verificar vínculos asociados",
+              description:
+                "Confirma si la operación está vinculada a pedidos, facturas o transferencias. El sistema advierte si hay dependencias.",
+            },
+            {
+              label: "Registrar motivo de anulación",
+              description:
+                "Indica el motivo (error, duplicación, cancelación) y agrega observaciones.",
+            },
+            {
+              label: "Confirmar anulación",
+              description:
+                "Haz clic en Aceptar. El sistema elimina la operación, ajusta el stock y deja constancia del cambio en el historial.",
+            },
+          ],
+        },
+        {
+          id: 36,
+          aNombre: "Actualización",
+          aResumen: `Este módulo permite actualizar operaciones de inventario registradas (entradas, salidas, transferencias, gastos o ventas), siempre que no estén cerradas. Sirve para:
+
+Corregir errores detectados en cantidades, productos o almacenes.
+
+Actualizar condiciones operativas antes del cierre definitivo.
+
+Evitar anulaciones innecesarias manteniendo la trazabilidad del proceso.
+
+Preservar control documental mediante registro de usuario y motivo del cambio.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Actualización",
+              description:
+                "Desde el menú Movimientos Operativos, selecciona la opción Actualización.",
+            },
+            {
+              label: "Seleccionar operación a actualizar",
+              description:
+                "Busca la operación por número, tipo, producto, almacén o fecha. Verifica que no esté cerrada.",
+            },
+            {
+              label: "Modificar datos necesarios",
+              description:
+                "Puedes ajustar productos, cantidades, almacén origen/destino, motivo o condiciones asociadas.",
+            },
+            {
+              label: "Registrar motivo de actualización",
+              description:
+                "Indica el motivo del cambio (error, ajuste operativo, corrección) y agrega observaciones.",
+            },
+            {
+              label: "Confirmar actualización",
+              description:
+                "Haz clic en Aceptar. El sistema guarda los cambios, actualiza el stock y deja constancia del usuario y fecha.",
+            },
+          ],
+        },
+        {
+          id: 37,
+          aNombre: "Cierre de Inventario",
+          aResumen: `Este módulo permite cerrar formalmente el inventario tras una toma o actualización, consolidando los datos y bloqueando modificaciones posteriores. Sirve para:
+
+Finalizar el proceso de toma y actualización de inventario.
+
+Evitar cambios posteriores que afecten la consistencia del stock.
+
+Generar reportes definitivos para auditoría y contabilidad.
+
+Mantener trazabilidad mediante registro de usuario, fecha y motivo de cierre.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Cierre de Inventario",
+              description:
+                "Desde el menú Movimientos Operativos, selecciona la opción Cierre de Inventario.",
+            },
+            {
+              label: "Seleccionar inventario a cerrar",
+              description:
+                "Busca el inventario por almacén, sección o fecha de toma. Verifica que esté pendiente de cierre.",
+            },
+            {
+              label: "Revisar diferencias",
+              description:
+                "El sistema muestra diferencias entre stock físico y stock registrado. Confirma que las actualizaciones estén completas.",
+            },
+            {
+              label: "Registrar motivo de cierre",
+              description:
+                "Indica si el cierre corresponde a toma finalizada, ajuste consolidado o auditoría concluida.",
+            },
+            {
+              label: "Confirmar cierre",
+              description:
+                "Haz clic en Aceptar. El sistema bloquea la edición, consolida el inventario y deja constancia del estado final.",
+            },
+          ],
+        },
+        {
+          id: 38,
+          aNombre: "Listado de Inventario",
+          aResumen: `Este módulo permite consultar el inventario actual en el sistema, mostrando productos, cantidades y ubicaciones. Sirve para:
+
+Visualizar el stock disponible en cada almacén o sección.
+
+Aplicar filtros por producto, categoría, familia o estado.
+
+Generar reportes de inventario para auditoría y planificación.
+
+Mantener trazabilidad entre inventario físico y sistema.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Listado de Inventario",
+              description:
+                "Desde el menú Movimientos Operativos, selecciona la opción Listado de Inventario.",
+            },
+            {
+              label: "Seleccionar almacén o sección",
+              description:
+                "Define el ámbito de consulta: almacén completo, sección específica o grupo de productos.",
+            },
+            {
+              label: "Aplicar filtros de búsqueda",
+              description:
+                "Puedes filtrar por categoría, familia, estado, rango de códigos o fechas de actualización.",
+            },
+            {
+              label: "Visualizar listado",
+              description:
+                "El sistema muestra los productos con detalle de stock actual, ubicación, código y estado.",
+            },
+            {
+              label: "Exportar o imprimir",
+              description:
+                "Genera un reporte para análisis logístico, auditoría o planificación.",
+            },
+            {
+              label: "Asignar responsables (opcional)",
+              description:
+                "Registra qué usuario o área se encargará de revisar o validar el listado generado.",
+            },
+          ],
+        },
+      ],
     },
     {
       id: 7,
       sNombre: "Estadísticas",
-      acciones: [],
+      acciones: [
+        {
+          id: 39,
+          aNombre: "Submayor de Productos",
+          aResumen: `Este módulo permite consultar el historial detallado de movimientos de un producto, mostrando entradas, salidas, transferencias, gastos y ventas. Sirve para:
+
+Auditar el comportamiento de cada producto en inventario.
+
+Detectar diferencias entre stock físico y sistema.
+
+Generar reportes de movimientos por período, almacén o usuario.
+
+Mantener trazabilidad completa de cada artículo.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Submayor de Productos",
+              description:
+                "Desde el menú Consultas y Reportes, selecciona la opción Submayor de Productos.",
+            },
+            {
+              label: "Seleccionar producto",
+              description:
+                "Busca el producto por código, nombre o categoría. Puedes seleccionar varios productos si lo requieres.",
+            },
+            {
+              label: "Definir período de consulta",
+              description:
+                "Indica el rango de fechas para el cual deseas visualizar los movimientos.",
+            },
+            {
+              label: "Aplicar filtros adicionales",
+              description:
+                "Opcionalmente, filtra por almacén, sección, tipo de movimiento o usuario responsable.",
+            },
+            {
+              label: "Visualizar historial",
+              description:
+                "El sistema muestra entradas, salidas, transferencias, gastos y ventas del producto, con detalle de cantidades, fechas y documentos asociados.",
+            },
+            {
+              label: "Exportar o imprimir",
+              description:
+                "Genera un reporte en formato digital o físico para auditoría, análisis contable o planificación logística.",
+            },
+          ],
+        },
+        {
+          id: 40,
+          aNombre: "Revisión del Submayor de Productos",
+          aResumen: `Este módulo permite revisar y auditar el historial de movimientos de un producto, validando que las entradas, salidas, transferencias, gastos y ventas estén correctamente registradas. Sirve para:
+
+Detectar inconsistencias entre inventario físico y sistema.
+
+Validar que los movimientos asociados a un producto estén completos y correctos.
+
+Generar reportes de revisión para auditoría interna o externa.
+
+Mantener trazabilidad mediante registro de usuario, fecha y observaciones.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Revisión del Submayor de Productos",
+              description:
+                "Desde el menú Consultas y Reportes, selecciona la opción Revisión del Submayor de Productos.",
+            },
+            {
+              label: "Seleccionar producto a revisar",
+              description:
+                "Busca el producto por código, nombre o categoría. Puedes seleccionar varios productos si lo requieres.",
+            },
+            {
+              label: "Definir período de revisión",
+              description:
+                "Indica el rango de fechas para el cual deseas validar los movimientos.",
+            },
+            {
+              label: "Comparar movimientos con inventario físico",
+              description:
+                "Verifica que las entradas, salidas y ajustes coincidan con el stock físico registrado en la última toma.",
+            },
+            {
+              label: "Registrar observaciones",
+              description:
+                "Agrega notas sobre diferencias detectadas, errores o validaciones realizadas.",
+            },
+            {
+              label: "Generar reporte de revisión",
+              description:
+                "Exporta o imprime el resultado de la revisión, con detalle de movimientos, diferencias y observaciones.",
+            },
+          ],
+        },
+        {
+          id: 41,
+          aNombre: "Ajustar Submayor",
+          aResumen: `Este módulo permite realizar ajustes en el historial de movimientos de un producto dentro del submayor, corrigiendo errores en cantidades, fechas o documentos asociados. Sirve para:
+
+Corregir inconsistencias detectadas en la revisión del submayor.
+
+Actualizar datos de movimientos sin necesidad de anulación completa.
+
+Mantener la trazabilidad mediante registro de usuario, fecha y motivo del ajuste.
+
+Evitar diferencias acumulativas entre inventario físico y sistema.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Ajustar Submayor",
+              description:
+                "Desde el menú Consultas y Reportes, selecciona la opción Ajustar Submayor.",
+            },
+            {
+              label: "Seleccionar producto y período",
+              description:
+                "Busca el producto por código o nombre y define el rango de fechas del submayor a ajustar.",
+            },
+            {
+              label: "Identificar movimiento a corregir",
+              description:
+                "Localiza la entrada, salida, transferencia, gasto o venta que presenta inconsistencias.",
+            },
+            {
+              label: "Modificar datos del movimiento",
+              description:
+                "Ajusta cantidades, fechas, documentos asociados o almacén involucrado según corresponda.",
+            },
+            {
+              label: "Registrar motivo del ajuste",
+              description:
+                "Indica el motivo (error de registro, corrección contable, ajuste operativo) y agrega observaciones.",
+            },
+            {
+              label: "Confirmar ajuste",
+              description:
+                "Haz clic en Aceptar. El sistema guarda los cambios, actualiza el submayor y deja constancia del usuario y fecha.",
+            },
+          ],
+        },
+        {
+          id: 42,
+          aNombre: "Inventario de Productos",
+          aResumen: `Este módulo permite consultar el inventario actual de cada producto, mostrando cantidades disponibles, ubicaciones y movimientos asociados. Sirve para:
+
+Visualizar el stock detallado por producto en tiempo real.
+
+Aplicar filtros por categoría, familia, almacén o estado.
+
+Generar reportes de inventario para auditoría, logística y planificación.
+
+Mantener trazabilidad entre inventario físico y sistema.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Inventario de Productos",
+              description:
+                "Desde el menú Consultas y Reportes, selecciona la opción Inventario de Productos.",
+            },
+            {
+              label: "Seleccionar almacén o sección",
+              description:
+                "Define el ámbito de consulta: almacén completo, sección específica o grupo de productos.",
+            },
+            {
+              label: "Aplicar filtros de búsqueda",
+              description:
+                "Puedes filtrar por categoría, familia, estado, rango de códigos o fechas de actualización.",
+            },
+            {
+              label: "Visualizar inventario",
+              description:
+                "El sistema muestra los productos con detalle de stock actual, ubicación, código y estado.",
+            },
+            {
+              label: "Revisar movimientos asociados",
+              description:
+                "Opcionalmente, consulta los movimientos recientes vinculados a cada producto para validar consistencia.",
+            },
+            {
+              label: "Exportar o imprimir",
+              description:
+                "Genera un reporte en formato digital o físico para análisis logístico, auditoría o planificación.",
+            },
+          ],
+        },
+        {
+          id: 43,
+          aNombre: "Productos No Consumidos",
+          aResumen: `Este módulo permite consultar los productos que permanecen en inventario sin movimientos de consumo (salidas, ventas, transferencias o gastos) durante un período definido. Sirve para:
+
+Detectar artículos inmovilizados o de baja rotación.
+
+Optimizar espacio en almacenes y reducir costos de almacenamiento.
+
+Planificar estrategias de liquidación, devolución o redistribución.
+
+Mantener trazabilidad de productos con escaso movimiento.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Productos No Consumidos",
+              description:
+                "Desde el menú Consultas y Reportes, selecciona la opción Productos No Consumidos.",
+            },
+            {
+              label: "Definir período de análisis",
+              description:
+                "Indica el rango de fechas en el cual se evaluará el consumo de productos.",
+            },
+            {
+              label: "Seleccionar almacén o sección",
+              description:
+                "Define el ámbito de consulta: almacén completo, sección específica o grupo de productos.",
+            },
+            {
+              label: "Aplicar filtros adicionales",
+              description:
+                "Opcionalmente, filtra por categoría, familia, estado o proveedor para delimitar el listado.",
+            },
+            {
+              label: "Visualizar listado",
+              description:
+                "El sistema muestra los productos que no registraron movimientos de salida o consumo en el período definido.",
+            },
+            {
+              label: "Exportar o imprimir",
+              description:
+                "Genera un reporte para análisis logístico, auditoría o planificación de acciones correctivas.",
+            },
+          ],
+        },
+        {
+          id: 44,
+          aNombre: "Extracto de Compras",
+          aResumen: `Este módulo permite consultar y generar un extracto de las compras registradas en el sistema, mostrando detalle por proveedor, producto y documento. Sirve para:
+
+Auditar las compras realizadas en un período específico.
+
+Validar que las entradas de inventario estén respaldadas por documentos de compra.
+
+Generar reportes para análisis contable y logístico.
+
+Mantener trazabilidad entre proveedores, productos y almacenes.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Extracto de Compras",
+              description:
+                "Desde el menú Consultas y Reportes, selecciona la opción Extracto de Compras.",
+            },
+            {
+              label: "Definir período de consulta",
+              description:
+                "Indica el rango de fechas para el cual deseas visualizar las compras registradas.",
+            },
+            {
+              label: "Seleccionar proveedor o grupo de proveedores",
+              description:
+                "Puedes delimitar la consulta a un proveedor específico o a varios proveedores.",
+            },
+            {
+              label: "Aplicar filtros adicionales",
+              description:
+                "Opcionalmente, filtra por producto, categoría, almacén o estado de la compra.",
+            },
+            {
+              label: "Visualizar extracto",
+              description:
+                "El sistema muestra las compras realizadas con detalle de productos, cantidades, precios y documentos asociados.",
+            },
+            {
+              label: "Exportar o imprimir",
+              description:
+                "Genera un reporte en formato digital o físico para análisis contable, auditoría o planificación de compras.",
+            },
+          ],
+        },
+        {
+          id: 45,
+          aNombre: "Productos con Precio de Compra Diferente",
+          aResumen: `Este módulo permite consultar los productos que presentan variaciones en su precio de compra en distintos documentos o períodos. Sirve para:
+
+Detectar diferencias de costos entre proveedores o compras sucesivas.
+
+Analizar impacto en márgenes de venta y rentabilidad.
+
+Controlar coherencia de precios en el sistema frente a facturas recibidas.
+
+Generar reportes de variaciones para auditoría y negociación con proveedores.`,
+          pasos: [
+            {
+              label:
+                "Acceder al módulo Productos con Precio de Compra Diferente",
+              description:
+                "Desde el menú Consultas y Reportes, selecciona la opción Productos con Precio de Compra Diferente.",
+            },
+            {
+              label: "Definir período de análisis",
+              description:
+                "Indica el rango de fechas en el cual deseas evaluar las compras registradas.",
+            },
+            {
+              label: "Seleccionar producto o grupo de productos",
+              description:
+                "Busca por código, nombre, categoría o familia de productos.",
+            },
+            {
+              label: "Visualizar variaciones de precio",
+              description:
+                "El sistema muestra las compras registradas con detalle de proveedor, documento, fecha y precio unitario.",
+            },
+            {
+              label: "Comparar precios",
+              description:
+                "Identifica diferencias entre precios de compra para el mismo producto en distintos documentos o proveedores.",
+            },
+            {
+              label: "Exportar o imprimir reporte",
+              description:
+                "Genera un informe con las variaciones detectadas, útil para auditoría, negociación y control de costos.",
+            },
+          ],
+        },
+        {
+          id: 46,
+          aNombre: "Resumen por Secciones",
+          aResumen: `Este módulo permite consultar un resumen consolidado del inventario y movimientos agrupados por secciones de un almacén. Sirve para:
+
+Visualizar el stock total y movimientos por cada sección.
+
+Detectar diferencias de inventario entre secciones.
+
+Generar reportes de control para auditoría y planificación logística.
+
+Mantener trazabilidad entre inventario físico y sistema a nivel de sección.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Resumen por Secciones",
+              description:
+                "Desde el menú Consultas y Reportes, selecciona la opción Resumen por Secciones.",
+            },
+            {
+              label: "Seleccionar almacén",
+              description:
+                "Indica el almacén del cual deseas obtener el resumen por secciones.",
+            },
+            {
+              label: "Definir período de consulta",
+              description:
+                "Indica el rango de fechas para el cual deseas consolidar los movimientos.",
+            },
+            {
+              label: "Visualizar resumen",
+              description:
+                "El sistema muestra cada sección con detalle de stock inicial, entradas, salidas, ajustes y stock final.",
+            },
+            {
+              label: "Comparar secciones",
+              description:
+                "Identifica diferencias entre secciones en cuanto a movimientos y stock disponible.",
+            },
+            {
+              label: "Exportar o imprimir",
+              description:
+                "Genera un reporte consolidado para auditoría, planificación logística o análisis contable.",
+            },
+          ],
+        },
+        {
+          id: 47,
+          aNombre: "Consecutivos Utilizados",
+          aResumen: `Este módulo permite consultar los números consecutivos ya asignados a operaciones de inventario y documentos. Sirve para:
+
+Auditar la secuencia de registros en entradas, salidas, transferencias, compras y ventas.
+
+Detectar duplicaciones o saltos en la numeración.
+
+Mantener trazabilidad documental y control interno.
+
+Generar reportes de consecutivos utilizados por período o tipo de operación.`,
+          pasos: [
+            {
+              label: "Acceder al módulo Consecutivos Utilizados",
+              description:
+                "Desde el menú Consultas y Reportes, selecciona la opción Consecutivos Utilizados.",
+            },
+            {
+              label: "Seleccionar tipo de operación",
+              description:
+                "Define si deseas consultar consecutivos de entradas, salidas, transferencias, compras, ventas u otro movimiento.",
+            },
+            {
+              label: "Definir período de consulta",
+              description:
+                "Indica el rango de fechas para el cual deseas visualizar los consecutivos utilizados.",
+            },
+            {
+              label: "Visualizar listado",
+              description:
+                "El sistema muestra los números consecutivos asignados, con detalle de operación, fecha, usuario y documento asociado.",
+            },
+            {
+              label: "Detectar inconsistencias",
+              description:
+                "Revisa si existen duplicaciones, saltos o números faltantes en la secuencia.",
+            },
+            {
+              label: "Exportar o imprimir",
+              description:
+                "Genera un reporte para auditoría, control interno o planificación de ajustes en la numeración.",
+            },
+          ],
+        },
+      ],
     },
     {
       id: 8,
