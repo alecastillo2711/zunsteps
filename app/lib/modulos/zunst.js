@@ -769,7 +769,7 @@ Auditar el historial de modificaciones para control técnico o contable.`,
     },
     {
       id: 2,
-      sNombre: "Enlaces(Nomencladores)",
+      sNombre: "Enlaces",
       acciones: [
         {
           id: 41,
@@ -955,7 +955,7 @@ Permitir reportes por producto, sección y almacén con trazabilidad completa.`,
     },
     {
       id: 3,
-      sNombre: "Enlaces(Contables)",
+      sNombre: "Enl(Contables)",
       acciones: [
         {
           id: 1,
