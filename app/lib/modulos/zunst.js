@@ -769,7 +769,7 @@ Auditar el historial de modificaciones para control técnico o contable.`,
     },
     {
       id: 2,
-      sNombre: "Enlaces(Nomencladores)",
+      sNombre: "Enl(Nomencladores)",
       acciones: [
         {
           id: 41,
@@ -955,7 +955,7 @@ Permitir reportes por producto, sección y almacén con trazabilidad completa.`,
     },
     {
       id: 3,
-      sNombre: "Enlaces(Contables)",
+      sNombre: "Enl(Contables)",
       acciones: [
         {
           id: 1,
@@ -3404,51 +3404,51 @@ Generar reportes de consecutivos utilizados por período o tipo de operación.`,
       sNombre: "Históricos",
       acciones: [],
     },
-    {
-      id: 9,
-      sNombre: "Otros",
-      acciones: [
-        {
-          id: 1,
-          aNombre: "Cambio de Código de Producto",
-          aResumen: `Este módulo permite reemplazar el código de un producto por otro, manteniendo su historial de movimientos, ubicación y valorización. Sirve para:
+    //     {
+    //       id: 9,
+    //       sNombre: "Otros",
+    //       acciones: [
+    //         {
+    //           id: 1,
+    //           aNombre: "Cambio de Código de Producto",
+    //           aResumen: `Este módulo permite reemplazar el código de un producto por otro, manteniendo su historial de movimientos, ubicación y valorización. Sirve para:
 
-Actualizar códigos obsoletos o mal asignados sin perder trazabilidad.
+    // Actualizar códigos obsoletos o mal asignados sin perder trazabilidad.
 
-Unificar productos duplicados bajo un solo código operativo.
+    // Unificar productos duplicados bajo un solo código operativo.
 
-Evitar errores en reportes, ajustes y contabilización por códigos inconsistentes.
+    // Evitar errores en reportes, ajustes y contabilización por códigos inconsistentes.
 
-Preservar la relación con almacenes, secciones, cuentas contables y nomencladores.`,
-          pasos: [
-            {
-              label: "Acceder al módulo Cambio de Código de Producto",
-              description:
-                "Desde el menú Movimientos Operativos, selecciona la opción Cambio de Código de Producto.",
-            },
-            {
-              label: "Seleccionar código origen",
-              description:
-                "Busca y selecciona el código actual del producto que deseas reemplazar.",
-            },
-            {
-              label: "Seleccionar código destino",
-              description:
-                "Busca y selecciona el nuevo código que reemplazará al anterior. Debe estar previamente registrado.",
-            },
-            {
-              label: "Confirmar el reemplazo",
-              description:
-                "Verifica que el nuevo código tenga las mismas características operativas (unidad, tipo, subfamilia).",
-            },
-            {
-              label: "Ejecutar el cambio",
-              description:
-                "Haz clic en Aceptar. El sistema migrará todos los movimientos, ubicaciones y enlaces al nuevo código.",
-            },
-          ],
-        },
-      ],
-    },
+    // Preservar la relación con almacenes, secciones, cuentas contables y nomencladores.`,
+    //           pasos: [
+    //             {
+    //               label: "Acceder al módulo Cambio de Código de Producto",
+    //               description:
+    //                 "Desde el menú Movimientos Operativos, selecciona la opción Cambio de Código de Producto.",
+    //             },
+    //             {
+    //               label: "Seleccionar código origen",
+    //               description:
+    //                 "Busca y selecciona el código actual del producto que deseas reemplazar.",
+    //             },
+    //             {
+    //               label: "Seleccionar código destino",
+    //               description:
+    //                 "Busca y selecciona el nuevo código que reemplazará al anterior. Debe estar previamente registrado.",
+    //             },
+    //             {
+    //               label: "Confirmar el reemplazo",
+    //               description:
+    //                 "Verifica que el nuevo código tenga las mismas características operativas (unidad, tipo, subfamilia).",
+    //             },
+    //             {
+    //               label: "Ejecutar el cambio",
+    //               description:
+    //                 "Haz clic en Aceptar. El sistema migrará todos los movimientos, ubicaciones y enlaces al nuevo código.",
+    //             },
+    //           ],
+    //         },
+    //       ],
+    //     },
   ],
 };

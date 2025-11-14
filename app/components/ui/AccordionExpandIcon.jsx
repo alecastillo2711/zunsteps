@@ -68,12 +68,6 @@ export default function AccordionExpandIcon({ seccion }) {
             <Typography variant="h5" color="primary.main">
               {mNombre}
             </Typography>
-            <Image
-              src={"/getLogo.png"}
-              alt="imaga"
-              width={150}
-              height={50}
-            ></Image>
           </Box>
         </AccordionSummary>
         <AccordionDetails>
