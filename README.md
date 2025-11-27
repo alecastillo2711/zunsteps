@@ -12,6 +12,8 @@ de aprender haciendo.
 - ✅ Interación en tiempo real
 - ✅ Interfaz amigable y fácil de usar
 - ✅ Tecnología Web
+- ✅ Apego total ala Suite ZUN
+
 
 ---
 
