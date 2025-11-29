@@ -11,12 +11,21 @@ import {
 } from "@mui/icons-material";
 import { DefaultButton } from "./components/ui/DefaultButton";
 import { WhiteMiddButton } from "./components/ui/WhiteMiddButton";
+import Image from "next/image";
 
 export default function Home() {
   const theme = useTheme();
   return (
     <Card className="front-card">
-      <Box sx={{ marginTop: "100px" }}>
+      <Box
+        sx={{
+          marginTop: "90px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+      >
         <Typography color="primary" variant="h3" fontFamily={"monospace"}>
           ZUNSteps
         </Typography>
@@ -30,7 +39,8 @@ export default function Home() {
           width: "80%",
           marginTop: "20px",
           marginBottom: "10px",
-        }}>
+        }}
+      >
         <Typography color="primary.text">
           La herramienta que facilita el trabajo con la
         </Typography>
@@ -48,7 +58,8 @@ export default function Home() {
           gap: "15px",
           marginTop: "10px",
           color: "primary.main",
-        }}>
+        }}
+      >
         <Link href={"facebook"}>
           <FacebookOutlined />
         </Link>
@@ -80,7 +91,8 @@ export default function Home() {
           flexDirection: "column",
           alignItems: "center",
           marginTop: "130px",
-        }}>
+        }}
+      >
         <Typography color="primary.text">
           Powered by Carlinhos. v1.0.0
         </Typography>
@@ -90,7 +102,8 @@ export default function Home() {
             alignItems: "center",
             justifyContent: "center",
             color: "primary.main",
-          }}>
+          }}
+        >
           <span>
             <WhatsApp />
           </span>
