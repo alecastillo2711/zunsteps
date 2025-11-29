@@ -1,9 +1,9 @@
 # netlify.toml
 [build]
-  command = "npm run build && npm run export"
+  command = "npm run build"
   publish = "out"
 
 # Indica que Netlify debe usar la rama develop para desplegar
 [context.develop]
-  command = "npm run build && npm run export"
+  command = "npm run build"
   publish = "out"
