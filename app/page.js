@@ -17,30 +17,12 @@ export default function Home() {
   const theme = useTheme();
   return (
     <Card className="front-card">
-      <Box
-        sx={{
-          marginTop: "90px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-        }}
-      >
+      <Box className="box-app-name">
         <Typography color="primary" variant="h3" fontFamily={"monospace"}>
           ZUNSteps
         </Typography>
       </Box>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "80%",
-          marginTop: "20px",
-          marginBottom: "10px",
-        }}
-      >
+      <Box className="box-promo-txt">
         <Typography color="primary.text">
           La herramienta que facilita el trabajo con la
         </Typography>
@@ -53,10 +35,8 @@ export default function Home() {
         </Typography>
       </Box>
       <Box
+        className="box-social"
         sx={{
-          display: "flex",
-          gap: "15px",
-          marginTop: "10px",
           color: "primary.main",
         }}
       >
@@ -85,14 +65,7 @@ export default function Home() {
         </Link>
       </Box>
 
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          marginTop: "130px",
-        }}
-      >
+      <Box className="box-contact">
         <Typography color="primary.text">
           Powered by Carlinhos. v1.0.0
         </Typography>
