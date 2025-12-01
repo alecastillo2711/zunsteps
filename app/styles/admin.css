@@ -1,0 +1,55 @@
+.box-admin {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card-admin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 450px;
+  height: 490px;
+  margin-top: 6%;
+}
+.box-txt {
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+  align-items: center;
+}
+.box-h5 {
+  margin-bottom: 5%;
+}
+.box-p {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+.box-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  margin-top: 7%;
+}
+.box-buttons {
+  display: flex;
+  gap: 5%;
+  margin-top: 6%;
+  height: 40px;
+}
+.box-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10%;
+  gap: 10px;
+}
+.box-info-txt {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}

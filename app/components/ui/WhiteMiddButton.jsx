@@ -1,6 +1,6 @@
 import { Button, Typography } from "@mui/material";
 
-export const WhiteMiddButton = ({ text, actionFunction }) => {
+export const WhiteMiddButton = ({ text, actionFunction, icon }) => {
   return (
     <Button
       onClick={actionFunction}
@@ -12,9 +12,11 @@ export const WhiteMiddButton = ({ text, actionFunction }) => {
           backgroundColor: "background.main",
           border: "1.5px,solid,#2c3e50",
         },
+        gap: "10px",
       }}
     >
       <Typography>{text}</Typography>
+      {icon}
     </Button>
   );
 };

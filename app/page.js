@@ -12,6 +12,8 @@ import {
 import { DefaultButton } from "./components/ui/DefaultButton";
 import { WhiteMiddButton } from "./components/ui/WhiteMiddButton";
 import Image from "next/image";
+import { KeyOutlined } from "@mui/icons-material";
+import VerifiedIcon from "@mui/icons-material/Verified";
 
 export default function Home() {
   const theme = useTheme();
@@ -54,8 +56,8 @@ export default function Home() {
         </Link>
       </Box>
       <Box sx={{ display: "flex", gap: "10px", marginTop: "50px" }}>
-        <Link href={"/zunsteps/docs"}>
-          <WhiteMiddButton text={"docs"} />
+        <Link href={"/admin"}>
+          <WhiteMiddButton text={"premium"} icon={<VerifiedIcon />} />
         </Link>
         <Link href={"zunsteps/dashboard"}>
           <DefaultButton
