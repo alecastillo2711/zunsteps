@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Card, Typography } from "@mui/material";
-import { useKey } from "../lib/hooks/useKey";
+
 import "../styles/admin.css";
 import TextField from "@mui/material/TextField";
 import { DefaultButton } from "../components/ui/DefaultButton";
@@ -12,12 +12,12 @@ import VerifiedIcon from "@mui/icons-material/Verified";
 import { useState, useContext } from "react";
 import Link from "next/link";
 import { validateKey } from "../lib/validate";
-import { PremiumContext } from "../lib/contexts/PremiumContext";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 
 const Admin = () => {
   const [showInfo, setShowInfo] = useState(false);
   const [keys, setKeys] = useState();
-  const { renderPremium, activatePremium } = useContext(PremiumContext);
+  //const { renderPremium, activatePremium } = useContext(PremiumContext);
   //capturo la key introducida desde el input
   const handleChange = (event) => {
     setKeys(event.target.value);
@@ -28,7 +28,6 @@ const Admin = () => {
         <Box className="box-txt">
           <Box className="box-h5">
             <Typography color="primary" variant="h4" fontFamily={"monospace"}>
-              <VerifiedIcon color="primary" sx={{ mr: 1 }} />
               Área Premium
             </Typography>
           </Box>
@@ -44,11 +43,14 @@ const Admin = () => {
               variant="outlined"
               onChange={handleChange}
             />
+            {validateKey(keys) && (
+              <VerifiedIcon sx={{ mr: 1, color: "primary.blue" }} />
+            )}
           </Box>
         </Box>
         <Box className="box-buttons">
           <Link href={"/"}>
-            <WhiteMiddButton text={"Home"} />
+            <WhiteMiddButton icon={<HomeOutlinedIcon />} text={"Home"} />
           </Link>
           {validateKey(keys) ? (
             <Link href={"/zunsteps/premium"}>
@@ -65,6 +67,7 @@ const Admin = () => {
           <IconButton aria-label="info" onClick={() => setShowInfo(!showInfo)}>
             <InfoOutlineIcon color="primary" />
           </IconButton>
+
           {showInfo && (
             <Box className="box-info-txt">
               <Typography color="primary.text">
