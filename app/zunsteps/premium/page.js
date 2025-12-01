@@ -1,10 +1,49 @@
+// app/zunsteps/premium/page.js
 "use client";
+import React from "react";
+import { Box, Container, Typography, Button, Card } from "@mui/material";
+import PremiumTabs from "@/app/components/ui/PremiumTaps";
 
 export default function PremiumPage() {
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Premium Features</h1>
-      <p>Access exclusive content and features with a premium subscription.</p>
-    </div>
+    <Container maxWidth="md" sx={{ py: 4 }}>
+      <Box textAlign="center" mb={4}>
+        <Typography variant="h3" component="h1" gutterBottom>
+          Zona Premium
+        </Typography>
+        <Typography variant="subtitle1">
+          ¡Bienvenido a tu área exclusiva!
+        </Typography>
+      </Box>
+
+      <Box mb={4}>
+        <Typography variant="h5" gutterBottom>
+          Beneficios de ser Premium
+        </Typography>
+        <ul>
+          <li>
+            <Typography>Acceso a contenido exclusivo</Typography>
+          </li>
+          <li>
+            <Typography>Soporte prioritario</Typography>
+          </li>
+          <li>
+            <Typography>Acceso a utilitarios exclusivos</Typography>
+          </li>
+        </ul>
+      </Box>
+
+      <Box mb={4}>
+        <Typography variant="h5" gutterBottom>
+          Contenido Exclusivo
+        </Typography>
+        <PremiumTabs />
+      </Box>
+      <Box textAlign="center" color="text.secondary" mt={6}>
+        <Typography variant="body2">
+          © {new Date().getFullYear()} Zunsteps Premium
+        </Typography>
+      </Box>
+    </Container>
   );
 }
