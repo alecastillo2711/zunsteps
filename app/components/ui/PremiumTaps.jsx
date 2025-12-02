@@ -7,6 +7,10 @@ import TerminalIcon from "@mui/icons-material/Terminal";
 import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
 import LinkOutlinedIcon from "@mui/icons-material/LinkOutlined";
 import CloudDownloadOutlinedIcon from "@mui/icons-material/CloudDownloadOutlined";
+import CodeSnippet from "../ui/CudeSnippet";
+import { resetGet } from "@/app/lib/scipts/utils";
+import { Typography } from "@mui/material";
+import "../../styles/premium.css";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -59,7 +63,16 @@ export default function PremiumTabs() {
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        Item One
+        <Typography variant="h6" sx={{ margin: "2%" }} gutterBottom>
+          Scripts Utilitarios
+        </Typography>
+        <Box className="copy-section">
+          <CodeSnippet
+            name={resetGet.name}
+            code={resetGet.code}
+            description={resetGet.description}
+          />
+        </Box>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         Item Two
