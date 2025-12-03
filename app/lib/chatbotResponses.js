@@ -128,7 +128,7 @@ export function getBestResponse(query) {
   });
 
   if (best.score > 0) {
-    return best.answer + `\n\n(Creo que te refieres a: ${best.source})`;
+    return best.answer + `\n\n(Referenciando a: ${best.source})`;
   }
 
   // 3) si no hay coincidencias, intentar búsqueda por substring en textos
