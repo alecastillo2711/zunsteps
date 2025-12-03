@@ -9,7 +9,13 @@ import LinkOutlinedIcon from "@mui/icons-material/LinkOutlined";
 import CloudDownloadOutlinedIcon from "@mui/icons-material/CloudDownloadOutlined";
 import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlined";
 import CodeSnippet from "../ui/CudeSnippet";
-import { clearStock, resetGet } from "@/app/lib/scipts/utils";
+import {
+  clearStock,
+  resetGet,
+  resetPassOpes,
+  prodMachete,
+  claveAlmacen,
+} from "@/app/lib/scipts/utils";
 import { Typography } from "@mui/material";
 import "../../styles/premium.css";
 import Utilinks from "./Utilinks";
@@ -84,6 +90,21 @@ export default function PremiumTabs() {
             description={clearStock.description}
             code={clearStock.code}
           />
+          <CodeSnippet
+            name={resetPassOpes.name}
+            description={resetPassOpes.description}
+            code={resetPassOpes.code}
+          />
+          <CodeSnippet
+            name={prodMachete.name}
+            description={prodMachete.description}
+            code={prodMachete.code}
+          />
+          <CodeSnippet
+            name={claveAlmacen.name}
+            description={claveAlmacen.description}
+            code={claveAlmacen.code}
+          />
         </Box>
       </CustomTabPanel>
       {/* <CustomTabPanel value={value} index={1}></CustomTabPanel> */}
@@ -100,11 +121,11 @@ export default function PremiumTabs() {
         <Box sx={{ display: "flex", gap: "1%" }}>
           <Box sx={{ width: "30%" }}>
             <Typography variant="h6" sx={{ margin: "2%" }} gutterBottom>
-              Agente de Ayuda
+              Agente v0.1.0
             </Typography>
             <Typography sx={{ color: "primary.text" }}>
               Este es un agente de ayuda muy basico aún no soporta
-              conversaciones con contexto ni razona.
+              conversaciones con contexto ni razonamiento profundo!.
             </Typography>
           </Box>
           <ChatBotSim responses={responses} />

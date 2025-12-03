@@ -3,6 +3,7 @@
 import React from "react";
 import { Box, Container, Typography, Button, Card } from "@mui/material";
 import PremiumTabs from "@/app/components/ui/PremiumTaps";
+import VerifiedIcon from "@mui/icons-material/Verified";
 
 export default function PremiumPage() {
   return (
@@ -37,8 +38,13 @@ export default function PremiumPage() {
       </Box>
 
       <Box mb={4}>
-        <Typography variant="h5" gutterBottom>
+        <Typography
+          sx={{ display: "flex", gap: "1%" }}
+          variant="h5"
+          gutterBottom
+        >
           Contenido Exclusivo
+          <VerifiedIcon sx={{ color: "blue" }} />
         </Typography>
         <PremiumTabs />
       </Box>

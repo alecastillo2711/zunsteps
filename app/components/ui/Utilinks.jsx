@@ -1,14 +1,8 @@
 "use client";
 import React from "react";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import {
-  Box,
-  Typography,
-  List,
-  ListItem,
-  ListItemButton,
-  Link as MuiLink,
-} from "@mui/material";
+import { Box, Typography, List, ListItem, ListItemButton } from "@mui/material";
+import Link from "next/link";
 
 /**
  * Utilinks
@@ -22,33 +16,27 @@ export default function Utilinks({ links }) {
       component="nav"
       sx={{
         width: "100%",
-        maxWidth: 360,
         bgcolor: "background.paper",
         borderRadius: 1,
+        margin: 1,
+        display: "flex",
       }}
     >
       <List disablePadding>
         {links.map((item, idx) => (
           <ListItem key={idx} disablePadding>
-            <ListItemButton component="div" sx={{ px: 0 }}>
-              <MuiLink
-                href={item.url}
-                underline="none"
-                sx={{
-                  width: "100%",
-                  padding: "2%",
-                  color: "primary.blue",
-                  display: "flex",
-                }}
-              >
-                {item.name}:{"  "}
+            <ListItemButton component="div" sx={{ padding: "3%" }}>
+              <Link target="_blank" href={item.url}>
+                <Typography variant="h6" color="blue">
+                  {item.name}
+                </Typography>
                 <Typography
                   variant="body2"
                   sx={{ marginLeft: "4px", color: "primary.text" }}
                 >
                   {item.description}
                 </Typography>
-              </MuiLink>
+              </Link>
             </ListItemButton>
           </ListItem>
         ))}
