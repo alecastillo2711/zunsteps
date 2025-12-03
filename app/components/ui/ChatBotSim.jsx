@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Box, Typography } from "@mui/material";
+import { getBestResponse } from "@/app/lib/chatbotResponses";
 
 export default function ChatBotSim({ responses }) {
   const [input, setInput] = useState("");
@@ -12,9 +13,7 @@ export default function ChatBotSim({ responses }) {
     const userMsg = { sender: "user", text: input };
     const botMsg = {
       sender: "bot",
-      text:
-        responses[input.trim()] ||
-        "Lo siento, no tengo respuesta para esa pregunta.",
+      text: getBestResponse(input.trim()),
     };
     setChat((prev) => [...prev, userMsg, botMsg]);
     setInput("");
@@ -65,7 +64,7 @@ export default function ChatBotSim({ responses }) {
       <Box sx={{ display: "flex", gap: 1 }}>
         <input
           type="text"
-          value={input.toLowerCase()}
+          value={input && input.toLowerCase()}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Escribe tu pregunta..."
           style={{
