@@ -9,7 +9,7 @@ import LinkOutlinedIcon from "@mui/icons-material/LinkOutlined";
 import CloudDownloadOutlinedIcon from "@mui/icons-material/CloudDownloadOutlined";
 import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlined";
 import CodeSnippet from "../ui/CudeSnippet";
-import { resetGet } from "@/app/lib/scipts/utils";
+import { clearStock, resetGet } from "@/app/lib/scipts/utils";
 import { Typography } from "@mui/material";
 import "../../styles/premium.css";
 import Utilinks from "./Utilinks";
@@ -78,6 +78,11 @@ export default function PremiumTabs() {
             name={resetGet.name}
             code={resetGet.code}
             description={resetGet.description}
+          />
+          <CodeSnippet
+            name={clearStock.name}
+            description={clearStock.description}
+            code={clearStock.code}
           />
         </Box>
       </CustomTabPanel>

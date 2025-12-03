@@ -6,7 +6,7 @@ import Button from "@mui/material/Button";
 export default function CodeSnippet({ name, code, description }) {
   const [copied, copyToClipboard] = useCopy();
   return (
-    <Card>
+    <Card sx={{ marginTop: "2%" }}>
       <Box p={2} mb={2}>
         <Typography variant="h6" gutterBottom>
           {name}

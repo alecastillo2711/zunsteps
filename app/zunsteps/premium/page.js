@@ -30,6 +30,9 @@ export default function PremiumPage() {
           <li>
             <Typography>Acceso a utilitarios exclusivos</Typography>
           </li>
+          <li>
+            <Typography>Agente de ayuda para responder FAQs</Typography>
+          </li>
         </ul>
       </Box>
 
