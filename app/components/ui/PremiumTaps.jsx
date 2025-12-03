@@ -7,10 +7,15 @@ import TerminalIcon from "@mui/icons-material/Terminal";
 import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
 import LinkOutlinedIcon from "@mui/icons-material/LinkOutlined";
 import CloudDownloadOutlinedIcon from "@mui/icons-material/CloudDownloadOutlined";
+import TipsAndUpdatesOutlinedIcon from "@mui/icons-material/TipsAndUpdatesOutlined";
 import CodeSnippet from "../ui/CudeSnippet";
 import { resetGet } from "@/app/lib/scipts/utils";
 import { Typography } from "@mui/material";
 import "../../styles/premium.css";
+import Utilinks from "./Utilinks";
+import { links } from "@/app/lib/links";
+import ChatBotSim from "./ChatBotSim";
+import chatBotResponses from "@/app/lib/chatbotResponses";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -43,6 +48,7 @@ function a11yProps(index) {
 
 export default function PremiumTabs() {
   const [value, setValue] = React.useState(0);
+  const responses = chatBotResponses;
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -60,6 +66,7 @@ export default function PremiumTabs() {
           <Tab label={<NotificationsActiveOutlinedIcon />} {...a11yProps(1)} />
           <Tab label={<LinkOutlinedIcon />} {...a11yProps(2)} />
           <Tab label={<CloudDownloadOutlinedIcon />} {...a11yProps(3)} />
+          <Tab label={<TipsAndUpdatesOutlinedIcon />} {...a11yProps(4)} />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
@@ -74,14 +81,21 @@ export default function PremiumTabs() {
           />
         </Box>
       </CustomTabPanel>
-      <CustomTabPanel value={value} index={1}>
-        Item Two
-      </CustomTabPanel>
+      <CustomTabPanel value={value} index={1}></CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        Item Three
+        <Typography variant="h6" sx={{ margin: "2%" }} gutterBottom>
+          Links Utilitarios
+        </Typography>
+        <Utilinks links={links} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
         Item Four
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={4}>
+        <Typography variant="h6" sx={{ margin: "2%" }} gutterBottom>
+          Agente de Ayuda
+        </Typography>
+        <ChatBotSim responses={responses} />
       </CustomTabPanel>
     </Box>
   );
