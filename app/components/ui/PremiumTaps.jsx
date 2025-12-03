@@ -63,10 +63,10 @@ export default function PremiumTabs() {
           aria-label="basic tabs example"
         >
           <Tab label={<TerminalIcon />} {...a11yProps(0)} />
-          <Tab label={<NotificationsActiveOutlinedIcon />} {...a11yProps(1)} />
-          <Tab label={<LinkOutlinedIcon />} {...a11yProps(2)} />
-          <Tab label={<CloudDownloadOutlinedIcon />} {...a11yProps(3)} />
-          <Tab label={<TipsAndUpdatesOutlinedIcon />} {...a11yProps(4)} />
+          {/* <Tab label={<NotificationsActiveOutlinedIcon />} {...a11yProps(1)} /> */}
+          <Tab label={<LinkOutlinedIcon />} {...a11yProps(1)} />
+          {/* <Tab label={<CloudDownloadOutlinedIcon />} {...a11yProps(3)} /> */}
+          <Tab label={<TipsAndUpdatesOutlinedIcon />} {...a11yProps(2)} />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
@@ -81,21 +81,29 @@ export default function PremiumTabs() {
           />
         </Box>
       </CustomTabPanel>
-      <CustomTabPanel value={value} index={1}></CustomTabPanel>
-      <CustomTabPanel value={value} index={2}>
+      {/* <CustomTabPanel value={value} index={1}></CustomTabPanel> */}
+      <CustomTabPanel value={value} index={1}>
         <Typography variant="h6" sx={{ margin: "2%" }} gutterBottom>
           Links Utilitarios
         </Typography>
         <Utilinks links={links} />
       </CustomTabPanel>
-      <CustomTabPanel value={value} index={3}>
+      {/* <CustomTabPanel value={value} index={3}>
         Item Four
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={4}>
-        <Typography variant="h6" sx={{ margin: "2%" }} gutterBottom>
-          Agente de Ayuda
-        </Typography>
-        <ChatBotSim responses={responses} />
+      </CustomTabPanel> */}
+      <CustomTabPanel value={value} index={2}>
+        <Box sx={{ display: "flex", gap: "1%" }}>
+          <Box sx={{ width: "30%" }}>
+            <Typography variant="h6" sx={{ margin: "2%" }} gutterBottom>
+              Agente de Ayuda
+            </Typography>
+            <Typography sx={{ color: "primary.text" }}>
+              Este es un agente de ayuda muy basico aún no soporta
+              conversaciones con contexto ni razona.
+            </Typography>
+          </Box>
+          <ChatBotSim responses={responses} />
+        </Box>
       </CustomTabPanel>
     </Box>
   );
