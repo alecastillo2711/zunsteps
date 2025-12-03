@@ -32,9 +32,15 @@ export default function ChatBotSim({ responses }) {
     >
       <Box sx={{ minHeight: 120, mb: 2 }}>
         {chat.length === 0 && (
-          <Typography variant="body2" color="text.secondary">
-            Escribe una pregunta para recibir ayuda.
-          </Typography>
+          <Box>
+            <Typography variant="body2" color="primary">
+              CBAGENT v0.1.0
+            </Typography>
+            <Typography color="primary.text">
+              Este es un agente de ayuda muy basico aún no soporta
+              conversaciones con contexto ni razonamiento profundo!
+            </Typography>
+          </Box>
         )}
         {chat.map((msg, idx) => (
           <Box

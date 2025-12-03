@@ -119,15 +119,6 @@ export default function PremiumTabs() {
       </CustomTabPanel> */}
       <CustomTabPanel value={value} index={2}>
         <Box sx={{ display: "flex", gap: "1%" }}>
-          <Box sx={{ width: "30%" }}>
-            <Typography variant="h6" sx={{ margin: "2%" }} gutterBottom>
-              Agente v0.1.0
-            </Typography>
-            <Typography sx={{ color: "primary.text" }}>
-              Este es un agente de ayuda muy basico aún no soporta
-              conversaciones con contexto ni razonamiento profundo!.
-            </Typography>
-          </Box>
           <ChatBotSim responses={responses} />
         </Box>
       </CustomTabPanel>
