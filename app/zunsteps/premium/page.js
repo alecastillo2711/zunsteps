@@ -4,6 +4,10 @@ import React from "react";
 import { Box, Container, Typography, Button, Card } from "@mui/material";
 import PremiumTabs from "@/app/components/ui/PremiumTaps";
 import VerifiedIcon from "@mui/icons-material/Verified";
+import { DefaultButton } from "@/app/components/ui/DefaultButton";
+import Link from "next/link";
+import { WhiteMiddButton } from "@/app/components/ui/WhiteMiddButton";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 
 export default function PremiumPage() {
   return (
@@ -12,6 +16,17 @@ export default function PremiumPage() {
         <Typography variant="h3" component="h1" gutterBottom>
           Zona Premium
         </Typography>
+        <Box sx={{ display: "flex", marginLeft: "40%", mb: 2, gap: "5px" }}>
+          <Link href={"/"}>
+            <WhiteMiddButton
+              icon={<HomeOutlinedIcon sx={{ color: "primary.blue" }} />}
+              text={"Inicio"}
+            />
+          </Link>
+          <Link href={"/zunsteps/dashboard"}>
+            <DefaultButton text="Dashboard" />
+          </Link>
+        </Box>
         <Typography variant="subtitle1">
           ¡Bienvenido a tu área exclusiva!
         </Typography>

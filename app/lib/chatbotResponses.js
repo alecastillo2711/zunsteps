@@ -1,5 +1,5 @@
 // Respuestas simuladas para el chatbot
-import { getConocimiento } from "./returnKnow";
+// import { getConocimiento } from "./returnKnow";
 
 import { zunacc } from "./modulos/zunacc";
 import { zunaft } from "./modulos/zunaft";
@@ -7,6 +7,7 @@ import { zunhr } from "./modulos/zunhr";
 import { zunst } from "./modulos/zunst";
 import { tablasConocimientos } from "./knowlebasic/tablas";
 import { tips } from "./knowlebasic/tips";
+import { basicAnswers } from "./knowlebasic/basicAnswers";
 
 function normalize(text) {
   return (text || "")
@@ -34,8 +35,23 @@ const chatbotResponses = {
 
 // Construir una base de conocimiento a partir de los módulos
 const modules = [zunacc, zunaft, zunhr, zunst];
-const knowledge = [getConocimiento(tablasConocimientos), getConocimiento(tips)];
-
+const knowledge = [];
+//para conocimientos basicos
+basicAnswers.forEach((b) => {
+  if (!b) return;
+  knowledge.push(b);
+});
+//para el conocimiento de las tablas
+tablasConocimientos.forEach((t) => {
+  if (!t) return;
+  knowledge.push(t);
+});
+//para diferentes tips
+tips.forEach((i) => {
+  if (!i) return;
+  knowledge.push(i);
+});
+//para el conocimieto de modulos
 modules.forEach((m) => {
   if (!m) return;
   const title = m.mNombre || "";
