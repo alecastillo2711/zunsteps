@@ -1,7 +1,10 @@
 export const zunst = {
   mNombre: "ZUNstock Almacén",
   mImage: "/st",
-  mResumen: "Resumen",
+  mResumen: `ZUNstock es un sistema integral de gestión de inventarios que registra,
+   controla y audita cada movimiento de productos —entradas, salidas, transferencias,
+    compras, ventas, ajustes y cierres— garantizando trazabilidad, consistencia entre inventario físico 
+    y sistema, y reportes claros para logística, contabilidad y auditoría.`,
   mSecciones: [
     {
       id: 1,
