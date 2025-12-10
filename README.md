@@ -9,7 +9,7 @@ de aprender haciendo.
 ## 📦 Características principales
 
 - ✅ Fácil de usar
-- ✅ Interación en tiempo real
+- ✅ Interacciión en tiempo real
 - ✅ Interfaz amigable y fácil de usar
 - ✅ Tecnología Web
 - ✅ Apego total ala Suite ZUN
